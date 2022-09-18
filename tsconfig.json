@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "outDir": "./build/",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "module": "ESNext",
+    "target": "es5",
+    "jsx": "react-jsx",
+    "allowJs": true,
+    "moduleResolution": "node",
+    // Для абсолютного импорта
+    "baseUrl": ".",
+    // esModuleInterop позволяет работать с пакетами, которые используют
+    // common js как с обычными пакетами с помощью import (require(), module.exports) = common js
+    // import Moment from 'moment'
+    // console.log(Moment)
+    // без esModuleInterop - undefined
+    // с esModuleInterop - [object Object]
+    "esModuleInterop": true,
+    // Если какая то библиотека не имеет export default
+    // лоадеры вроде ts-loader babel-loader автоматически создают их
+    // вместо import * as React from 'react'
+    // можно писать import React from 'react'
+    "allowSyntheticDefaultImports": true,
+    "plugins": [{ "name": "typescript-plugin-css-modules" }]
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  }
+}
