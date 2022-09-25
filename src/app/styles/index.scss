@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap');
+@import './reset';
+@import './variables/global';
+@import './themes/dark';
+@import './themes//light.scss';
+
+.app {
+  font: var(--font-m);
+  background: var(--bg-color);
+  color: var(--primary-color);
+  min-height: 100vh;
+}

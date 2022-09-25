@@ -21,7 +21,7 @@ const BuildWebpackConfig = (options: BuildOptions): webpack.Configuration => {
     module: {
       rules: BuildLoaders(options),
     },
-    resolve: BuildResolve(),
+    resolve: BuildResolve(options),
     devServer: isDev ? BuildDevServer(options) : undefined,
   };
   return config;
