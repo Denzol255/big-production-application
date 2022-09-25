@@ -12,25 +12,21 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-width: 150px;
 }
 
 .navbarLogoText {
   font: var(--font-l);
   color: var(--inverted-primary-color);
+  margin-left: 15px;
 }
 
 .navbarLogoImage {
   width: 50px;
 }
 
-.navbarToggleTheme {
-}
-
 .navbarLinksContainer {
   display: flex;
   align-items: center;
-  margin: 0 40px 0 auto;
 }
 
 .navbarLink {

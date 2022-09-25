@@ -3,7 +3,7 @@ import Logo from '@/shared/assets/icons/logo.svg';
 import { getClassNames } from '@/shared/lib/getClassNames';
 import { AppLinkTheme } from '@/shared/ui/AppLink/AppLink';
 import { AppLink } from '@/shared/ui/index';
-import { ToggleTheme } from '@/widgets/ToggleTheme';
+import { useTranslation } from 'react-i18next';
 import styles from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -11,11 +11,12 @@ interface NavbarProps {
 }
 
 export const Navbar = ({ className }: NavbarProps) => {
+  const { t } = useTranslation();
   return (
     <div className={getClassNames(styles.navbar, {}, [className])}>
       <div className={styles.navbarLogoContainer}>
         <Logo fill='#FAA508' className={styles.navbarLogoImage} />
-        <span className={styles.navbarLogoText}>My App</span>
+        <span className={styles.navbarLogoText}>{t('My App')}</span>
       </div>
       <div className={styles.navbarLinksContainer}>
         <AppLink
@@ -23,17 +24,16 @@ export const Navbar = ({ className }: NavbarProps) => {
           className={styles.navbarLink}
           to={'/'}
         >
-          Main
+          {t('Main')}
         </AppLink>
         <AppLink
           theme={AppLinkTheme.SECONDARY}
           className={styles.navbarLink}
           to={'/about'}
         >
-          About
+          {t('About')}
         </AppLink>
       </div>
-      <ToggleTheme className={styles.navbarToggleTheme} />
     </div>
   );
 };
