@@ -7,14 +7,18 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: ['plugin:react/recommended', 'standard-with-typescript'],
+  extends: [
+    'plugin:react/recommended',
+    'standard-with-typescript',
+    'plugin:i18next/recommended',
+  ],
   overrides: [],
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
     project: ['./tsconfig.json'],
   },
-  plugins: ['react'],
+  plugins: ['react', '@typescript-eslint', 'i18next'],
   rules: {
     'comma-dangle': OFF,
     '@typescript-eslint/comma-dangle': OFF,
@@ -34,6 +38,7 @@ module.exports = {
     '@typescript-eslint/no-floating-promises': OFF,
     '@typescript-eslint/array-type': OFF,
     '@typescript-eslint/naming-convention': WARN,
+    'i18next/no-literal-string': ['warn', { markupOnly: true }],
   },
   globals: {
     __IS_DEV__: true,
