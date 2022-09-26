@@ -15,6 +15,17 @@ const BuildLoaders = ({ isDev }: BuildOptions): webpack.RuleSetRule[] => {
     test: /\.svg$/,
     use: ['@svgr/webpack'],
   };
+  const babelLoader = {
+    test: /\.(js|jsx|tsx)/,
+    exclude: /node_modules/,
+    use: {
+      loader: 'babel-loader',
+      options: {
+        presets: ['@babel/preset-env'],
+      },
+    },
+  };
+
   const typescriptRules = {
     test: /\.tsx?$/,
     use: 'ts-loader',
@@ -40,7 +51,7 @@ const BuildLoaders = ({ isDev }: BuildOptions): webpack.RuleSetRule[] => {
     ],
   };
 
-  return [typescriptRules, fileRules, svgRules, scssRules];
+  return [fileRules, svgRules, babelLoader, typescriptRules, scssRules];
 };
 
 export default BuildLoaders;
