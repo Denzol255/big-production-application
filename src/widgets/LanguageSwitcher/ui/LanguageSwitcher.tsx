@@ -1,5 +1,5 @@
 import i18n from '@/shared/config/i18n/i18n';
-import { getClassNames } from '@/shared/lib/getClassNames';
+import { getClassNames } from '@/shared/lib/getClassNames/getClassNames';
 import { Button } from '@/shared/ui';
 import { ButtonTheme } from '@/shared/ui/Button/Button';
 import { FC } from 'react';

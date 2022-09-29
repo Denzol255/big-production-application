@@ -1,4 +1,4 @@
-import { getClassNames } from '@/shared/lib/getClassNames';
+import { getClassNames } from '@/shared/lib/getClassNames/getClassNames';
 import { Button } from '@/shared/ui';
 import { LanguageSwitcher } from '@/widgets/LanguageSwitcher';
 import { ToggleTheme } from '@/widgets/ToggleTheme';
