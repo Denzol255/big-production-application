@@ -17,7 +17,7 @@ export const Loader: FC = () => {
     <TailSpin
       height='80'
       width='80'
-      color='#4fa94d'
+      color='#faa508'
       ariaLabel='tail-spin-loading'
       radius='1'
       wrapperStyle={{}}
