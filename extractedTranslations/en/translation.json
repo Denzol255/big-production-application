@@ -1,10 +1,14 @@
 {
   "About": "About",
+  "Go to home page": "Go to home page",
   "Main": "Main",
   "My App": "My App",
   "Not Found": "Not Found",
   "Page Main": "Page Main",
   "Page about": "Page about",
+  "Reload page": "Reload page",
+  "Throw error": "Throw error",
   "Toggle sidebar": "Toggle sidebar",
+  "Unexpected Error": "Unexpected Error",
   "_Language_": "_Language_"
 }

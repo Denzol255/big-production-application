@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 declare module '*.module.css';
 declare module '*.module.scss';
 declare module '*.jpg';
