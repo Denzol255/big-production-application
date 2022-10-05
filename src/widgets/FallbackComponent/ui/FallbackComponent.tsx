@@ -1,9 +1,9 @@
-import { getClassNames } from '@/shared/lib/getClassNames/getClassNames';
-import { Button } from '@/shared/ui';
-import { ButtonTheme } from '@/shared/ui/Button/Button';
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
+import { getClassNames } from 'shared/lib/getClassNames/getClassNames';
+import { Button } from 'shared/ui';
+import { ButtonTheme } from 'shared/ui/Button/Button';
 import './FallbackComponent.scss';
 
 interface ErrorFallbackComponentProps {

@@ -1,9 +1,9 @@
-import { getClassNames } from '@/shared/lib/getClassNames/getClassNames';
-import { Button } from '@/shared/ui';
-import { LanguageSwitcher } from '@/widgets/LanguageSwitcher';
-import { ToggleTheme } from '@/widgets/ToggleTheme';
 import { FC, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { getClassNames } from 'shared/lib/getClassNames/getClassNames';
+import { Button } from 'shared/ui';
+import { LanguageSwitcher } from 'widgets/LanguageSwitcher';
+import { ToggleTheme } from 'widgets/ToggleTheme';
 import styles from './Sidebar.module.scss';
 
 interface SidebarProps {
@@ -17,13 +17,16 @@ export const Sidebar: FC<SidebarProps> = (props) => {
   const handleShowSidebar = () => setCollapsed(!collapsed);
   return (
     <div
+      data-testid='sidebar'
       className={getClassNames(
         styles.sidebar,
         { [styles.collapsed]: collapsed },
         [className]
       )}
     >
-      <Button onClick={handleShowSidebar}>{t('Toggle sidebar')}</Button>
+      <Button data-testid='sidebar-toggle' onClick={handleShowSidebar}>
+        {t('Toggle sidebar')}
+      </Button>
       <div className={styles.switchers}>
         <ToggleTheme />
         <LanguageSwitcher />

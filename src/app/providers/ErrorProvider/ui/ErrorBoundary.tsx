@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/indent */
-import { ErrorFallbackComponent } from '@/widgets/FallbackComponent';
 import React, { ErrorInfo, ReactNode, Suspense } from 'react';
+import { ErrorFallbackComponent } from 'widgets/FallbackComponent';
 
 interface ErrorBoundaryProps {
   children: ReactNode;

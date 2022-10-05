@@ -1,6 +1,6 @@
-import { getClassNames } from '@/shared/lib/getClassNames/getClassNames';
 import { FC, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { getClassNames } from 'shared/lib/getClassNames/getClassNames';
 import { Button, ButtonTheme } from '../Button/Button';
 
 interface BugButtonProps {
