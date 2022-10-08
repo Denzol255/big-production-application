@@ -1,28 +1,15 @@
-import { FC } from 'react';
-import { TailSpin } from 'react-loader-spinner';
+import { getClassNames } from 'shared/lib/getClassNames/getClassNames';
+import './Loader.scss';
 
-// interface LoaderProps {
-//   height: string;
-//   width: string;
-//   color?: string;
-//   ariaLabel?: string;
-//   radius?: string;
-//   wrapperStyle: CSSProperties;
-//   wrapperClass?: string;
-//   visible: boolean;
-// }
+interface LoaderProps {
+  className?: string;
+}
 
-export const Loader: FC = () => {
-  return (
-    <TailSpin
-      height='80'
-      width='80'
-      color='#faa508'
-      ariaLabel='tail-spin-loading'
-      radius='1'
-      wrapperStyle={{}}
-      wrapperClass=''
-      visible={true}
-    />
-  );
-};
+export const Loader = ({ className }: LoaderProps) => (
+  <div className={getClassNames('lds-ellipsis', {}, [className])}>
+    <div />
+    <div />
+    <div />
+    <div />
+  </div>
+);

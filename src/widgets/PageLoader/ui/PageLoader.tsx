@@ -1,6 +1,6 @@
-import { getClassNames } from '@/shared/lib/getClassNames/getClassNames';
-import { MainLoader } from '@/shared/ui';
 import { FC } from 'react';
+import { getClassNames } from 'shared/lib/getClassNames/getClassNames';
+import { MainLoader } from 'shared/ui';
 import styles from './PageLoader.module.scss';
 
 interface PageLoaderProps {
