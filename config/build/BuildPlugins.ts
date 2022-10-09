@@ -2,11 +2,16 @@ import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import webpack from 'webpack';
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import { BuildOptions } from './types/config';
+
+// for correct type for WebpackPluginInstance
+const noop = () => {};
 
 const BuildPlugins = ({
   paths,
   isDev,
+  analyze,
 }: BuildOptions): webpack.WebpackPluginInstance[] => {
   return [
     new webpack.ProgressPlugin(),
@@ -22,7 +27,8 @@ const BuildPlugins = ({
     }),
     new webpack.HotModuleReplacementPlugin(),
     new ReactRefreshWebpackPlugin(),
-  ];
+    analyze ? new BundleAnalyzerPlugin() : noop,
+  ].filter(Boolean);
 };
 
 export default BuildPlugins;

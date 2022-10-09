@@ -1,0 +1,20 @@
+{
+  "component": {
+    "default": {
+      "customTemplates": {
+        "component": "templates/default/TemplateName.tsx",
+        "style": "templates/default/TemplateName.module.scss",
+        "test": "templates/default/TemplateName.test.tsx"
+      },
+      "path": "src/shared/ui/",
+      "withLazy": false,
+      "withStory": false,
+      "withStyle": true,
+      "withTest": true
+    }
+  },
+  "cssPreprocessor": "scss",
+  "testLibrary": "Testing Library",
+  "usesCssModule": true,
+  "usesTypeScript": true
+}

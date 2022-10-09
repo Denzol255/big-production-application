@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/indent */
-import { ErrorFallbackComponent } from '@/widgets/FallbackComponent';
-import React, { ErrorInfo, ReactNode, Suspense } from 'react';
+import React, { ErrorInfo, Suspense } from 'react';
+import { FallbackComponent } from 'widgets/FallbackComponent';
 
 interface ErrorBoundaryProps {
-  children: ReactNode;
+  children: React.ReactNode;
 }
 
 interface ErrorBoundaryState {
@@ -36,10 +36,12 @@ class ErrorBoundary extends React.Component<
     if (hasError) {
       return (
         <Suspense fallback=''>
-          <ErrorFallbackComponent />
+          <FallbackComponent />
         </Suspense>
       );
     }
+
+    console.log(children);
 
     return children;
   }

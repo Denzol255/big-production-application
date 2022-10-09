@@ -1,1 +1,1 @@
-export { ErrorFallbackComponent } from './ui/FallbackComponent';
+export { FallbackComponent } from './ui/FallbackComponent';

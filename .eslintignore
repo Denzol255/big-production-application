@@ -2,3 +2,7 @@ public
 node_modules
 config
 build
+templates
+webpack.config.ts
+stylelintrrc.ts
+storybook

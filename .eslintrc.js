@@ -1,7 +1,6 @@
 const OFF = 0;
 const WARN = 1;
 const ERROR = 2;
-
 module.exports = {
   env: {
     browser: true,
@@ -10,8 +9,8 @@ module.exports = {
   },
   extends: [
     'plugin:react/recommended',
-    'standard-with-typescript',
     'plugin:i18next/recommended',
+    'plugin:storybook/recommended',
   ],
   overrides: [],
   parserOptions: {
@@ -20,6 +19,7 @@ module.exports = {
     project: ['./tsconfig.json'],
   },
   plugins: ['react', '@typescript-eslint', 'i18next'],
+  ignorePatterns: ['*.stories.tsx'],
   rules: {
     'comma-dangle': OFF,
     '@typescript-eslint/comma-dangle': OFF,
@@ -29,7 +29,9 @@ module.exports = {
     'react/react-in-jsx-scope': OFF,
     'react/jsx-filename-extension': [
       2,
-      { extensions: ['.ts', '.tsx', '.js', '.jsx'] },
+      {
+        extensions: ['.ts', '.tsx', '.js', '.jsx'],
+      },
     ],
     '@typescript-eslint/explicit-function-return-type': OFF,
     '@typescript-eslint/member-delimiter-style': OFF,
@@ -39,7 +41,13 @@ module.exports = {
     '@typescript-eslint/no-floating-promises': OFF,
     '@typescript-eslint/array-type': OFF,
     '@typescript-eslint/naming-convention': WARN,
-    'i18next/no-literal-string': ['warn', { markupOnly: true }],
+    'i18next/no-literal-string': [
+      'warn',
+      {
+        markupOnly: true,
+        ignoreAttribute: ['data-testid', 'to'],
+      },
+    ], // '@typescript-eslint/consistent-type-assertions': OFF,
   },
   globals: {
     __IS_DEV__: true,
