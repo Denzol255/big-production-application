@@ -30,10 +30,10 @@ const BuildPlugins = ({
 
   if (isDev) {
     plugins.push(new webpack.HotModuleReplacementPlugin());
-    plugins.push(new BundleAnalyzerPlugin());
+    plugins.push(analyze ? new BundleAnalyzerPlugin() : noop);
   }
 
-  return plugins;
+  return plugins.filter(Boolean);
 };
 
 export default BuildPlugins;
