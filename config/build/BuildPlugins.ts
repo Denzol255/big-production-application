@@ -13,7 +13,7 @@ const BuildPlugins = ({
   isDev,
   analyze,
 }: BuildOptions): webpack.WebpackPluginInstance[] => {
-  return [
+  const plugins = [
     new webpack.ProgressPlugin(),
     new HtmlWebpackPlugin({
       template: paths.html,
@@ -25,10 +25,15 @@ const BuildPlugins = ({
     new webpack.DefinePlugin({
       __IS_DEV__: JSON.stringify(isDev),
     }),
-    new webpack.HotModuleReplacementPlugin(),
     new ReactRefreshWebpackPlugin(),
-    analyze ? new BundleAnalyzerPlugin() : noop,
-  ].filter(Boolean);
+  ];
+
+  if (isDev) {
+    plugins.push(new webpack.HotModuleReplacementPlugin());
+    plugins.push(new BundleAnalyzerPlugin());
+  }
+
+  return plugins;
 };
 
 export default BuildPlugins;
