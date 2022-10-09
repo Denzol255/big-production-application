@@ -2,7 +2,6 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { Theme } from 'app/providers/ThemeProvider';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { ButtonTheme } from 'shared/ui/Button/Button';
 import { Navbar } from './Navbar';
 
 export default {
@@ -16,9 +15,7 @@ export default {
 const Template: ComponentStory<typeof Navbar> = (args) => <Navbar {...args} />;
 
 export const Primary = Template.bind({});
-Primary.args = {
-  children: 'Text',
-};
+Primary.args = {};
 
 export const Light = Template.bind({});
 Light.args = {};

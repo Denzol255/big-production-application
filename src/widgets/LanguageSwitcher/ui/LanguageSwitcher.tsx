@@ -8,10 +8,12 @@ import styles from './LanguageSwitcher.module.scss';
 
 interface LanguageSwitcherProps {
   className?: string;
+  short?: boolean;
 }
 
-export const LanguageSwitcher: FC<LanguageSwitcherProps> = () => {
+export const LanguageSwitcher: FC<LanguageSwitcherProps> = (props) => {
   const { t } = useTranslation();
+  const { short, className } = props;
   const toggleLanguage = () => {
     i18n.changeLanguage(
       i18n.language === 'ru' ? 'en' : i18n.language === 'en' ? 'se' : 'ru'
@@ -21,11 +23,9 @@ export const LanguageSwitcher: FC<LanguageSwitcherProps> = () => {
     <Button
       theme={ButtonTheme.CLEAR}
       onClick={toggleLanguage}
-      className={getClassNames(styles.languageSwitcher, {}, [
-        styles.handleLanguageBtn,
-      ])}
+      className={getClassNames('', {}, [styles.handleLanguageBtn, className])}
     >
-      {t('_Language_')}
+      {short ? t('_LanguageShort_') : t('_Language_')}
     </Button>
   );
 };

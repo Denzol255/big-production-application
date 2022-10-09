@@ -18,22 +18,6 @@ export const Navbar = ({ className }: NavbarProps) => {
         <Logo fill='#FAA508' className={styles.navbarLogoImage} />
         <span className={styles.navbarLogoText}>{t('My App')}</span>
       </div>
-      <div className={styles.navbarLinksContainer}>
-        <AppLink
-          theme={AppLinkTheme.SECONDARY}
-          className={styles.navbarLink}
-          to={'/'}
-        >
-          {t('Main')}
-        </AppLink>
-        <AppLink
-          theme={AppLinkTheme.SECONDARY}
-          className={styles.navbarLink}
-          to={'/about'}
-        >
-          {t('About')}
-        </AppLink>
-      </div>
     </div>
   );
 };
