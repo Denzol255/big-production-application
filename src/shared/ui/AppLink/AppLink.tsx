@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import { Link, LinkProps } from 'react-router-dom';
 import { getClassNames } from 'shared/lib/getClassNames/getClassNames';
+// github build failed with AppLink.module.scss
 import styles from './Applink.module.scss';
 
 export const enum AppLinkTheme {
