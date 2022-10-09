@@ -1,6 +1,9 @@
 {
-  "extends": ["stylelint-config-standard-scss", "stylelint-config-css-modules"],
+  "extends": ["stylelint-config-standard-scss"],
   "rules": {
+    "block-no-empty": null,
+    "keyframes-name-pattern": null,
+    "no-duplicate-selectors": null,
     "no-empty-source": null,
     "selector-class-pattern": null,
     "string-quotes": [

@@ -2,6 +2,7 @@ const OFF = 0;
 const WARN = 1;
 const ERROR = 2;
 module.exports = {
+  parser: '@typescript-eslint/parser',
   env: {
     browser: true,
     es2021: true,
@@ -11,6 +12,7 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:i18next/recommended',
     'plugin:storybook/recommended',
+    'plugin:@typescript-eslint/recommended',
   ],
   overrides: [],
   parserOptions: {
@@ -40,14 +42,14 @@ module.exports = {
     '@typescript-eslint/space-before-function-paren': OFF,
     '@typescript-eslint/no-floating-promises': OFF,
     '@typescript-eslint/array-type': OFF,
-    '@typescript-eslint/naming-convention': WARN,
     'i18next/no-literal-string': [
       'warn',
       {
         markupOnly: true,
-        ignoreAttribute: ['data-testid', 'to'],
+        ignoreAttribute: ['data-testid', 'to', 'fill'],
       },
     ], // '@typescript-eslint/consistent-type-assertions': OFF,
+    '@typescript-eslint/ban-ts-comment': OFF,
   },
   globals: {
     __IS_DEV__: true,

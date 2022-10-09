@@ -6,3 +6,5 @@ templates
 webpack.config.ts
 stylelintrrc.ts
 storybook
+.eslintrc.js
+*.test.tsx
