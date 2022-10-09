@@ -8,3 +8,4 @@ stylelintrrc.ts
 storybook
 .eslintrc.js
 *.test.tsx
+scripts
