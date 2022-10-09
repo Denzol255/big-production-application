@@ -15,6 +15,7 @@
     "test:ui": "npx loki test",
     "test:ui:ok": "npx loki approve",
     "test:ui:ci": "npm run build-storybook && npx loki --requireReference --reactUri file:./storybook-static",
+    "test:ui:ci-alone": "npx loki --requireReference --reactUri file:./storybook-static",
     "storybook": "start-storybook -p 6006 -c ./config/storybook",
     "build-storybook": "build-storybook -c ./config/storybook",
     "component": "generate-react component"
