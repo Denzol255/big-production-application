@@ -13,6 +13,8 @@ module.exports = {
     'plugin:i18next/recommended',
     'plugin:storybook/recommended',
     'plugin:@typescript-eslint/recommended',
+    'plugin:jsx-a11y/recommended',
+    'plugin:react-hooks/recommended',
   ],
   overrides: [],
   parserOptions: {
@@ -20,7 +22,7 @@ module.exports = {
     sourceType: 'module',
     project: ['./tsconfig.json'],
   },
-  plugins: ['react', '@typescript-eslint', 'i18next'],
+  plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks'],
   ignorePatterns: ['*.stories.tsx'],
   rules: {
     'comma-dangle': OFF,
@@ -48,8 +50,11 @@ module.exports = {
         markupOnly: true,
         ignoreAttribute: ['data-testid', 'to', 'fill'],
       },
-    ], // '@typescript-eslint/consistent-type-assertions': OFF,
+    ],
     '@typescript-eslint/ban-ts-comment': OFF,
+    'jsx-a11y/click-events-have-key-events': WARN,
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'error',
   },
   globals: {
     __IS_DEV__: true,

@@ -15,3 +15,7 @@ declare module '*.woff2';
 // and so on for whatever flavor of css you're using
 
 declare const __IS_DEV__: boolean;
+
+interface MyKeyboardEvent {
+  key: string;
+}
