@@ -11,14 +11,15 @@
     "lint:ts:fix": "eslint \"**/*.{ts,tsx}\" --fix",
     "lint:scss": "npx stylelint \"**/*.scss\"",
     "lint:scss:fix": "npx stylelint \"**/*.scss\" --fix",
+    "lint:all": "npm run lint:ts && npm run lint:scss",
     "test:unit": "jest --config ./config/jest/jest.config.ts",
     "test:ui": "npx loki test",
     "test:ui:ok": "npx loki approve",
     "test:ui:ci": "npm run build-storybook && npx loki --requireReference --reactUri file:./storybook-static",
-    "test:ui:report": "npm run test:ui:json && npm run test:ui:html",
+    "test:ui:ci-alone": "npx loki --requireReference --reactUri file:./storybook-static",
     "test:ui:json": "node scripts/generate-visual-json-report.js",
     "test:ui:html": "npx reg-cli --from .loki/report.json --report .loki/report.html",
-    "test:ui:ci-alone": "npx loki --requireReference --reactUri file:./storybook-static",
+    "test:ui:report": "npm run test:ui:json && npm run test:ui:html && start ./.loki/report.html",
     "storybook": "start-storybook -p 6006 -c ./config/storybook",
     "build-storybook": "build-storybook -c ./config/storybook",
     "component": "generate-react component"
@@ -67,7 +68,7 @@
     "html-webpack-plugin": "^5.5.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.5.1",
-    "loki": "^0.28.1",
+    "loki": "^0.30.3",
     "mini-css-extract-plugin": "^2.5.3",
     "reg-cli": "^0.17.6",
     "regenerator-runtime": "^0.13.9",
@@ -85,6 +86,7 @@
     "webpack-dev-server": "^4.7.4"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.8.0",
     "generate-react-cli": "^7.4.0",
     "i18next": "^21.6.11",
     "i18next-browser-languagedetector": "^6.1.3",
@@ -92,6 +94,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-i18next": "^11.15.5",
+    "react-redux": "^7.2.6",
     "react-router-dom": "^6.2.1"
   },
   "loki": {

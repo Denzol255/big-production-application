@@ -1,7 +1,6 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import { getClassNames } from 'shared/lib/getClassNames/getClassNames';
 import React, { FC, useCallback, useRef, useState } from 'react';
-import { useTranslation } from 'react-i18next';
 import styles from './Modal.module.scss';
 import { useEffect } from 'react';
 import { Portal } from '../Portal/Portal';
