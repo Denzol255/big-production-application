@@ -9,13 +9,9 @@ body {
   color: var(--primary-color);
 }
 
-.app,
-.app_modal {
-  background: var(--bg-color);
-}
-
 .app {
   min-height: 100vh;
+  background: var(--bg-color);
 }
 
 .content-page {

@@ -48,7 +48,7 @@ module.exports = {
       'warn',
       {
         markupOnly: true,
-        ignoreAttribute: ['data-testid', 'to', 'fill'],
+        ignoreAttribute: ['data-testid', 'to', 'fill', 'inputName'],
       },
     ],
     '@typescript-eslint/ban-ts-comment': OFF,
@@ -56,6 +56,9 @@ module.exports = {
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'error',
     'no-param-reassing': OFF,
+    'react/display-name': OFF,
+    'react/prop-types': OFF,
+    'jsx-a11y/no-autofocus': OFF,
   },
   globals: {
     __IS_DEV__: true,

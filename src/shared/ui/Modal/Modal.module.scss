@@ -23,11 +23,15 @@
 .content {
   padding: 20px;
   border-radius: 5px;
-  background-color: var(--bg-color);
+  background-color: var(--inverted-bg-color);
   max-width: 40%;
   transition: all 0.3s ease 0s;
   transform: scale(0.5);
   color: var(--primary-color);
+
+  &:focus-visible {
+    outline: none;
+  }
 }
 
 .opened {
@@ -44,5 +48,23 @@
 .isClosing {
   .content {
     transform: scale(0);
+  }
+}
+
+.isOpening {
+  .content {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 1200px) {
+  .content {
+    max-width: 60%;
+  }
+}
+
+@media (max-width: 768px) {
+  .content {
+    max-width: 100%;
   }
 }

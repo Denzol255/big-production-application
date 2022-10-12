@@ -1,0 +1,15 @@
+.label {
+  color: var(--inverted-primary-color);
+}
+
+.input {
+  border: 2px solid var(--primary-orange-color);
+  border-radius: 2px;
+  min-height: 30px;
+  padding: 0 10px;
+  outline: none;
+
+  &:focus {
+    outline: none;
+  }
+}

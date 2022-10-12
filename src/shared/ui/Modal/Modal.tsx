@@ -9,13 +9,16 @@ interface ModalProps {
   className?: string;
   isOpen?: boolean;
   onClose?: () => void;
+  lazy?: boolean;
 }
 
 const ANIMATION_DELAY = 300;
 
 export const Modal: FC<ModalProps> = (props) => {
-  const { children, className, isOpen, onClose } = props;
+  const { children, className, isOpen, onClose, lazy } = props;
+  // const [isOpening, setIsOpening] = useState<boolean>(false);
   const [isClosing, setIsClosing] = useState<boolean>(false);
+  const [isMounted, setIsMounted] = useState<boolean>(false);
   const timerRef = useRef<ReturnType<typeof setTimeout>>();
 
   const handleContentClick = (e: React.MouseEvent) => {
@@ -44,7 +47,17 @@ export const Modal: FC<ModalProps> = (props) => {
   const mods: Record<string, boolean> = {
     [styles.opened]: isOpen,
     [styles.isClosing]: isClosing,
+    // [styles.isOpening]: isOpening,
   };
+  useEffect(() => {
+    if (isOpen) {
+      setIsMounted(true);
+      // setIsOpening(true);
+      // timerRef.current = setTimeout(() => {
+      //   setIsOpening(false);
+      // }, ANIMATION_DELAY);
+    }
+  }, [isOpen]);
 
   useEffect(() => {
     if (isOpen) {
@@ -56,11 +69,13 @@ export const Modal: FC<ModalProps> = (props) => {
     };
   }, [isOpen, onKeyPressHandler]);
 
+  if (lazy && !isMounted) {
+    return null;
+  }
+
   return (
     <Portal>
-      <div
-        className={getClassNames(styles.modal, mods, [className, '.app_modal'])}
-      >
+      <div className={getClassNames(styles.modal, mods, [className])}>
         <div
           className={styles.overlay}
           onClick={handleOnClose}

@@ -7,8 +7,6 @@ import { Sidebar } from 'widgets/Sidebar';
 import { AppRouter } from './providers/router';
 
 const App = () => {
-  const { theme } = useTheme();
-
   return (
     <div
       className={getClassNames('app', { hovered: true, selected: true }, [])}
