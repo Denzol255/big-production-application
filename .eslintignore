@@ -9,3 +9,4 @@ storybook
 .eslintrc.js
 *.test.tsx
 scripts
+json-server

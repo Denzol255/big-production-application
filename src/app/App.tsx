@@ -11,9 +11,7 @@ const App = () => {
 
   return (
     <div
-      className={getClassNames('app', { hovered: true, selected: true }, [
-        theme,
-      ])}
+      className={getClassNames('app', { hovered: true, selected: true }, [])}
     >
       <Suspense fallback={<MainLoader />}>
         <Navbar />
