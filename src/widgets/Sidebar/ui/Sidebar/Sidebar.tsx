@@ -31,7 +31,7 @@ export const Sidebar: FC<SidebarProps> = (props) => {
     >
       <div className={styles.sidebarItems}>
         <AppLink
-          theme={AppLinkTheme.SECONDARY}
+          theme={AppLinkTheme.PRIMARY_INVERTED}
           className={styles.sidebarItem}
           to={RoutePath.main}
         >
@@ -39,7 +39,7 @@ export const Sidebar: FC<SidebarProps> = (props) => {
           <span className={styles.sidebarItemText}>{t('Main')}</span>
         </AppLink>
         <AppLink
-          theme={AppLinkTheme.SECONDARY}
+          theme={AppLinkTheme.PRIMARY_INVERTED}
           className={styles.sidebarItem}
           to={RoutePath.about}
         >

@@ -6,6 +6,7 @@ import styles from './Applink.module.scss';
 
 export const enum AppLinkTheme {
   PRIMARY = 'primary',
+  PRIMARY_INVERTED = 'primary_inverted',
   SECONDARY = 'secondary',
 }
 

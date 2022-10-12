@@ -59,12 +59,12 @@ Background.args = {
   theme: ButtonTheme.BACKGROUND,
 };
 
-export const BackgroundInverted = Template.bind({});
-BackgroundInverted.args = {
-  children: 'Text',
-  theme: ButtonTheme.BACKGROUNDINVERTED,
-};
-BackgroundInverted.decorators = [ThemeDecorator(Theme.DARK)];
+// export const BackgroundInverted = Template.bind({});
+// BackgroundInverted.args = {
+//   children: 'Text',
+//   theme: ButtonTheme.BACKGROUNDINVERTED,
+// };
+// BackgroundInverted.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const Square = Template.bind({});
 Square.args = {

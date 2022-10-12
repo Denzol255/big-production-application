@@ -6,8 +6,12 @@
 
 body {
   font: var(--font-m);
-  background: var(--bg-color);
   color: var(--primary-color);
+}
+
+.app,
+.app_modal {
+  background: var(--bg-color);
 }
 
 .app {
