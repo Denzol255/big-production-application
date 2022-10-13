@@ -1,8 +1,10 @@
 {
   "About": "Handla om",
+  "Authorization form": "Fullmaktsformulär",
   "Enter": "Ange",
   "Field": "Fält",
   "Go to home page": "Gå till startsidan",
+  "Incorrect username or password": "Felaktigt användarnamn eller lösenord",
   "Login": "Logga in",
   "Main": "Hem",
   "My App": "Min app",
@@ -12,6 +14,7 @@
   "Password": "Lösenord",
   "Reload page": "Ladda om sidan",
   "Sign in": "Logga in",
+  "Sign out": "Logga ut",
   "Throw error": "Kasta fel",
   "Toggle sidebar": "Vippsida",
   "Unexpected Error": "Oväntat fel",

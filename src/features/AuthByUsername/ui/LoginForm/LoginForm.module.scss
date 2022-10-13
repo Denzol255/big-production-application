@@ -7,6 +7,10 @@
   height: 200px;
 }
 
+.loginTitle {
+  margin-bottom: 10px;
+}
+
 .loginInput {
   display: flex;
   align-items: center;
@@ -17,4 +21,8 @@
 
 .loginBtn {
   min-width: 200px;
+}
+
+.loginError {
+  margin-top: 10px;
 }

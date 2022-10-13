@@ -1,4 +1,4 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Input } from './Input';
 
 export default {
@@ -9,7 +9,8 @@ export default {
   },
 } as ComponentMeta<typeof Input>;
 
-const Template: ComponentStory<typeof Input> = (args) => (
+const Template: ComponentStory<typeof Input> = (args) => <Input {...args} />;
+const DarkTemplate: ComponentStory<typeof Input> = (args) => (
   <div
     style={{
       width: '250px',
@@ -22,7 +23,7 @@ const Template: ComponentStory<typeof Input> = (args) => (
   </div>
 );
 
-export const Primary = Template.bind({});
+export const Primary = DarkTemplate.bind({});
 Primary.args = {
   placeholder: 'text',
   value: '123',

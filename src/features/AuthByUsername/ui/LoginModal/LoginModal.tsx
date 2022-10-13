@@ -1,9 +1,8 @@
-import { getClassNames } from 'shared/lib/getClassNames/getClassNames';
 import { FC } from 'react';
-import { useTranslation } from 'react-i18next';
-import styles from './LoginModal.module.scss';
+import { getClassNames } from 'shared/lib/getClassNames/getClassNames';
 import { Modal } from 'shared/ui/Modal/Modal';
 import { LoginForm } from '../LoginForm/LoginForm';
+import styles from './LoginModal.module.scss';
 
 interface LoginModalProps {
   className?: string;

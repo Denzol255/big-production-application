@@ -41,8 +41,6 @@ class ErrorBoundary extends React.Component<
       );
     }
 
-    console.log(children);
-
     return children;
   }
 }

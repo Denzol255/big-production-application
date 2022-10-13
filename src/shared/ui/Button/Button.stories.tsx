@@ -1,4 +1,4 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { Theme } from 'app/providers/ThemeProvider';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
@@ -59,13 +59,6 @@ Background.args = {
   theme: ButtonTheme.BACKGROUND,
 };
 
-// export const BackgroundInverted = Template.bind({});
-// BackgroundInverted.args = {
-//   children: 'Text',
-//   theme: ButtonTheme.BACKGROUNDINVERTED,
-// };
-// BackgroundInverted.decorators = [ThemeDecorator(Theme.DARK)];
-
 export const Square = Template.bind({});
 Square.args = {
   children: '+',
@@ -103,4 +96,12 @@ SizeXL.args = {
   size: ButtonSize.SIZE_XL,
   square: true,
   theme: ButtonTheme.BACKGROUND,
+};
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+  children: 'Login',
+  size: ButtonSize.SIZE_XL,
+  disabled: true,
+  theme: ButtonTheme.PRIMARY,
 };

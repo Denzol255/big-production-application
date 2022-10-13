@@ -19,3 +19,7 @@ declare const __IS_DEV__: boolean;
 interface MyKeyboardEvent {
   key: string;
 }
+
+interface MyAxiosResponseDataError {
+  message: string;
+}

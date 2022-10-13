@@ -1,8 +1,10 @@
 {
   "About": "О сайте",
+  "Authorization form": "Форма авторизации",
   "Enter": "Введите",
   "Field": "Поле",
   "Go to home page": "Вернутся на главную",
+  "Incorrect username or password": "Неверно указан логин или пароль",
   "Login": "Логин",
   "Main": "Главная",
   "My App": "Мое приложение",
@@ -12,6 +14,7 @@
   "Password": "Пароль",
   "Reload page": "Перезагрузить страницу",
   "Sign in": "Войти",
+  "Sign out": "Выйти",
   "Throw error": "Выбросить ошибку",
   "Toggle sidebar": "Переключить сайдбар",
   "Unexpected Error": "Неожиданная ошибка",

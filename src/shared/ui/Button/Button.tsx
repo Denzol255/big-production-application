@@ -8,7 +8,6 @@ export const enum ButtonTheme {
   PRIMARY = 'primary',
   OUTLINE = 'outline',
   BACKGROUND = 'background',
-  BACKGROUNDINVERTED = 'background-inverted',
 }
 
 export const enum ButtonSize {
@@ -32,16 +31,17 @@ export const Button: FC<ButtonProps> = (props) => {
     children,
     size = ButtonSize.SIZE_M,
     square,
+    disabled,
     ...otherProps
   } = props;
   return (
     <button
       {...otherProps}
-      className={getClassNames(styles.button, { [styles.square]: square }, [
-        className,
-        styles[theme],
-        styles[size],
-      ])}
+      className={getClassNames(
+        styles.button,
+        { [styles.square]: square, [styles.disabled]: disabled },
+        [className, styles[theme], styles[size]]
+      )}
     >
       {children}
     </button>

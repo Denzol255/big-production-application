@@ -38,11 +38,6 @@
   border: none;
 }
 
-// .background-inverted {
-//   background-color: var(--primary-orange-color);
-//   border: none;
-// }
-
 .square {
   padding: 0;
 }
@@ -81,4 +76,8 @@
 
 .size-xl {
   font: var(--font-xl);
+}
+
+.disabled {
+  opacity: 0.5;
 }

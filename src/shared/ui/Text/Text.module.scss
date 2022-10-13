@@ -1,0 +1,40 @@
+.textMain {
+}
+
+.textTitle {
+  font: var(--font-l);
+}
+
+.textDescription {
+  font: var(--font-m);
+}
+
+.primary {
+  .textTitle {
+    color: var(--primary-color);
+  }
+
+  .textDescription {
+    color: var(--secondary-color);
+  }
+}
+
+.primary_inverted {
+  .textTitle {
+    color: var(--inverted-primary-color);
+  }
+
+  .textDescription {
+    color: var(--inverted-secondary-color);
+  }
+}
+
+.error {
+  .textTitle {
+    color: var(--primary-red-color);
+  }
+
+  .textDescription {
+    color: var(--secondary-red-color);
+  }
+}

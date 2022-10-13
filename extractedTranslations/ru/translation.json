@@ -1,5 +1,6 @@
 {
   "About": "About",
+  "Authorization form": "Authorization form",
   "Enter": "Enter",
   "Field": "Field",
   "Go to home page": "Go to home page",
@@ -13,6 +14,7 @@
   "Password": "Password",
   "Reload page": "Reload page",
   "Sign in": "Sign in",
+  "Sign out": "Sign out",
   "Throw error": "Throw error",
   "Toggle sidebar": "Toggle sidebar",
   "Unexpected Error": "Неожиданная ошибка",

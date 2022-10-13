@@ -1,12 +1,24 @@
-import { createSlice } from '@reduxjs/toolkit';
-import { UserSchema } from '../types/userSchema';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { User, UserSchema } from '../types/userSchema';
 
 const initialState: UserSchema = {};
 
 export const userSlice = createSlice({
   name: 'user',
   initialState,
-  reducers: {},
+  reducers: {
+    setAuthData: (state, action: PayloadAction<User>) => {
+      state.authData = action.payload;
+    },
+    initAuthData: (state, action: PayloadAction<User>) => {
+      if (action.payload) {
+        state.authData = action.payload;
+      }
+    },
+    logOut: (state) => {
+      state.authData = undefined;
+    },
+  },
 });
 
 // Action creators are generated for each case reducer function

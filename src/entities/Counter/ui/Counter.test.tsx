@@ -3,6 +3,8 @@ import userEvent from '@testing-library/user-event';
 import { renderComponent } from 'shared/lib/getClassNames/tests/renderComponent/renderComponent';
 import { Counter } from './Counter';
 
+jest.mock('axios');
+
 describe('Counter', () => {
   test('In document', () => {
     renderComponent(<Counter />, { initialState: { counter: { value: 1 } } });
