@@ -2,24 +2,38 @@ import { loginByUsername } from 'features/AuthByUsername/model/services/loginByU
 import { FC, memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
+import {
+  DynamicModuleLoader,
+  ReducersList,
+} from 'shared/lib/components/DynamicModuleLoader';
 import { getClassNames } from 'shared/lib/getClassNames/getClassNames';
-import { Button } from 'shared/ui';
-import { ButtonTheme } from 'shared/ui/Button/Button';
+import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/ui/Input';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
-import { getLoginState } from '../../model/selectors/getLoginState/getLoginState';
-import { loginActions } from '../../model/slice/loginSlice';
+import { getLoginError } from '../../model/selectors/getLoginError/getLoginError';
+import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading/getLoginIsLoading';
+import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword';
+import { getLoginUsername } from '../../model/selectors/getLoginUsername/getLoginUsername';
+import { loginActions, loginReducer } from '../../model/slice/loginSlice';
 import styles from './LoginForm.module.scss';
 
-interface LoginFormProps {
+export interface LoginFormProps {
   className?: string;
 }
 
-export const LoginForm: FC<LoginFormProps> = memo((props) => {
+const initialsReducers: ReducersList = {
+  login: loginReducer,
+};
+
+const LoginForm: FC<LoginFormProps> = memo((props) => {
   const { className } = props;
   const { t } = useTranslation();
   const dispatch = useDispatch();
-  const { password, username, isLoading, error } = useSelector(getLoginState);
+
+  const username = useSelector(getLoginUsername);
+  const password = useSelector(getLoginPassword);
+  const isLoading = useSelector(getLoginIsLoading);
+  const error = useSelector(getLoginError);
 
   const onChangeUsername = useCallback(
     (value: string) => {
@@ -37,11 +51,8 @@ export const LoginForm: FC<LoginFormProps> = memo((props) => {
     dispatch(loginByUsername({ username, password }));
   }, [dispatch, password, username]);
 
-  if (error) {
-    console.log(error);
-  }
   return (
-    <>
+    <DynamicModuleLoader reducers={initialsReducers} removeAfterUnmount>
       <form className={getClassNames(styles.loginForm, {}, [className])}>
         <Text
           theme={TextTheme.PRIMARY_INVERTED}
@@ -80,6 +91,8 @@ export const LoginForm: FC<LoginFormProps> = memo((props) => {
           text={t(error)}
         />
       )}
-    </>
+    </DynamicModuleLoader>
   );
 });
+
+export default LoginForm;

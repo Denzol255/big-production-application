@@ -1,6 +1,6 @@
 import { fireEvent, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { renderComponent } from 'shared/lib/getClassNames/tests/renderComponent/renderComponent';
+import { renderComponent } from 'shared/lib/tests/renderComponent/renderComponent';
 import { Counter } from './Counter';
 
 jest.mock('axios');

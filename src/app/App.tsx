@@ -3,7 +3,7 @@ import { Suspense, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { USER_LOCAL_STORAGE_KEY } from 'shared/constants/localstorage';
 import { getClassNames } from 'shared/lib/getClassNames/getClassNames';
-import { MainLoader } from 'shared/ui';
+import { Loader } from 'shared/ui/Loader/Loader';
 import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
 import { AppRouter } from './providers/router';
@@ -19,7 +19,7 @@ const App = () => {
     <div
       className={getClassNames('app', { hovered: true, selected: true }, [])}
     >
-      <Suspense fallback={<MainLoader />}>
+      <Suspense fallback={<Loader />}>
         <Navbar />
         <div className='content-page'>
           <Sidebar />

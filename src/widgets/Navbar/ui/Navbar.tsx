@@ -7,8 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Logo from 'shared/assets/icons/logo.svg';
 import { USER_LOCAL_STORAGE_KEY } from 'shared/constants/localstorage';
 import { getClassNames } from 'shared/lib/getClassNames/getClassNames';
-import { Button } from 'shared/ui';
-import { ButtonTheme } from 'shared/ui/Button/Button';
+import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import styles from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -60,7 +59,9 @@ export const Navbar = ({ className }: NavbarProps) => {
         {t('Sign in')}
       </Button>
 
-      <LoginModal isOpen={isAuthModal} onClose={handleCloseModal} />
+      {isAuthModal && (
+        <LoginModal isOpen={isAuthModal} onClose={handleCloseModal} />
+      )}
     </div>
   );
 };

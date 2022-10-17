@@ -1,12 +1,17 @@
 import { getClassNames } from 'shared/lib/getClassNames/getClassNames';
 import './Loader.scss';
 
-interface LoaderProps {
-  className?: string;
+export const enum LoaderTheme {
+  WHITE = 'white',
 }
 
-export const Loader = ({ className }: LoaderProps) => (
-  <div className={getClassNames('lds-ellipsis', {}, [className])}>
+interface LoaderProps {
+  className?: string;
+  theme?: LoaderTheme;
+}
+
+export const Loader = ({ className, theme }: LoaderProps) => (
+  <div className={getClassNames('lds-ellipsis', {}, [className, theme])}>
     <div />
     <div />
     <div />

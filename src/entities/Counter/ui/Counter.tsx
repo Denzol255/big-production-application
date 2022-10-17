@@ -1,13 +1,12 @@
 import { FC } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Button } from 'shared/ui';
-import { ButtonTheme } from 'shared/ui/Button/Button';
+import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { getCounterValue } from '../model/selectors/getCounterValue/getCounterValue';
 import { counterActions } from '../model/slice/counterSlice';
 import styles from './Counter.module.scss';
 
 interface CounterProps {
-  lol?: number;
+  className?: string;
 }
 
 export const Counter: FC<CounterProps> = () => {
