@@ -32,6 +32,7 @@ export const Navbar = ({ className }: NavbarProps) => {
 
   const handleLogOut = useCallback(() => {
     dispatch(userActions.logOut());
+    setIsAuthModal(false);
     localStorage.removeItem(USER_LOCAL_STORAGE_KEY);
   }, [dispatch]);
 
