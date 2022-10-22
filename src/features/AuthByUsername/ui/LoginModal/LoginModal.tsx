@@ -1,4 +1,4 @@
-import { FC, Suspense } from 'react';
+import { FC, memo, Suspense } from 'react';
 import { getClassNames } from 'shared/lib/getClassNames/getClassNames';
 import { Loader, LoaderTheme } from 'shared/ui/Loader/Loader';
 import { Modal } from 'shared/ui/Modal/Modal';
@@ -11,7 +11,7 @@ interface LoginModalProps {
   onClose: () => void;
 }
 
-export const LoginModal: FC<LoginModalProps> = (props) => {
+export const LoginModal: FC<LoginModalProps> = memo((props) => {
   const { className, isOpen, onClose } = props;
   return (
     <Modal
@@ -21,8 +21,8 @@ export const LoginModal: FC<LoginModalProps> = (props) => {
       className={getClassNames(styles.loginModal, {}, [className])}
     >
       <Suspense fallback={<Loader theme={LoaderTheme.WHITE} />}>
-        <LoginFormAsync />
+        <LoginFormAsync onSuccess={onClose} />
       </Suspense>
     </Modal>
   );
-};
+});

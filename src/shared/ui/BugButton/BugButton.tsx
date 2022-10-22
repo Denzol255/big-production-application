@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from 'react';
+import { FC, memo, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { getClassNames } from 'shared/lib/getClassNames/getClassNames';
 import { Button, ButtonTheme } from '../Button/Button';
@@ -7,7 +7,7 @@ interface BugButtonProps {
   className?: string;
 }
 
-export const BugButton: FC<BugButtonProps> = (props) => {
+export const BugButton: FC<BugButtonProps> = memo((props) => {
   const { t } = useTranslation();
   const { className } = props;
   const [isError, setIsError] = useState(false);
@@ -34,4 +34,4 @@ export const BugButton: FC<BugButtonProps> = (props) => {
       {t('Throw error')}
     </Button>
   );
-};
+});

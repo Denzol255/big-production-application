@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, memo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { getCounterValue } from '../model/selectors/getCounterValue/getCounterValue';
@@ -9,7 +9,7 @@ interface CounterProps {
   className?: string;
 }
 
-export const Counter: FC<CounterProps> = () => {
+export const Counter: FC<CounterProps> = memo(() => {
   const dispatch = useDispatch();
   const counterValue = useSelector(getCounterValue);
   const increment = () => {
@@ -41,4 +41,4 @@ export const Counter: FC<CounterProps> = () => {
       </Button>
     </div>
   );
-};
+});

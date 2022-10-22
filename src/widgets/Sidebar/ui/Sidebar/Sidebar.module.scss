@@ -34,33 +34,6 @@
   margin: 10px auto;
 }
 
-.sidebarItem {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 5px;
-  padding: 10px;
-
-  &:not(:last-child) {
-    margin-bottom: 10px;
-  }
-}
-
-.sidebarItemText {
-  display: block;
-  min-width: 60px;
-  text-align: center;
-  font: var(--font-m);
-  margin-left: 10px;
-  transition: all 0.2s;
-  transform: translate(0, 0);
-}
-
-.sidebarItemIcon {
-  fill: var(--inverted-primary-color);
-}
-
 .collapsed {
   width: var(--sidebar-width-collapsed);
 

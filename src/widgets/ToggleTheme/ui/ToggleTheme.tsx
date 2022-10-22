@@ -1,5 +1,5 @@
 import { Theme, useTheme } from 'app/providers/ThemeProvider';
-import { FC } from 'react';
+import { FC, memo } from 'react';
 import DarkIcon from 'shared/assets/icons/themeDark.svg';
 import LightIcon from 'shared/assets/icons/themeLight.svg';
 import { getClassNames } from 'shared/lib/getClassNames/getClassNames';
@@ -10,7 +10,7 @@ interface ToggleThemeProps {
   className?: string;
 }
 
-export const ToggleTheme: FC<ToggleThemeProps> = (props) => {
+export const ToggleTheme: FC<ToggleThemeProps> = memo((props) => {
   const { className } = props;
   const { theme, toggleTheme } = useTheme();
 
@@ -23,4 +23,4 @@ export const ToggleTheme: FC<ToggleThemeProps> = (props) => {
       {theme === Theme.DARK ? <DarkIcon /> : <LightIcon />}
     </Button>
   );
-};
+});

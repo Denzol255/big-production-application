@@ -29,7 +29,14 @@
     }
   ],
   "profile": {
-    "name": "typicode"
+    "age": 25,
+    "avatar": "https://img.freepik.com/premium-photo/emoji-with-medical-mask-sunglass-royal-crown-3d_286925-127.jpg?w=826",
+    "city": "Khimki",
+    "country": "Russia",
+    "currency": "RUB",
+    "first": "Denis",
+    "lastname": "Zolotarev",
+    "username": "Denzol935"
   },
   "users": [
     {

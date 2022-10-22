@@ -1,7 +1,7 @@
 import { getUserAuthData, userActions } from 'entities/User';
 import { LoginModal } from 'features/AuthByUsername';
 import { loginActions } from 'features/AuthByUsername/model/slice/loginSlice';
-import { useCallback, useState } from 'react';
+import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import Logo from 'shared/assets/icons/logo.svg';
@@ -14,7 +14,7 @@ interface NavbarProps {
   className?: string;
 }
 
-export const Navbar = ({ className }: NavbarProps) => {
+export const Navbar = memo(({ className }: NavbarProps) => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
   const authData = useSelector(getUserAuthData);
@@ -32,7 +32,6 @@ export const Navbar = ({ className }: NavbarProps) => {
 
   const handleLogOut = useCallback(() => {
     dispatch(userActions.logOut());
-    setIsAuthModal(false);
     localStorage.removeItem(USER_LOCAL_STORAGE_KEY);
   }, [dispatch]);
 
@@ -65,4 +64,4 @@ export const Navbar = ({ className }: NavbarProps) => {
       )}
     </div>
   );
-};
+});

@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { getClassNames } from 'shared/lib/getClassNames/getClassNames';
 import './Loader.scss';
 
@@ -10,11 +11,11 @@ interface LoaderProps {
   theme?: LoaderTheme;
 }
 
-export const Loader = ({ className, theme }: LoaderProps) => (
+export const Loader = memo(({ className, theme }: LoaderProps) => (
   <div className={getClassNames('lds-ellipsis', {}, [className, theme])}>
     <div />
     <div />
     <div />
     <div />
   </div>
-);
+));

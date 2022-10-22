@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { getClassNames } from 'shared/lib/getClassNames/getClassNames';
@@ -9,7 +9,7 @@ interface FallbackComponentProps {
   className?: string;
 }
 
-export const FallbackComponent: FC<FallbackComponentProps> = (props) => {
+export const FallbackComponent: FC<FallbackComponentProps> = memo((props) => {
   const { t } = useTranslation();
   const { className } = props;
   const navigate = useNavigate();
@@ -63,4 +63,4 @@ export const FallbackComponent: FC<FallbackComponentProps> = (props) => {
       </div>
     </div>
   );
-};
+});
