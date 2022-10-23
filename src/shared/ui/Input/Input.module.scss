@@ -2,12 +2,17 @@
   color: var(--inverted-primary-color);
 }
 
+.label.inverted_label {
+  color: var(--primary-color);
+}
+
 .input {
   border: 2px solid var(--primary-orange-color);
   border-radius: 2px;
   min-height: 30px;
   padding: 0 10px;
   outline: none;
+  margin-left: 10px;
 
   &:focus {
     outline: none;

@@ -10,7 +10,10 @@ import { AppRouter } from './providers/router';
 
 const App = () => {
   const dispatch = useDispatch();
-  const user = JSON.parse(localStorage.getItem(USER_LOCAL_STORAGE_KEY));
+  const user = JSON.parse(
+    localStorage.getItem(USER_LOCAL_STORAGE_KEY) as string
+  );
+
   useEffect(() => {
     dispatch(userActions.initAuthData(user));
   }, [dispatch, user]);

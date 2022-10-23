@@ -1,4 +1,3 @@
-import { getClassNames } from 'shared/lib/getClassNames/getClassNames';
 import {
   ChangeEvent,
   FC,
@@ -9,17 +8,23 @@ import {
   useState,
 } from 'react';
 import { useTranslation } from 'react-i18next';
+import { getClassNames } from 'shared/lib/getClassNames/getClassNames';
 import styles from './Input.module.scss';
+
+export const enum InputTheme {
+  INVERTED_LABEL = 'inverted_label',
+}
 
 interface InputProps
   extends Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'> {
   className?: string;
   inputName: string;
   value: string;
-  onChange: (value: string) => void;
+  onChange?: (value: string) => void;
   type?: string;
   placeholder?: string;
   autofocus?: boolean;
+  theme?: InputTheme;
 }
 
 export const Input: FC<InputProps> = memo((props) => {
@@ -32,6 +37,7 @@ export const Input: FC<InputProps> = memo((props) => {
     type = 'text',
     placeholder,
     autofocus,
+    theme = '',
     ...otherProps
   } = props;
   const [isFocused, setIsFocused] = useState<boolean>(false);
@@ -54,7 +60,7 @@ export const Input: FC<InputProps> = memo((props) => {
 
   return (
     <label
-      className={getClassNames(styles.label, {}, [className])}
+      className={getClassNames(styles.label, {}, [className, styles[theme]])}
       htmlFor={inputName}
     >
       {`${t('Enter')} ${placeholder ? placeholder.toLowerCase() : t('Field')}`}

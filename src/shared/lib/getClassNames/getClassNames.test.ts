@@ -19,7 +19,7 @@ describe('getClassNames', () => {
       getClassNames('someClass', {
         selected: true,
         hovered: false,
-        clicked: null,
+        clicked: false,
       })
     ).toBe('someClass selected');
   });

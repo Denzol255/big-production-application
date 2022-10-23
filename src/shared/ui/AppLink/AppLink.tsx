@@ -1,4 +1,3 @@
-import { memo } from 'react';
 import { Link, LinkProps } from 'react-router-dom';
 import { getClassNames } from 'shared/lib/getClassNames/getClassNames';
 // github build failed with AppLink.module.scss
@@ -15,8 +14,14 @@ interface AppLinkProps extends LinkProps {
   theme?: AppLinkTheme;
 }
 
-export const AppLink = memo((props: AppLinkProps) => {
-  const { to, className, children, theme, ...otherProps } = props;
+export const AppLink = (props: AppLinkProps) => {
+  const {
+    to,
+    className,
+    children,
+    theme = AppLinkTheme.PRIMARY,
+    ...otherProps
+  } = props;
   return (
     <Link
       to={to}
@@ -26,4 +31,4 @@ export const AppLink = memo((props: AppLinkProps) => {
       {children}
     </Link>
   );
-});
+};

@@ -9,7 +9,7 @@ import {
 import { getClassNames } from 'shared/lib/getClassNames/getClassNames';
 import { useAppDispatch } from 'shared/lib/getClassNames/useAppDispatch/useAppDispatch';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
-import { Input } from 'shared/ui/Input/ui/Input';
+import { Input } from 'shared/ui/Input/Input';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { getLoginError } from '../../model/selectors/getLoginError/getLoginError';
 import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading/getLoginIsLoading';

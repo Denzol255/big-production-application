@@ -15,6 +15,7 @@ declare module '*.woff2';
 // and so on for whatever flavor of css you're using
 
 declare const __IS_DEV__: boolean;
+declare const __API__: string;
 
 interface MyKeyboardEvent {
   key: string;
@@ -23,3 +24,9 @@ interface MyKeyboardEvent {
 interface MyAxiosResponseDataError {
   message: string;
 }
+
+type DeepPartial<T> = T extends object
+  ? {
+      [P in keyof T]?: DeepPartial<T[P]>;
+    }
+  : T;

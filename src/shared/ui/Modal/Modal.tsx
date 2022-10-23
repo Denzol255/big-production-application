@@ -1,9 +1,15 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import { getClassNames } from 'shared/lib/getClassNames/getClassNames';
-import React, { FC, useCallback, useRef, useState } from 'react';
-import styles from './Modal.module.scss';
-import { useEffect } from 'react';
+import React, {
+  FC,
+  MutableRefObject,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
+import { getClassNames, Mods } from 'shared/lib/getClassNames/getClassNames';
 import { Portal } from '../Portal/Portal';
+import styles from './Modal.module.scss';
 
 interface ModalProps {
   className?: string;
@@ -19,7 +25,7 @@ export const Modal: FC<ModalProps> = (props) => {
   // const [isOpening, setIsOpening] = useState<boolean>(false);
   const [isClosing, setIsClosing] = useState<boolean>(false);
   const [isMounted, setIsMounted] = useState<boolean>(false);
-  const timerRef = useRef<ReturnType<typeof setTimeout>>();
+  const timerRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;
 
   const handleContentClick = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -44,7 +50,7 @@ export const Modal: FC<ModalProps> = (props) => {
     [handleOnClose]
   );
 
-  const mods: Record<string, boolean> = {
+  const mods: Mods = {
     [styles.opened]: isOpen,
     [styles.isClosing]: isClosing,
     // [styles.isOpening]: isOpening,

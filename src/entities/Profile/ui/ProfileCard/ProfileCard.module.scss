@@ -1,0 +1,27 @@
+.profileCard {
+  padding: 10px;
+  border: 2px solid var(--primary-orange-color);
+  max-width: 410px;
+}
+
+.profileHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.profileData {
+  display: flex;
+  flex-direction: column;
+}
+
+.profileInput {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}

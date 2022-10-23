@@ -59,8 +59,10 @@ module.exports = {
     'react/display-name': OFF,
     'react/prop-types': OFF,
     'jsx-a11y/no-autofocus': OFF,
+    'no-undef': OFF,
   },
   globals: {
     __IS_DEV__: true,
+    __API__: true,
   },
 };
