@@ -8,20 +8,35 @@ export const enum TextTheme {
   ERROR = 'error',
 }
 
+export const enum TextAlign {
+  LEFT = 'left',
+  CENTER = 'center',
+  RIGHT = 'right',
+}
+
 interface TextProps {
   className?: string;
   text?: string;
   title?: string;
   theme?: TextTheme;
+  align?: TextAlign;
 }
 
 export const Text: FC<TextProps> = memo((props) => {
-  const { className, text, title, theme = TextTheme.PRIMARY } = props;
+  const {
+    className,
+    text,
+    title,
+    theme = TextTheme.PRIMARY,
+    align = TextAlign.LEFT,
+  } = props;
   return (
     <div
-      className={getClassNames(styles.textMain, { [styles[theme]]: true }, [
-        className,
-      ])}
+      className={getClassNames(
+        styles.textMain,
+        { [styles[theme]]: true, [styles[align]]: true },
+        [className]
+      )}
     >
       <p className={styles.textTitle}>{title}</p>
       <p className={styles.textDescription}>{text}</p>

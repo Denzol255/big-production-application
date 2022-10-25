@@ -1,46 +1,107 @@
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
 import { getClassNames } from 'shared/lib/getClassNames/getClassNames';
-import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { Input, InputTheme } from 'shared/ui/Input/Input';
-import { Text } from 'shared/ui/Text/Text';
-import { getProfileData } from '../../model/selectors/getProfileData/getProfileData';
-import { getProfileError } from '../../model/selectors/getProfileError/getProfileError';
-import { getProfileIsLoading } from '../../model/selectors/getProfileIsLoading/getProfileIsLoading';
+import { Loader } from 'shared/ui/Loader/Loader';
+import { Text, TextAlign, TextTheme } from 'shared/ui/Text/Text';
+import { Profile } from '../../model/types/profile';
 import styles from './ProfileCard.module.scss';
 
 interface ProfileCardProps {
   className?: string;
+  formData?: Profile;
+  error?: string;
+  isLoading?: boolean;
+  handleLastname: (value: string) => void;
+  handleFirstname: (value: string) => void;
+  handleAge: (value: string) => void;
+  handleCity: (value: string) => void;
+  readonly?: boolean;
 }
 
 export const ProfileCard: FC<ProfileCardProps> = (props) => {
   const { t } = useTranslation();
-  const { className } = props;
-  const data = useSelector(getProfileData);
-  const error = useSelector(getProfileError);
-  const isLoading = useSelector(getProfileIsLoading);
+  const {
+    className,
+    formData,
+    isLoading,
+    error,
+    handleFirstname,
+    handleLastname,
+    handleAge,
+    handleCity,
+    readonly = false,
+  } = props;
+
+  if (isLoading) {
+    return (
+      <div
+        className={getClassNames(styles.profileCard, {}, [
+          className,
+          styles.loading,
+        ])}
+      >
+        <Loader />
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div
+        className={getClassNames(styles.profileCard, {}, [
+          className,
+          styles.loading,
+        ])}
+      >
+        <Text
+          align={TextAlign.CENTER}
+          theme={TextTheme.ERROR}
+          title={t('An error occurred while loading the profile')}
+          text={t('Try to reload the page')}
+        />
+      </div>
+    );
+  }
 
   return (
     <div className={getClassNames(styles.profileCard, {}, [className])}>
-      <div className={styles.profileHeader}>
-        <Text title={t('Profile')} />
-        <Button theme={ButtonTheme.PRIMARY}>{t('Edit')}</Button>
-      </div>
       <div className={styles.profileData}>
         <Input
           theme={InputTheme.INVERTED_LABEL}
           inputName={t('Firstname')}
           className={styles.profileInput}
-          value={data?.first || ''}
+          value={formData?.first || ''}
+          onChange={handleFirstname}
           placeholder={t('Your firstname')}
+          readonly={readonly}
         />
         <Input
           theme={InputTheme.INVERTED_LABEL}
           inputName={t('Lastname')}
           className={styles.profileInput}
-          value={data?.lastname || ''}
+          value={formData?.lastname || ''}
+          onChange={handleLastname}
           placeholder={t('Your lastname')}
+          readonly={readonly}
+        />
+        <Input
+          theme={InputTheme.INVERTED_LABEL}
+          inputName={t('Age')}
+          className={styles.profileInput}
+          value={formData?.age || 0}
+          onChange={handleAge}
+          placeholder={t('Your age')}
+          readonly={readonly}
+        />
+        <Input
+          theme={InputTheme.INVERTED_LABEL}
+          inputName={t('Lastname')}
+          className={styles.profileInput}
+          value={formData?.city || ''}
+          onChange={handleCity}
+          placeholder={t('Your city')}
+          readonly={readonly}
         />
       </div>
     </div>

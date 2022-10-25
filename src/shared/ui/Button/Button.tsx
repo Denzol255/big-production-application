@@ -8,6 +8,7 @@ export const enum ButtonTheme {
   PRIMARY = 'primary',
   OUTLINE = 'outline',
   BACKGROUND = 'background',
+  DANGER = 'danger',
 }
 
 export const enum ButtonSize {

@@ -1,6 +1,9 @@
 {
   "About": "Handla om",
+  "Age": "Ålder",
+  "An error occurred while loading the profile": "Ett fel uppstod när profilen laddades",
   "Authorization form": "Fullmaktsformulär",
+  "Cancel": "Avbryt",
   "Enter": "Ange",
   "Field": "Fält",
   "Go to home page": "Gå till startsidan",
@@ -14,11 +17,17 @@
   "Password": "Lösenord",
   "Profile": "Profil",
   "Reload page": "Ladda om sidan",
+  "Save": "Spara",
   "Sign in": "Logga in",
   "Sign out": "Logga ut",
   "Throw error": "Kasta fel",
   "Toggle sidebar": "Vippsida",
+  "Try to reload the page": "Försök att ladda om sidan",
   "Unexpected Error": "Oväntat fel",
+  "Your age": "Din ålder",
+  "Your city": "Din stad",
+  "Your firstname": "Ditt förnamn",
+  "Your lastname": "Ditt efternamn",
   "_LanguageShort_": "SV",
   "_Language_": "Svenska"
 }

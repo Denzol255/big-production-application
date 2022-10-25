@@ -18,12 +18,20 @@
   color: var(--inverted-primary-color);
 }
 
-.primary {
+.primary,
+.danger {
   font: var(--font-m);
   color: var(--primary-white-color);
   border-radius: 5px;
   padding: 10px;
+}
+
+.primary {
   background-color: var(--primary-orange-color);
+}
+
+.danger {
+  background-color: var(--primary-red-color);
 }
 
 .outline {

@@ -18,3 +18,14 @@
     outline: none;
   }
 }
+
+.label.readonly {
+  color: var(--secondary-color);
+
+  input {
+    cursor: default;
+    border: none;
+    background-color: transparent;
+    color: var(--primary-color);
+  }
+}

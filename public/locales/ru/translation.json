@@ -1,6 +1,10 @@
 {
   "About": "О сайте",
+  "Age": "Возраст",
+  "An error occurred while loading the profile": "Произошла ошибка при загрузке профиля",
   "Authorization form": "Форма авторизации",
+  "Cancel": "Отмена",
+  "Edit": "Редактировать",
   "Enter": "Введите",
   "Field": "Поле",
   "Go to home page": "Вернутся на главную",
@@ -14,11 +18,17 @@
   "Password": "Пароль",
   "Profile": "Профиль",
   "Reload page": "Перезагрузить страницу",
+  "Save": "Сохранить",
   "Sign in": "Войти",
   "Sign out": "Выйти",
   "Throw error": "Выбросить ошибку",
   "Toggle sidebar": "Переключить сайдбар",
+  "Try to reload the page": "Попробуйте перезагрузить страницу",
   "Unexpected Error": "Неожиданная ошибка",
+  "Your age": "Ваш возраст",
+  "Your city": "Ваш город",
+  "Your firstname": "Ваше имя",
+  "Your lastname": "Ваша фамилия",
   "_LanguageShort_": "RU",
   "_Language_": "Русский"
 }

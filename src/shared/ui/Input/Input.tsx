@@ -16,15 +16,19 @@ export const enum InputTheme {
 }
 
 interface InputProps
-  extends Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'> {
+  extends Omit<
+    InputHTMLAttributes<HTMLInputElement>,
+    'value' | 'onChange' | 'readOnly'
+  > {
   className?: string;
   inputName: string;
-  value: string;
+  value: string | number;
   onChange?: (value: string) => void;
   type?: string;
   placeholder?: string;
   autofocus?: boolean;
   theme?: InputTheme;
+  readonly?: boolean;
 }
 
 export const Input: FC<InputProps> = memo((props) => {
@@ -38,6 +42,7 @@ export const Input: FC<InputProps> = memo((props) => {
     placeholder,
     autofocus,
     theme = '',
+    readonly = false,
     ...otherProps
   } = props;
   const [isFocused, setIsFocused] = useState<boolean>(false);
@@ -60,7 +65,10 @@ export const Input: FC<InputProps> = memo((props) => {
 
   return (
     <label
-      className={getClassNames(styles.label, {}, [className, styles[theme]])}
+      className={getClassNames(styles.label, { [styles.readonly]: readonly }, [
+        className,
+        styles[theme],
+      ])}
       htmlFor={inputName}
     >
       {`${t('Enter')} ${placeholder ? placeholder.toLowerCase() : t('Field')}`}
@@ -74,6 +82,7 @@ export const Input: FC<InputProps> = memo((props) => {
         className={styles.input}
         {...otherProps}
         onFocus={handleFocus}
+        readOnly={readonly}
       ></input>
     </label>
   );

@@ -1,7 +1,7 @@
 .profileCard {
-  padding: 10px;
+  padding: 20px;
   border: 2px solid var(--primary-orange-color);
-  max-width: 410px;
+  max-width: fit-content;
 }
 
 .profileHeader {
@@ -18,10 +18,16 @@
 .profileInput {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   flex-wrap: wrap;
 
   &:not(:last-child) {
     margin-bottom: 10px;
   }
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
 }
