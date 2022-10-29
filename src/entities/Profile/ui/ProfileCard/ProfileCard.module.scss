@@ -1,7 +1,8 @@
 .profileCard {
   padding: 20px;
-  border: 2px solid var(--primary-orange-color);
+  border: 2px solid var(--primary-color);
   max-width: fit-content;
+  min-width: 430px;
 }
 
 .profileHeader {
@@ -30,4 +31,8 @@
   align-items: center;
   justify-content: center;
   height: 300px;
+}
+
+.editing {
+  border: 2px solid var(--primary-orange-color);
 }

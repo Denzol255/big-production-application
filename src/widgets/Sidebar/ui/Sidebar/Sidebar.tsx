@@ -1,4 +1,4 @@
-import { FC, memo, useState } from 'react';
+import { FC, memo, useMemo, useState } from 'react';
 
 import { getClassNames } from 'shared/lib/getClassNames/getClassNames';
 import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button/Button';
@@ -16,6 +16,15 @@ export const Sidebar: FC<SidebarProps> = memo((props) => {
   const { className } = props;
   const [collapsed, setCollapsed] = useState(false);
   const handleShowSidebar = () => setCollapsed(!collapsed);
+
+  const itemsList = useMemo(
+    () =>
+      SidebarItems.map((item) => (
+        <SidebarItem key={item.path} item={item} collapsed={collapsed} />
+      )),
+    [collapsed]
+  );
+
   return (
     <div
       data-testid='sidebar'
@@ -25,11 +34,7 @@ export const Sidebar: FC<SidebarProps> = memo((props) => {
         [className]
       )}
     >
-      <div className={styles.sidebarItems}>
-        {SidebarItems.map((item) => (
-          <SidebarItem key={item.path} item={item} collapsed={collapsed} />
-        ))}
-      </div>
+      <div className={styles.sidebarItems}>{itemsList}</div>
       <Button
         className={styles.sidebarToggleBtn}
         theme={ButtonTheme.BACKGROUND}

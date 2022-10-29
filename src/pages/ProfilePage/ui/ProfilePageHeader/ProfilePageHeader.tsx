@@ -2,6 +2,7 @@ import {
   getProfileFormData,
   getProfileReadonly,
   profileActions,
+  updateProfileData,
 } from 'entities/Profile';
 import { FC, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -32,9 +33,9 @@ export const ProfilePageHeader: FC<ProfilePageHeaderProps> = (props) => {
   }, [dispatch]);
 
   const onSave = useCallback(() => {
-    dispatch(profileActions.updateProfileFormData(profileFormData || {}));
+    dispatch(updateProfileData());
     dispatch(profileActions.setReadonly(true));
-  }, [dispatch, profileFormData]);
+  }, [dispatch]);
 
   return (
     <div className={getClassNames(styles.profileHeader, {}, [className])}>

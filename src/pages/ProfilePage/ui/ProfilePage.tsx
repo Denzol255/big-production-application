@@ -1,3 +1,5 @@
+import { Country } from 'entities/Country';
+import { Currency } from 'entities/Currency';
 import {
   fetchProfileData,
   getProfileError,
@@ -52,12 +54,7 @@ const ProfilePage = memo((props: ProfilePageProps) => {
   const handleAge = useCallback(
     (value: string) => {
       const age = Number(value);
-      console.log(value);
-      console.log(age);
-
       if (age >= 0 && age < 123) {
-        console.log(123);
-
         dispatch(
           profileActions.updateProfileFormData({ age: Number(value || 0) })
         );
@@ -69,6 +66,42 @@ const ProfilePage = memo((props: ProfilePageProps) => {
   const handleCity = useCallback(
     (value: string) => {
       dispatch(profileActions.updateProfileFormData({ city: value || '' }));
+    },
+    [dispatch]
+  );
+
+  const handleAvatar = useCallback(
+    (value: string) => {
+      dispatch(profileActions.updateProfileFormData({ avatar: value || '' }));
+    },
+    [dispatch]
+  );
+
+  const handleUsername = useCallback(
+    (value: string) => {
+      dispatch(profileActions.updateProfileFormData({ username: value || '' }));
+    },
+    [dispatch]
+  );
+
+  const handleCurrency = useCallback(
+    (currency: Currency) => {
+      dispatch(
+        profileActions.updateProfileFormData({
+          currency: currency || Currency.RUB,
+        })
+      );
+    },
+    [dispatch]
+  );
+
+  const handleCountry = useCallback(
+    (country: Country) => {
+      dispatch(
+        profileActions.updateProfileFormData({
+          country: country || Country.RUSSIA,
+        })
+      );
     },
     [dispatch]
   );
@@ -89,6 +122,10 @@ const ProfilePage = memo((props: ProfilePageProps) => {
           handleLastname={handleLastname}
           handleCity={handleCity}
           handleAge={handleAge}
+          handleUsername={handleUsername}
+          handleAvatar={handleAvatar}
+          handleCurrency={handleCurrency}
+          handleCountry={handleCountry}
           readonly={readonly}
         />
       </div>

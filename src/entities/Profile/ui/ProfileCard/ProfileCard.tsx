@@ -1,6 +1,9 @@
+import { Country, CountrySelect } from 'entities/Country';
+import { Currency, CurrencySelect } from 'entities/Currency';
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { getClassNames } from 'shared/lib/getClassNames/getClassNames';
+import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Input, InputTheme } from 'shared/ui/Input/Input';
 import { Loader } from 'shared/ui/Loader/Loader';
 import { Text, TextAlign, TextTheme } from 'shared/ui/Text/Text';
@@ -12,10 +15,14 @@ interface ProfileCardProps {
   formData?: Profile;
   error?: string;
   isLoading?: boolean;
-  handleLastname: (value: string) => void;
-  handleFirstname: (value: string) => void;
-  handleAge: (value: string) => void;
-  handleCity: (value: string) => void;
+  handleLastname?: (value: string) => void;
+  handleFirstname?: (value: string) => void;
+  handleAge?: (value: string) => void;
+  handleCity?: (value: string) => void;
+  handleAvatar?: (value: string) => void;
+  handleUsername?: (value: string) => void;
+  handleCurrency?: (currency: Currency) => void;
+  handleCountry?: (country: Country) => void;
   readonly?: boolean;
 }
 
@@ -30,8 +37,16 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
     handleLastname,
     handleAge,
     handleCity,
+    handleAvatar,
+    handleUsername,
+    handleCurrency,
+    handleCountry,
     readonly = false,
   } = props;
+
+  const mods = {
+    [styles.editing]: !readonly,
+  };
 
   if (isLoading) {
     return (
@@ -49,7 +64,7 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
   if (error) {
     return (
       <div
-        className={getClassNames(styles.profileCard, {}, [
+        className={getClassNames(styles.profileCard, mods, [
           className,
           styles.loading,
         ])}
@@ -65,8 +80,9 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
   }
 
   return (
-    <div className={getClassNames(styles.profileCard, {}, [className])}>
+    <div className={getClassNames(styles.profileCard, mods, [className])}>
       <div className={styles.profileData}>
+        <Avatar size={150} src={formData?.avatar} alt={t('Avatar')} />
         <Input
           theme={InputTheme.INVERTED_LABEL}
           inputName={t('Firstname')}
@@ -101,6 +117,36 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
           value={formData?.city || ''}
           onChange={handleCity}
           placeholder={t('Your city')}
+          readonly={readonly}
+        />
+        <Input
+          theme={InputTheme.INVERTED_LABEL}
+          inputName={t('Username')}
+          className={styles.profileInput}
+          value={formData?.username || ''}
+          onChange={handleUsername}
+          placeholder={t('Your username')}
+          readonly={readonly}
+        />
+        <Input
+          theme={InputTheme.INVERTED_LABEL}
+          inputName={t('Avatar')}
+          className={styles.profileInput}
+          value={formData?.avatar || ''}
+          onChange={handleAvatar}
+          placeholder={t('Your avatar')}
+          readonly={readonly}
+        />
+        <CurrencySelect
+          className={styles.profileInput}
+          value={formData?.currency || Currency.RUB}
+          onChange={handleCurrency}
+          readonly={readonly}
+        />
+        <CountrySelect
+          className={styles.profileInput}
+          value={formData?.country || Country.RUSSIA}
+          onChange={handleCountry}
           readonly={readonly}
         />
       </div>

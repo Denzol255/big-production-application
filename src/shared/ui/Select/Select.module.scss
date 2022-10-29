@@ -1,0 +1,33 @@
+.selectWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.selectLabel {
+  margin-right: 10px;
+}
+
+.selectMain {
+  background: none;
+  outline: none;
+  color: var(--primary-color);
+  padding: 2px 10px 2px 2px;
+  border: 1px solid var(--primary-orange-color);
+}
+
+.selectOption {
+  color: var(--inverted-primary-color);
+  background: var(--inverted-bg-color);
+}
+
+.readonly {
+  .selectMain {
+    border: none;
+    appearance: none;
+    text-indent: 1px;
+  }
+
+  .selectLabel {
+    color: var(--secondary-color);
+  }
+}
