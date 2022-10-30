@@ -1,5 +1,4 @@
 import {
-  getProfileFormData,
   getProfileReadonly,
   profileActions,
   updateProfileData,
@@ -21,7 +20,6 @@ export const ProfilePageHeader: FC<ProfilePageHeaderProps> = (props) => {
   const { t } = useTranslation();
   const { className } = props;
   const readonly = useSelector(getProfileReadonly);
-  const profileFormData = useSelector(getProfileFormData);
   const dispatch = useAppDispatch();
 
   const onEdit = useCallback(() => {
@@ -34,7 +32,6 @@ export const ProfilePageHeader: FC<ProfilePageHeaderProps> = (props) => {
 
   const onSave = useCallback(() => {
     dispatch(updateProfileData());
-    dispatch(profileActions.setReadonly(true));
   }, [dispatch]);
 
   return (

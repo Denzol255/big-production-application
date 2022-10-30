@@ -26,6 +26,7 @@ export default (env: BuildEnv) => {
     port,
     analyze,
     apiUrl,
+    project: 'frontend',
   };
 
   const config: webpack.Configuration = BuildWebpackConfig(options);
