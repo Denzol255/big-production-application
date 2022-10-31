@@ -47,7 +47,7 @@ h2 {
   height: 120px;
   margin: 0 auto;
   border-radius: 50%;
-  background: var(--primary-orange-color);
+  background: var(--primary-button-bg-color);
 }
 
 .gear::before {
@@ -71,7 +71,7 @@ h2 {
   width: 70px;
   height: 70px;
   border-radius: 50%;
-  border: 5px solid var(--primary-orange-color);
+  border: 5px solid var(--primary-button-bg-color);
   box-sizing: border-box;
   background: var(--inverted-bg-color);
 }
@@ -98,7 +98,7 @@ h2 {
   height: 30px;
   margin-top: -15px;
   border-radius: 5px;
-  background: var(--primary-orange-color);
+  background: var(--primary-button-bg-color);
 }
 
 .gear .bar::before {

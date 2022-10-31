@@ -2,7 +2,8 @@
 @import './reset';
 @import './variables/global';
 @import './themes/dark';
-@import './themes//light.scss';
+@import './themes/light';
+@import './themes/blue';
 
 body {
   font: var(--font-m);

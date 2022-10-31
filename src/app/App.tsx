@@ -1,6 +1,6 @@
-import { userActions } from 'entities/User';
+import { getInitedUser, userActions } from 'entities/User';
 import { Suspense, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { USER_LOCAL_STORAGE_KEY } from 'shared/constants/localstorage';
 import { getClassNames } from 'shared/lib/getClassNames/getClassNames';
 import { Loader } from 'shared/ui/Loader/Loader';
@@ -13,6 +13,7 @@ const App = () => {
   const user = JSON.parse(
     localStorage.getItem(USER_LOCAL_STORAGE_KEY) as string
   );
+  const inited = useSelector(getInitedUser);
 
   useEffect(() => {
     dispatch(userActions.initAuthData(user));
@@ -26,7 +27,7 @@ const App = () => {
         <Navbar />
         <div className='content-page'>
           <Sidebar />
-          <AppRouter />
+          {inited && <AppRouter />}
         </div>
       </Suspense>
     </div>
