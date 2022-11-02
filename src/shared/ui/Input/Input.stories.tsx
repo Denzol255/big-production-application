@@ -10,7 +10,7 @@ export default {
 } as ComponentMeta<typeof Input>;
 
 const Template: ComponentStory<typeof Input> = (args) => <Input {...args} />;
-const DarkTemplate: ComponentStory<typeof Input> = (args) => (
+const DarkBackgroundTemplate: ComponentStory<typeof Input> = (args) => (
   <div
     style={{
       width: '250px',
@@ -23,7 +23,7 @@ const DarkTemplate: ComponentStory<typeof Input> = (args) => (
   </div>
 );
 
-export const Primary = DarkTemplate.bind({});
+export const Primary = DarkBackgroundTemplate.bind({});
 Primary.args = {
   placeholder: 'text',
   value: '123',

@@ -1,20 +1,18 @@
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { getClassNames } from 'shared/lib/getClassNames/getClassNames';
-import styles from './ArticlesPage.module.scss';
+import styles from './ArticleCodeBlock.module.scss';
 
-interface ArticlesPageProps {
+interface ArticleCodeBlockProps {
   className?: string;
 }
 
-const ArticlesPage: FC<ArticlesPageProps> = (props) => {
+export const ArticleCodeBlock: FC<ArticleCodeBlockProps> = (props) => {
   const { t } = useTranslation();
   const { className } = props;
   return (
-    <div className={getClassNames(styles.articlesPage, {}, [className])}>
-      ARTICLES PAGE
+    <div className={getClassNames(styles.articleCodeBlock, {}, [className])}>
+      123
     </div>
   );
 };
-
-export default ArticlesPage;
