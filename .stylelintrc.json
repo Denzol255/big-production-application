@@ -11,6 +11,7 @@
       {
         "avoidEscape": false
       }
-    ]
+    ],
+    "declaration-colon-newline-after": null
   }
 }
