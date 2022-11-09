@@ -3,14 +3,14 @@
     "default": {
       "customTemplates": {
         "component": "templates/default/TemplateName.tsx",
-        "style": "templates/default/TemplateName.module.scss",
-        "test": "templates/default/TemplateName.test.tsx"
+        "stories": "templates/default/TemplateName.stories.tsx",
+        "style": "templates/default/TemplateName.module.scss"
       },
       "path": "src/shared/ui/",
       "withLazy": false,
-      "withStory": false,
+      "withStory": true,
       "withStyle": true,
-      "withTest": true
+      "withTest": false
     }
   },
   "cssPreprocessor": "scss",

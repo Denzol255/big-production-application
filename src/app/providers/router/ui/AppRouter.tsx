@@ -25,12 +25,5 @@ export const AppRouter = memo(() => {
     );
   }, []);
 
-  return (
-    <Routes>
-      {Object.values(routeConfig).map(renderWithWrapper)}
-      {/* {routes.map(({ path, element }) => (
-        
-      ))} */}
-    </Routes>
-  );
+  return <Routes>{Object.values(routeConfig).map(renderWithWrapper)}</Routes>;
 });

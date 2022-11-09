@@ -1,21 +1,32 @@
 import { fetchArticleByID } from 'entities/Article/model/services/fetchArticleByID/fetchArticleByID';
-import { FC, memo, useEffect } from 'react';
+import {
+  ArticleBlock,
+  ArticleBlockType,
+} from 'entities/Article/model/types/article';
+import { FC, memo, useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
+import CalendarIcon from 'shared/assets/icons/calendarIcon.svg';
+import EyeIcon from 'shared/assets/icons/eyeIcon.svg';
 import {
   DynamicModuleLoader,
   ReducersList,
 } from 'shared/lib/components/DynamicModuleLoader';
 import { getClassNames } from 'shared/lib/getClassNames/getClassNames';
 import { useAppDispatch } from 'shared/lib/getClassNames/useAppDispatch/useAppDispatch';
+import { Avatar } from 'shared/ui/Avatar/Avatar';
+import { Icon } from 'shared/ui/Icon/Icon';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
-import { Text, TextAlign, TextTheme } from 'shared/ui/Text/Text';
+import { Text, TextAlign, TextSize, TextTheme } from 'shared/ui/Text/Text';
 import {
   getArticleDetailsData,
   getArticleDetailsError,
   getArticleDetailsIsLoading,
 } from '../../model/selectors/articleDetails';
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
+import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
+import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleCodeImageComponent';
+import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import styles from './ArticleDetails.module.scss';
 
 interface ArticleDetailsProps {
@@ -32,12 +43,45 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props) => {
   const { className, id } = props;
   const dispatch = useAppDispatch();
   const isLoading = useSelector(getArticleDetailsIsLoading);
-  const data = useSelector(getArticleDetailsData);
+  const article = useSelector(getArticleDetailsData);
   const error = useSelector(getArticleDetailsError);
   let content;
 
+  const renderBlocks = useCallback((block: ArticleBlock) => {
+    switch (block.type) {
+      case ArticleBlockType.CODE:
+        return (
+          <ArticleCodeBlockComponent
+            key={block.id}
+            block={block}
+            className={styles.block}
+          />
+        );
+      case ArticleBlockType.TEXT:
+        return (
+          <ArticleTextBlockComponent
+            key={block.id}
+            block={block}
+            className={styles.block}
+          />
+        );
+      case ArticleBlockType.IMAGE:
+        return (
+          <ArticleImageBlockComponent
+            key={block.id}
+            block={block}
+            className={styles.block}
+          />
+        );
+      default:
+        return null;
+    }
+  }, []);
+
   useEffect(() => {
-    dispatch(fetchArticleByID(id));
+    if (__PROJECT__ !== 'storybook') {
+      dispatch(fetchArticleByID(id));
+    }
   }, [dispatch, id]);
 
   if (isLoading) {
@@ -59,13 +103,34 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props) => {
     content = (
       <Text
         theme={TextTheme.ERROR}
-        title={'An error occurred while loading the article'}
-        text={'Try to reload the page'}
+        title={t('An error occurred while loading the article')}
+        text={t('Try to reload the page')}
         align={TextAlign.CENTER}
       />
     );
   } else {
-    content = 'article details213123';
+    content = (
+      <>
+        <div className={styles.avatarWrapper}>
+          <Avatar size={200} src={article?.img} className={styles.avatar} />
+        </div>
+        <Text
+          className={styles.title}
+          title={article?.title}
+          text={article?.subtitle}
+          size={TextSize.LARGE}
+        />
+        <div className={styles.articleInfo}>
+          <Icon Svg={EyeIcon} className={`${styles.icon} ${styles.eyeIcon}`} />
+          <Text text={String(article?.views)} />
+        </div>
+        <div className={styles.articleInfo}>
+          <Icon Svg={CalendarIcon} className={styles.icon} />
+          <Text text={String(article?.createdAt)} />
+        </div>
+        {article?.blocks.map(renderBlocks)}
+      </>
+    );
   }
 
   return (

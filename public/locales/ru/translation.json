@@ -1,6 +1,7 @@
 {
   "About": "О сайте",
   "Age": "Возраст",
+  "An error occurred while loading the article": "Произошла ошибка при загрузке статьи",
   "An error occurred while loading the profile": "Произошла ошибка при загрузке профиля",
   "Armenia": "Армения",
   "Articles": "Статьи",
@@ -46,5 +47,6 @@
   "Your lastname": "Ваша фамилия",
   "Your username": "Ваш никнейм",
   "_LanguageShort_": "RU",
-  "_Language_": "Русский"
+  "_Language_": "Русский",
+  "code": "код"
 }

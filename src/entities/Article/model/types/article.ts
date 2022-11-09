@@ -39,7 +39,7 @@ export type ArticleBlock =
   | ArticleCodeBlock;
 
 export interface Article {
-  blocks: ArticleBlock;
+  blocks: ArticleBlock[];
   createdAt: string;
   id: string;
   img: string;

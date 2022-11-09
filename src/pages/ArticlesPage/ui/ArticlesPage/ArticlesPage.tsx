@@ -1,5 +1,4 @@
 import { FC } from 'react';
-import { useTranslation } from 'react-i18next';
 import { getClassNames } from 'shared/lib/getClassNames/getClassNames';
 import styles from './ArticlesPage.module.scss';
 
@@ -8,12 +7,9 @@ interface ArticlesPageProps {
 }
 
 const ArticlesPage: FC<ArticlesPageProps> = (props) => {
-  const { t } = useTranslation();
   const { className } = props;
   return (
-    <div className={getClassNames(styles.articlesPage, {}, [className])}>
-      ARTICLES PAGE
-    </div>
+    <div className={getClassNames(styles.articlesPage, {}, [className])}></div>
   );
 };
 

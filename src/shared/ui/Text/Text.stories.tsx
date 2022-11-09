@@ -2,7 +2,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Theme } from 'app/providers/ThemeProvider';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 
-import { Text, TextTheme } from './Text';
+import { Text, TextSize, TextTheme } from './Text';
 
 export default {
   title: 'shared/Text',
@@ -68,4 +68,25 @@ NoTitle.args = {
 export const NoText = Template.bind({});
 NoText.args = {
   title: 'Title',
+};
+
+export const TextSmall = Template.bind({});
+TextSmall.args = {
+  title: 'Title',
+  text: 'Description Description Description Description',
+  size: TextSize.SMALL,
+};
+
+export const TextMedium = Template.bind({});
+TextMedium.args = {
+  title: 'Title',
+  text: 'Description Description Description Description',
+  size: TextSize.MEDIUM,
+};
+
+export const TextLarge = Template.bind({});
+TextLarge.args = {
+  title: 'Title',
+  text: 'Description Description Description Description',
+  size: TextSize.LARGE,
 };

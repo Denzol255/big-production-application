@@ -1,0 +1,25 @@
+.code {
+  border: 1px solid var(--primary-color);
+  background: var(--code-bg);
+  overflow: auto;
+}
+
+.codeViewportWrapper {
+  padding: 20px;
+  position: relative;
+  min-width: fit-content;
+}
+
+.copyBtn {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+.copyBtnIcon {
+  fill: var(--primary-color);
+
+  path {
+    stroke: var(--bg-color);
+  }
+}

@@ -2,6 +2,7 @@
   "": "",
   "About": "About",
   "Age": "Age",
+  "An error occurred while loading the article": "An error occurred while loading the article",
   "An error occurred while loading the profile": "An error occurred while loading the profile",
   "Armenia": "Armenia",
   "Article is not found": "Article is not found",
@@ -52,5 +53,6 @@
   "Your lastname": "Your lastname",
   "Your username": "Your username",
   "_LanguageShort_": "_LanguageShort_",
-  "_Language_": "_Language_"
+  "_Language_": "_Language_",
+  "code": "code"
 }

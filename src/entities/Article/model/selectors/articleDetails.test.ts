@@ -1,22 +1,10 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
-
+import { StateSchema } from 'app/providers/StoreProvider';
+import { ArticleBlockType, ArticleType } from '../types/article';
 import {
-  ArticleBlockType,
-  ArticleType,
-} from 'entities/Article/model/types/article';
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
-import ArticleDetailsPage from './ArticleDetailsPage';
-export default {
-  title: 'pages/ArticleDetailsPage',
-  component: ArticleDetailsPage,
-  argTypes: {
-    backgroundColor: { control: 'color' },
-  },
-} as ComponentMeta<typeof ArticleDetailsPage>;
-
-const Template: ComponentStory<typeof ArticleDetailsPage> = () => (
-  <ArticleDetailsPage />
-);
+  getArticleDetailsData,
+  getArticleDetailsError,
+  getArticleDetailsIsLoading,
+} from './articleDetails';
 
 const article = {
   blocks: [
@@ -87,23 +75,53 @@ const article = {
   type: [ArticleType.IT],
   views: 1022,
 };
+describe('getArticleDetailsData', () => {
+  test('should return article data', () => {
+    const state: DeepPartial<StateSchema> = {
+      articleDetails: {
+        data: article,
+      },
+    };
+    expect(getArticleDetailsData(state as StateSchema)).toEqual(article);
+  });
+  test('should return undefined', () => {
+    const state: DeepPartial<StateSchema> = {
+      articleDetails: {},
+    };
+    expect(getArticleDetailsData(state as StateSchema)).toEqual(undefined);
+  });
+});
 
-export const Primary = Template.bind({});
-Primary.args = {};
-Primary.decorators = [
-  StoreDecorator({
-    articleDetails: {
-      data: article,
-    },
-  }),
-];
+describe('getArticleDetailsIsLoading', () => {
+  test('should return true', () => {
+    const state: DeepPartial<StateSchema> = {
+      articleDetails: {
+        isLoading: true,
+      },
+    };
+    expect(getArticleDetailsIsLoading(state as StateSchema)).toEqual(true);
+  });
+  test('should return undefined', () => {
+    const state: DeepPartial<StateSchema> = {
+      articleDetails: {},
+    };
+    expect(getArticleDetailsData(state as StateSchema)).toEqual(undefined);
+  });
+});
 
-export const Dark = Template.bind({});
-Dark.args = {};
-Dark.decorators = [
-  StoreDecorator({
-    articleDetails: {
-      data: article,
-    },
-  }),
-];
+describe('getArticleDetailsError', () => {
+  test('should return true', () => {
+    const state: DeepPartial<StateSchema> = {
+      articleDetails: {
+        error: 'error',
+      },
+    };
+    expect(getArticleDetailsError(state as StateSchema)).toEqual('error');
+  });
+  test('should return undefined', () => {
+    const state: DeepPartial<StateSchema> = {
+      articleDetails: {},
+    };
+    expect(getArticleDetailsError(state as StateSchema)).toEqual(undefined);
+  });
+});

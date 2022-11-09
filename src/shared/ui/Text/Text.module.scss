@@ -1,9 +1,7 @@
 .textTitle {
-  font: var(--font-l);
 }
 
 .textDescription {
-  font: var(--font-m);
 }
 
 .primary {
@@ -46,4 +44,34 @@
 
 .right {
   text-align: right;
+}
+
+.small {
+  .textTitle {
+    font: var(--font-m);
+  }
+
+  .textDescription {
+    font: var(--font-s);
+  }
+}
+
+.medium {
+  .textTitle {
+    font: var(--font-l);
+  }
+
+  .textDescription {
+    font: var(--font-m);
+  }
+}
+
+.large {
+  .textTitle {
+    font: var(--font-xl);
+  }
+
+  .textDescription {
+    font: var(--font-l);
+  }
 }
