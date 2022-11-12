@@ -66,9 +66,7 @@
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "subtitle": "Что нового в JS за 2022 год?",
       "title": "Javascript news",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "views": 1022
     }
   ],
@@ -126,12 +124,14 @@
   },
   "users": [
     {
+      "avatar": "https://i.stack.imgur.com/Swnv8.png?s=192&g=1",
       "id": "1",
       "password": "123",
       "role": "ADMIN",
       "username": "admin"
     },
     {
+      "avatar": "https://ru-static.z-dn.net/files/ddd/02bd3a23f077cda4cc1843b6467a4db1.jpg",
       "id": "2",
       "password": "1234",
       "role": "USER",

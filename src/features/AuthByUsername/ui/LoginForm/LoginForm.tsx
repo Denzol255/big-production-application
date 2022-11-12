@@ -7,7 +7,7 @@ import {
   ReducersList,
 } from 'shared/lib/components/DynamicModuleLoader';
 import { getClassNames } from 'shared/lib/getClassNames/getClassNames';
-import { useAppDispatch } from 'shared/lib/getClassNames/useAppDispatch/useAppDispatch';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
 import { Text, TextTheme } from 'shared/ui/Text/Text';

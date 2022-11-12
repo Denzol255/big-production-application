@@ -12,7 +12,7 @@ import {
   profileReducer,
   ValidateProfileErrors,
 } from 'entities/Profile';
-import { memo, useCallback, useEffect } from 'react';
+import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import {
@@ -20,7 +20,8 @@ import {
   ReducersList,
 } from 'shared/lib/components/DynamicModuleLoader';
 import { getClassNames } from 'shared/lib/getClassNames/getClassNames';
-import { useAppDispatch } from 'shared/lib/getClassNames/useAppDispatch/useAppDispatch';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import styles from './ProfilePage.module.scss';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
@@ -123,11 +124,9 @@ const ProfilePage = memo((props: ProfilePageProps) => {
     [dispatch]
   );
 
-  useEffect(() => {
-    if (__PROJECT__ !== 'storybook') {
-      dispatch(fetchProfileData());
-    }
-  }, [dispatch]);
+  useInitialEffect(() => {
+    dispatch(fetchProfileData());
+  });
 
   return (
     <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount>

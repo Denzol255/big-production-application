@@ -46,8 +46,8 @@ export const Text: FC<TextProps> = memo((props) => {
         [className, styles[size]]
       )}
     >
-      <p className={styles.textTitle}>{title}</p>
-      <p className={styles.textDescription}>{text}</p>
+      {title && <p className={styles.textTitle}>{title}</p>}
+      {text && <p className={styles.textDescription}>{text}</p>}
     </div>
   );
 });
