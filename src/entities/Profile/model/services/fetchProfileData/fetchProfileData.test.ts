@@ -21,7 +21,7 @@ describe('fetchProfileData test', () => {
         data,
       })
     );
-    const result = await newTestAsyncThunk.callThunk();
+    const result = await newTestAsyncThunk.callThunk('1');
     expect(newTestAsyncThunk.api.get).toHaveBeenCalled();
     expect(result.meta.requestStatus).toBe('fulfilled');
     expect(result.payload).toEqual(data);
@@ -34,7 +34,7 @@ describe('fetchProfileData test', () => {
         status: 403,
       })
     );
-    const result = await newTestAsyncThunk.callThunk();
+    const result = await newTestAsyncThunk.callThunk('1');
     expect(result.meta.requestStatus).toBe('rejected');
   });
 });

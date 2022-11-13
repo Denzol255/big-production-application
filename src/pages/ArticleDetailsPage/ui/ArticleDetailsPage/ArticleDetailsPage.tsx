@@ -1,10 +1,11 @@
 import { ArticleDetails } from 'entities/Article';
 import { CommentList } from 'entities/Comment';
+import { AddCommentForm } from 'features/addCommentForm';
 import {
   getArticleCommentsError,
   getArticleCommentsIsLoading,
 } from 'pages/ArticleDetailsPage/model/selectors/comments';
-import { FC } from 'react';
+import { FC, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
@@ -13,7 +14,11 @@ import {
   ReducersList,
 } from 'shared/lib/components/DynamicModuleLoader';
 import { getClassNames } from 'shared/lib/getClassNames/getClassNames';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { Text } from 'shared/ui/Text/Text';
+import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
+import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import {
   articleDetailsCommentsReducer,
   getArticleComments,
@@ -35,6 +40,18 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
   const comments = useSelector(getArticleComments.selectAll);
   const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
   const commentsError = useSelector(getArticleCommentsError);
+  const dispatch = useAppDispatch();
+
+  const handleSendComment = useCallback(
+    (value: string) => {
+      dispatch(addCommentForArticle(value));
+    },
+    [dispatch]
+  );
+
+  useInitialEffect(() => {
+    dispatch(fetchCommentsByArticleId(id));
+  });
 
   if (!id) {
     return (
@@ -56,6 +73,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
           className={styles.articleCommentListTitle}
           title={t('Comments')}
         />
+        <AddCommentForm handleSendComment={handleSendComment} />
         <CommentList
           error={commentsError}
           isLoading={commentsIsLoading}

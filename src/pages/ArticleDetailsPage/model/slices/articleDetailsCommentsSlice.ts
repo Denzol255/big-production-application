@@ -5,7 +5,7 @@ import {
 } from '@reduxjs/toolkit';
 import { StateSchema } from 'app/providers/StoreProvider';
 import { CommentItem } from 'entities/Comment/model/types/comment';
-import { fetchCommentsByArticleId } from '../services/fetchCommentsByArticleId';
+import { fetchCommentsByArticleId } from '../services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { ArticleDetailsCommentsSchema } from '../types/ArticleDetailsCommentsSchema';
 
 const articleDetailsCommentsAdapter = createEntityAdapter<CommentItem>({
@@ -20,7 +20,7 @@ export const getArticleComments =
   );
 
 const articleDetailsCommentsSlice = createSlice({
-  name: 'books',
+  name: 'articleDetailsComments',
   initialState:
     articleDetailsCommentsAdapter.getInitialState<ArticleDetailsCommentsSchema>(
       {

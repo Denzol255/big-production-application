@@ -14,11 +14,12 @@ import styles from './ProfilePageHeader.module.scss';
 
 interface ProfilePageHeaderProps {
   className?: string;
+  canEdit: boolean;
 }
 
 export const ProfilePageHeader: FC<ProfilePageHeaderProps> = (props) => {
   const { t } = useTranslation();
-  const { className } = props;
+  const { className, canEdit } = props;
   const readonly = useSelector(getProfileReadonly);
   const dispatch = useAppDispatch();
 
@@ -39,31 +40,35 @@ export const ProfilePageHeader: FC<ProfilePageHeaderProps> = (props) => {
       <div className={styles.profileHeader}>
         <Text title={t('Profile')} />
         <div className={styles.profileHeaderButtons}>
-          {readonly ? (
-            <Button
-              theme={ButtonTheme.PRIMARY}
-              className={styles.profileHeaderButtonOnEdit}
-              onClick={onEdit}
-            >
-              {t('Edit')}
-            </Button>
-          ) : (
-            <>
-              <Button
-                theme={ButtonTheme.PRIMARY}
-                onClick={onSave}
-                className={styles.profileHeaderButtonSave}
-              >
-                {t('Save')}
-              </Button>
-              <Button
-                theme={ButtonTheme.DANGER}
-                onClick={onCancelEdit}
-                className={styles.profileHeaderButtonCancel}
-              >
-                {t('Cancel')}
-              </Button>
-            </>
+          {canEdit && (
+            <div className={styles.btnsWrapper}>
+              {readonly ? (
+                <Button
+                  theme={ButtonTheme.PRIMARY}
+                  className={styles.profileHeaderButtonOnEdit}
+                  onClick={onEdit}
+                >
+                  {t('Edit')}
+                </Button>
+              ) : (
+                <>
+                  <Button
+                    theme={ButtonTheme.PRIMARY}
+                    onClick={onSave}
+                    className={styles.profileHeaderButtonSave}
+                  >
+                    {t('Save')}
+                  </Button>
+                  <Button
+                    theme={ButtonTheme.DANGER}
+                    onClick={onCancelEdit}
+                    className={styles.profileHeaderButtonCancel}
+                  >
+                    {t('Cancel')}
+                  </Button>
+                </>
+              )}
+            </div>
           )}
         </div>
       </div>

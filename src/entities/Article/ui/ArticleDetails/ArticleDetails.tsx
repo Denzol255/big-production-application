@@ -3,7 +3,6 @@ import {
   ArticleBlock,
   ArticleBlockType,
 } from 'entities/Article/model/types/article';
-import { fetchCommentsByArticleId } from 'pages/ArticleDetailsPage/model/services/fetchCommentsByArticleId';
 import { FC, memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
@@ -82,10 +81,6 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props) => {
 
   useInitialEffect(() => {
     dispatch(fetchArticleByID(id));
-  });
-
-  useInitialEffect(() => {
-    dispatch(fetchCommentsByArticleId(id));
   });
 
   if (isLoading) {

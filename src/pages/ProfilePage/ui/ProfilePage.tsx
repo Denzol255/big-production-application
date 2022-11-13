@@ -2,6 +2,7 @@ import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
 import {
   fetchProfileData,
+  getProfileData,
   getProfileError,
   getProfileFormData,
   getProfileIsLoading,
@@ -12,9 +13,11 @@ import {
   profileReducer,
   ValidateProfileErrors,
 } from 'entities/Profile';
+import { getUserAuthData } from 'entities/User';
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
 import {
   DynamicModuleLoader,
   ReducersList,
@@ -43,6 +46,10 @@ const ProfilePage = memo((props: ProfilePageProps) => {
   const readonly = useSelector(getProfileReadonly);
   const validateErrors = useSelector(getProfileValidateErrors);
   const { t } = useTranslation();
+  const { id } = useParams<{ id: string }>();
+  const authData = useSelector(getUserAuthData);
+  const profileData = useSelector(getProfileData);
+  const canEdit = authData?.id === profileData?.id;
 
   const validatesErrorTranslate = {
     [ValidateProfileErrors.SERVER_ERROR]: t(
@@ -125,13 +132,15 @@ const ProfilePage = memo((props: ProfilePageProps) => {
   );
 
   useInitialEffect(() => {
-    dispatch(fetchProfileData());
+    if (id) {
+      dispatch(fetchProfileData(id));
+    }
   });
 
   return (
     <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount>
       <div className={getClassNames(styles.profilePage, {}, [className])}>
-        <ProfilePageHeader />
+        <ProfilePageHeader canEdit={canEdit} />
         {validateErrors?.length &&
           validateErrors.map((error) => {
             return (

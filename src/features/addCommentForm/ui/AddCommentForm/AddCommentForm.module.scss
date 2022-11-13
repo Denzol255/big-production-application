@@ -1,0 +1,24 @@
+.addCommentForm {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid var(--primary-color);
+  padding: 20px;
+}
+
+.addCommentFormInput {
+  margin-right: 10px;
+  max-width: 700px;
+  width: 100%;
+  input {
+    max-width: 400px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 950px) {
+  .addCommentFormInput {
+    margin-bottom: 10px;
+  }
+}

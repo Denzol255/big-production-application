@@ -1,7 +1,7 @@
 import { FC, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { getClassNames } from 'shared/lib/getClassNames/getClassNames';
-import { Text } from 'shared/ui/Text/Text';
+import { Text, TextAlign, TextTheme } from 'shared/ui/Text/Text';
 import { CommentItem } from '../../model/types/comment';
 import { CommentCard } from '../CommentCard/CommentCard';
 import styles from './CommentList.module.scss';
@@ -17,12 +17,26 @@ export const CommentList: FC<CommentListProps> = memo((props) => {
   const { className, isLoading, error, comments } = props;
   const { t } = useTranslation();
 
+  if (isLoading) {
+    return (
+      <div className={getClassNames(styles.commentList, {}, [className])}>
+        <CommentCard isLoading />
+        <CommentCard isLoading />
+        <CommentCard isLoading />
+      </div>
+    );
+  }
+
   if (error) {
     return (
       <div className={getClassNames(styles.commentList, {}, [className])}>
-        <span className={styles.commentList}>
-          {t('Error while loading comments')}
-        </span>
+        <Text
+          theme={TextTheme.ERROR}
+          align={TextAlign.CENTER}
+          className={styles.commentList}
+          text={t('Try to reload the page')}
+          title={t('Error while loading comments')}
+        />
       </div>
     );
   }

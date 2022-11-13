@@ -66,7 +66,9 @@
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "subtitle": "Что нового в JS за 2022 год?",
       "title": "Javascript news",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "views": 1022
     }
   ],
@@ -88,6 +90,30 @@
       "id": "3",
       "text": "some comment 3",
       "userId": "1"
+    },
+    {
+      "articleId": "1",
+      "id": "vpS_M73",
+      "text": "`12`12",
+      "userId": "1"
+    },
+    {
+      "articleId": "1",
+      "id": "b5kq4tF",
+      "text": "sssss",
+      "userId": "2"
+    },
+    {
+      "articleId": "1",
+      "id": "m6Puo2O",
+      "text": "123",
+      "userId": "2"
+    },
+    {
+      "articleId": "1",
+      "id": "hru1Ufl",
+      "text": "    `",
+      "userId": "2"
     }
   ],
   "posts": [
@@ -112,19 +138,33 @@
       "title": "json-server 4"
     }
   ],
-  "profile": {
-    "age": 1,
-    "avatar": "https://img.freepik.com/premium-photo/emoji-with-medical-mask-sunglass-royal-crown-3d_286925-127.jpg?w=826",
-    "city": "Khimki",
-    "country": "Russia",
-    "currency": "USD",
-    "first": "Chepchi",
-    "lastname": "Gorohov",
-    "username": "Denzol935"
-  },
+  "profile": [
+    {
+      "age": 1,
+      "avatar": "https://img.freepik.com/premium-photo/emoji-with-medical-mask-sunglass-royal-crown-3d_286925-127.jpg?w=826",
+      "city": "Khimki",
+      "country": "Russia",
+      "currency": "USD",
+      "first": "Chepchi",
+      "id": "1",
+      "lastname": "Gorohov",
+      "username": "Denzol935"
+    },
+    {
+      "age": 2,
+      "avatar": "https://ru-static.z-dn.net/files/ddd/02bd3a23f077cda4cc1843b6467a4db1.jpg",
+      "city": "Vologda",
+      "country": "Russia",
+      "currency": "USD",
+      "first": "2Name",
+      "id": "2",
+      "lastname": "Lastname",
+      "username": "User"
+    }
+  ],
   "users": [
     {
-      "avatar": "https://i.stack.imgur.com/Swnv8.png?s=192&g=1",
+      "avatar": "https://img.freepik.com/premium-photo/emoji-with-medical-mask-sunglass-royal-crown-3d_286925-127.jpg?w=826",
       "id": "1",
       "password": "123",
       "role": "ADMIN",

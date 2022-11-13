@@ -22,7 +22,7 @@ interface InputProps
   > {
   className?: string;
   inputName: string;
-  value: string | number;
+  value?: string | number;
   onChange?: (value: string) => void;
   type?: string;
   placeholder?: string;
