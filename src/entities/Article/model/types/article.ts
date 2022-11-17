@@ -1,3 +1,5 @@
+import { User } from 'entities/User';
+
 export enum ArticleType {
   IT = 'IT',
   MEDICINE = 'MEDICINE',
@@ -47,4 +49,10 @@ export interface Article {
   title: string;
   type: ArticleType[];
   views: number;
+  user: User;
+}
+
+export enum ArticleView {
+  LIST = 'LIST',
+  GRID = 'GRID',
 }

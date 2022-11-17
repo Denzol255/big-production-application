@@ -85,6 +85,10 @@ const article = {
   title: 'Javascript news',
   type: [ArticleType.IT],
   views: 1022,
+  user: {
+    username: 'Denzol',
+    id: '1',
+  },
 };
 
 export const Primary = Template.bind({});

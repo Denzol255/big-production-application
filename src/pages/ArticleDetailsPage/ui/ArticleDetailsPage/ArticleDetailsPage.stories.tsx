@@ -1,5 +1,4 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-
 import {
   ArticleBlockType,
   ArticleType,
@@ -86,6 +85,10 @@ const article = {
   title: 'Javascript news',
   type: [ArticleType.IT],
   views: 1022,
+  user: {
+    username: 'Denzol',
+    id: '1',
+  },
 };
 
 export const Primary = Template.bind({});
@@ -98,12 +101,12 @@ Primary.decorators = [
   }),
 ];
 
-export const Dark = Template.bind({});
-Dark.args = {};
-Dark.decorators = [
-  StoreDecorator({
-    articleDetails: {
-      data: article,
-    },
-  }),
-];
+// export const Dark = Template.bind({});
+// Dark.args = {};
+// Dark.decorators = [
+//   StoreDecorator({
+//     articleDetails: {
+//       data: article,
+//     },
+//   }),
+// ];

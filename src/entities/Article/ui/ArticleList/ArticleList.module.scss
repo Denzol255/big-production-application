@@ -1,0 +1,10 @@
+.articleList.GRID {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.articleList.LIST {
+  display: flex;
+  flex-direction: column;
+}

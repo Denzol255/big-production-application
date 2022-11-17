@@ -1,6 +1,7 @@
 .commentCard {
   padding: 10px;
   border: 1px solid var(--primary-color);
+
   &:not(:last-child) {
     margin-bottom: 15px;
   }

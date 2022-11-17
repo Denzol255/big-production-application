@@ -66,9 +66,8 @@
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "subtitle": "Что нового в JS за 2022 год?",
       "title": "Javascript news",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
+      "userId": "1",
       "views": 1022
     }
   ],

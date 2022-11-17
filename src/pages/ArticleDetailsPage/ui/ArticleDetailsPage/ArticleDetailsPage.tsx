@@ -8,7 +8,8 @@ import {
 import { FC, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
+import { RoutePath } from 'shared/config/routerConfig/RouteConfig';
 import {
   DynamicModuleLoader,
   ReducersList,
@@ -16,6 +17,7 @@ import {
 import { getClassNames } from 'shared/lib/getClassNames/getClassNames';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { Text } from 'shared/ui/Text/Text';
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
@@ -41,6 +43,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
   const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
   const commentsError = useSelector(getArticleCommentsError);
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
   const handleSendComment = useCallback(
     (value: string) => {
@@ -48,6 +51,10 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
     },
     [dispatch]
   );
+
+  const handleBackToList = useCallback(() => {
+    navigate(RoutePath.articles);
+  }, [navigate]);
 
   useInitialEffect(() => {
     dispatch(fetchCommentsByArticleId(id));
@@ -68,6 +75,9 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
       <div
         className={getClassNames(styles.articleDetailsPage, {}, [className])}
       >
+        <Button theme={ButtonTheme.OUTLINE} onClick={handleBackToList}>
+          {t('Back to list')}
+        </Button>
         <ArticleDetails id={id} />
         <Text
           className={styles.articleCommentListTitle}

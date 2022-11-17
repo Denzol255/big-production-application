@@ -1,0 +1,147 @@
+.LIST {
+  display: flex;
+  flex-direction: column;
+
+  .listCard {
+    margin-bottom: 20px;
+  }
+
+  .articleTop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .imageUsernameBlock {
+    display: flex;
+    align-items: center;
+  }
+
+  .userAvatar {
+    margin-right: 10px;
+  }
+
+  .listTitle {
+    margin-bottom: 10px;
+  }
+
+  .img {
+    max-height: 300px;
+    width: 100%;
+    object-fit: cover;
+    margin-bottom: 15px;
+  }
+
+  .types {
+    margin-bottom: 10px;
+  }
+
+  .footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+
+  .viewsWrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  .eyeIcon {
+    margin-left: 10px;
+    width: 24px;
+    fill: var(--primary-color);
+
+    path {
+      stroke: var(--primary-color);
+    }
+
+    circle {
+      stroke: var(--bg-color);
+    }
+  }
+
+  .textBlock {
+    max-height: 200px;
+    overflow: hidden;
+  }
+}
+
+.GRID {
+  max-width: 230px;
+  transition: 0.2s;
+  margin: 0 30px 30px 0;
+
+  .date {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    color: var(--inverted-primary-color);
+    display: none;
+  }
+
+  &:hover {
+    opacity: 0.8;
+    transform: scale(1.01);
+
+    .date {
+      display: block;
+    }
+  }
+
+  .imageWrapper {
+    width: 200px;
+    height: 200px;
+    position: relative;
+  }
+
+  .img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .infoWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0;
+  }
+
+  .types p {
+    width: 130px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .viewWrapper {
+    display: flex;
+  }
+
+  .views {
+  }
+
+  .eyeIcon {
+    margin-left: 10px;
+    width: 24px;
+    fill: var(--primary-color);
+
+    path {
+      stroke: var(--primary-color);
+    }
+
+    circle {
+      stroke: var(--bg-color);
+    }
+  }
+
+  .title p {
+    width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
