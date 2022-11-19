@@ -1,17 +1,19 @@
 /* eslint-disable */
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Text } from 'shared/ui/Text/Text';
-import { Page } from './Page';
+import { PageWrapper } from './PageWrapper';
 
 export default {
-  title: 'shared/Page',
-  component: Page,
+  title: 'shared/PageWrapper',
+  component: PageWrapper,
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-} as ComponentMeta<typeof Page>;
+} as ComponentMeta<typeof PageWrapper>;
 
-const Template: ComponentStory<typeof Page> = (args) => <Page {...args} />;
+const Template: ComponentStory<typeof PageWrapper> = (args) => (
+  <PageWrapper {...args} />
+);
 
 export const Primary = Template.bind({});
 Primary.args = {

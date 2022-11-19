@@ -25,8 +25,8 @@ import {
 import { getClassNames } from 'shared/lib/getClassNames/getClassNames';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { Page } from 'shared/ui/Page/Page';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
+import { PageWrapper } from 'widgets/PageWrapper/PageWrapper';
 import styles from './ProfilePage.module.scss';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 
@@ -140,7 +140,9 @@ const ProfilePage = memo((props: ProfilePageProps) => {
 
   return (
     <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount>
-      <Page className={getClassNames(styles.profilePage, {}, [className])}>
+      <PageWrapper
+        className={getClassNames(styles.profilePage, {}, [className])}
+      >
         <ProfilePageHeader canEdit={canEdit} />
         {validateErrors?.length &&
           validateErrors.map((error) => {
@@ -166,7 +168,7 @@ const ProfilePage = memo((props: ProfilePageProps) => {
           handleCountry={handleCountry}
           readonly={readonly}
         />
-      </Page>
+      </PageWrapper>
     </DynamicModuleLoader>
   );
 });

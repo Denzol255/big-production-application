@@ -13,8 +13,8 @@ import {
 import { getClassNames } from 'shared/lib/getClassNames/getClassNames';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { Page } from 'shared/ui/Page/Page';
 import { Text, TextAlign, TextTheme } from 'shared/ui/Text/Text';
+import { PageWrapper } from 'widgets/PageWrapper/PageWrapper';
 import {
   getArticlesError,
   getArticlesIsLoading,
@@ -75,7 +75,7 @@ const ArticlesPage: FC<ArticlesPageProps> = (props) => {
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
-      <Page
+      <PageWrapper
         onScrollEnd={handleNextPart}
         className={getClassNames(styles.articlesPage, {}, [className])}
       >
@@ -88,7 +88,7 @@ const ArticlesPage: FC<ArticlesPageProps> = (props) => {
           view={articlesView}
           articles={articles}
         />
-      </Page>
+      </PageWrapper>
     </DynamicModuleLoader>
   );
 };

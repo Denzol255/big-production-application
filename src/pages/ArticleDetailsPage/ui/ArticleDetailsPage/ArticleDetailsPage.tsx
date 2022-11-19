@@ -18,8 +18,8 @@ import { getClassNames } from 'shared/lib/getClassNames/getClassNames';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
-import { Page } from 'shared/ui/Page/Page';
 import { Text } from 'shared/ui/Text/Text';
+import { PageWrapper } from 'widgets/PageWrapper/PageWrapper';
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import {
@@ -65,17 +65,17 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
 
   if (!id) {
     return (
-      <Page
+      <PageWrapper
         className={getClassNames(styles.articleDetailsPage, {}, [className])}
       >
         {t('Article is not found')}
-      </Page>
+      </PageWrapper>
     );
   }
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <Page
+      <PageWrapper
         className={getClassNames(styles.articleDetailsPage, {}, [className])}
       >
         <Button theme={ButtonTheme.OUTLINE} onClick={handleBackToList}>
@@ -93,7 +93,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
           comments={comments}
           className={styles.articleCommentList}
         />
-      </Page>
+      </PageWrapper>
     </DynamicModuleLoader>
   );
 };
