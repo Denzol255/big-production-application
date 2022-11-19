@@ -9,6 +9,7 @@ import { getClassNames } from 'shared/lib/getClassNames/getClassNames';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { Input, InputTheme } from 'shared/ui/Input/Input';
+import { Text, TextAlign, TextTheme } from 'shared/ui/Text/Text';
 import {
   getAddCommentFormError,
   getAddCommentFormText,
@@ -31,8 +32,8 @@ const reducers: ReducersList = {
 const AddCommentForm = memo((props: AddCommentFormProps) => {
   const { className, handleSendComment } = props;
   const { t } = useTranslation();
-  const commentText = useSelector(getAddCommentFormText);
-  const commentError = useSelector(getAddCommentFormError);
+  const addCommentText = useSelector(getAddCommentFormText);
+  const addCommentError = useSelector(getAddCommentFormError);
   const dispatch = useAppDispatch();
 
   const handleCommentText = useCallback(
@@ -43,9 +44,22 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
   );
 
   const onSendHandler = useCallback(() => {
-    handleSendComment?.(commentText || '');
+    handleSendComment?.(addCommentText || '');
     handleCommentText('');
-  }, [commentText, handleCommentText, handleSendComment]);
+  }, [addCommentText, handleCommentText, handleSendComment]);
+
+  if (addCommentError) {
+    return (
+      <div className={getClassNames(styles.addCommentForm, {}, [className])}>
+        <Text
+          align={TextAlign.CENTER}
+          theme={TextTheme.ERROR}
+          title={t('Cannot get add comment form')}
+          text={t('Try to reload the page')}
+        />
+      </div>
+    );
+  }
 
   return (
     <DynamicModuleLoader removeAfterUnmount reducers={reducers}>
@@ -55,11 +69,11 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
           theme={InputTheme.INVERTED_LABEL}
           placeholder={t('Your comment text')}
           inputName={t('Comment text')}
-          value={commentText}
+          value={addCommentText}
           onChange={handleCommentText}
         />
         <Button
-          disabled={!commentText?.trim()}
+          disabled={!addCommentText?.trim()}
           className={styles.addCommentFormSendBtn}
           theme={ButtonTheme.OUTLINE}
           onClick={onSendHandler}

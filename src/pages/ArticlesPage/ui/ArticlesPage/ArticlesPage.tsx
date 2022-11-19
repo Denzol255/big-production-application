@@ -4,8 +4,6 @@ import {
   ArticleViewSelector,
 } from 'entities/Article';
 import { t } from 'i18next';
-import { fetchArticlesList } from 'pages/ArticlesPage/model/services/fetchArticlesList/fetchArticlesList';
-import { fetchArticlesNextPage } from 'pages/ArticlesPage/model/services/fetchArticlesNextPage/fetchArticlesNextPage';
 import { FC, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import {
@@ -16,12 +14,14 @@ import { getClassNames } from 'shared/lib/getClassNames/getClassNames';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { Page } from 'shared/ui/Page/Page';
-import { Text } from 'shared/ui/Text/Text';
+import { Text, TextAlign, TextTheme } from 'shared/ui/Text/Text';
 import {
   getArticlesError,
   getArticlesIsLoading,
   getArticlesView,
 } from '../../model/selectors/articlesPage';
+import { fetchArticlesNextPage } from '../../model/services/fetchArticlesNextPage/fetchArticlesNextPage';
+import { initArticles } from '../../model/services/initArticles/initArticles';
 import {
   articlesPageActions,
   articlesPageReducer,
@@ -57,14 +57,15 @@ const ArticlesPage: FC<ArticlesPageProps> = (props) => {
   }, [dispatch]);
 
   useInitialEffect(() => {
-    dispatch(articlesPageActions.initState());
-    dispatch(fetchArticlesList({ page: 1 }));
+    dispatch(initArticles());
   });
 
   if (articlesError) {
     return (
       <div className={getClassNames(styles.articlesPage, {}, [className])}>
         <Text
+          align={TextAlign.CENTER}
+          theme={TextTheme.ERROR}
           title={t('Error while loading artiles list')}
           text={t('Try to reload the page')}
         />
@@ -73,7 +74,7 @@ const ArticlesPage: FC<ArticlesPageProps> = (props) => {
   }
 
   return (
-    <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
+    <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
       <Page
         onScrollEnd={handleNextPart}
         className={getClassNames(styles.articlesPage, {}, [className])}

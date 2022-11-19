@@ -20,3 +20,15 @@ Primary.args = {
   handleSendComment: action('handleSendComment'),
 };
 Primary.decorators = [StoreDecorator({})];
+
+export const Error = Template.bind({});
+Error.args = {
+  handleSendComment: action('handleSendComment'),
+};
+Error.decorators = [
+  StoreDecorator({
+    addCommentForm: {
+      error: 'error',
+    },
+  }),
+];
