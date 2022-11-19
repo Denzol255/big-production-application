@@ -47,6 +47,8 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
 
   const handleSendComment = useCallback(
     (value: string) => {
+      console.log(value);
+
       dispatch(addCommentForArticle(value));
     },
     [dispatch]

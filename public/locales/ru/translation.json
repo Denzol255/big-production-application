@@ -18,6 +18,7 @@
   "Edit": "Редактировать",
   "Enter": "Введите",
   "Error while getting data from server": "Ошибка при получении данных с сервера",
+  "Error while loading artiles list": "Ошибка при загрузке статей",
   "Error while loading comments": "Ошибка при загрузке комментариев",
   "Field": "поле",
   "First and last name are required": "Имя и фамилия обязательны",

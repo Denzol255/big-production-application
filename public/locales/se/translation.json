@@ -17,6 +17,7 @@
   "Data not specified": "Data ej specificerade",
   "Enter": "Ange",
   "Error while getting data from server": "Fel när data hämtades från servern",
+  "Error while loading artiles list": "Fel vid laddning av artikellistan",
   "Error while loading comments": "Det gick inte att läsa in kommentarer",
   "Field": "fält",
   "First and last name are required": "För- och efternamn krävs",

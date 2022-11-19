@@ -13,7 +13,6 @@ interface ArticleListItemSceletonProps {
 
 const ArticleListItemSceleton = memo((props: ArticleListItemSceletonProps) => {
   const { className, view } = props;
-  console.log(view);
 
   if (view === ArticleView.LIST) {
     return (

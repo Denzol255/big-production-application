@@ -21,6 +21,7 @@
   "Enter your firstname": "Enter your firstname",
   "Enter your lastname": "Enter your lastname",
   "Error while getting data from server": "Error while getting data from server",
+  "Error while loading artiles list": "Error while loading artiles list",
   "Error while loading comments": "Error while loading comments",
   "Field": "Field",
   "First and last name are required": "First and last name are required",
