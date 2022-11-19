@@ -24,19 +24,6 @@ export const ArticleList = memo((props: ArticleListProps) => {
     return <ArticleListItem view={view} article={article} key={article.id} />;
   };
 
-  if (isLoading) {
-    return (
-      <div
-        className={getClassNames(styles.articleList, {}, [
-          className,
-          styles[view],
-        ])}
-      >
-        {getSceletons(view)}
-      </div>
-    );
-  }
-
   return (
     <div
       className={getClassNames(styles.articleList, {}, [
@@ -45,6 +32,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
       ])}
     >
       {articles?.length > 0 ? articles.map(renderArticle) : null}
+      {isLoading && getSceletons(view)}
     </div>
   );
 });

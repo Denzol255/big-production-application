@@ -4,7 +4,8 @@ import {
   ArticleViewSelector,
 } from 'entities/Article';
 import { t } from 'i18next';
-import { fetchArticlesList } from 'pages/ArticlesPage/model/services/fetchArticlesList';
+import { fetchArticlesList } from 'pages/ArticlesPage/model/services/fetchArticlesList/fetchArticlesList';
+import { fetchArticlesNextPage } from 'pages/ArticlesPage/model/services/fetchArticlesNextPage/fetchArticlesNextPage';
 import { FC, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import {
@@ -14,6 +15,7 @@ import {
 import { getClassNames } from 'shared/lib/getClassNames/getClassNames';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { Page } from 'shared/ui/Page/Page';
 import { Text } from 'shared/ui/Text/Text';
 import {
   getArticlesError,
@@ -50,9 +52,13 @@ const ArticlesPage: FC<ArticlesPageProps> = (props) => {
     [dispatch]
   );
 
+  const handleNextPart = useCallback(() => {
+    dispatch(fetchArticlesNextPage());
+  }, [dispatch]);
+
   useInitialEffect(() => {
-    dispatch(fetchArticlesList());
     dispatch(articlesPageActions.initState());
+    dispatch(fetchArticlesList({ page: 1 }));
   });
 
   if (articlesError) {
@@ -68,7 +74,10 @@ const ArticlesPage: FC<ArticlesPageProps> = (props) => {
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <div className={getClassNames(styles.articlesPage, {}, [className])}>
+      <Page
+        onScrollEnd={handleNextPart}
+        className={getClassNames(styles.articlesPage, {}, [className])}
+      >
         <ArticleViewSelector
           view={articlesView}
           onViewClick={handleChangeView}
@@ -78,7 +87,7 @@ const ArticlesPage: FC<ArticlesPageProps> = (props) => {
           view={articlesView}
           articles={articles}
         />
-      </div>
+      </Page>
     </DynamicModuleLoader>
   );
 };

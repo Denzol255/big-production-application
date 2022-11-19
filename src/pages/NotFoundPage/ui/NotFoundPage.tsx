@@ -1,6 +1,7 @@
 import { FC, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { getClassNames } from 'shared/lib/getClassNames/getClassNames';
+import { Page } from 'shared/ui/Page/Page';
 import styles from './NotFoundPage.module.scss';
 
 interface NotFoundPageProps {
@@ -11,8 +12,8 @@ export const NotFoundPage: FC<NotFoundPageProps> = memo((props) => {
   const { t } = useTranslation();
   const { className } = props;
   return (
-    <div className={getClassNames(styles.notFound, {}, [className])}>
+    <Page className={getClassNames(styles.notFound, {}, [className])}>
       {t('Not Found')}
-    </div>
+    </Page>
   );
 });
