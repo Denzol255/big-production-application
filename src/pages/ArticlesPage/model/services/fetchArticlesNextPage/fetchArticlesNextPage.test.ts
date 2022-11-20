@@ -18,7 +18,7 @@ describe('fetchArticlesNextPage test', () => {
     });
     await newTestAsyncThunk.callThunk();
     expect(newTestAsyncThunk.dispatch).toBeCalledTimes(4);
-    expect(fetchArticlesList).toHaveBeenCalledWith({ page: 3 });
+    expect(fetchArticlesList).toHaveBeenCalledWith({});
   });
 
   test('no more data from server', async () => {

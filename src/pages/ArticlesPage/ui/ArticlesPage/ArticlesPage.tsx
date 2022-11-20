@@ -1,11 +1,8 @@
-import {
-  ArticleList,
-  ArticleView,
-  ArticleViewSelector,
-} from 'entities/Article';
+import { ArticleList } from 'entities/Article';
 import { t } from 'i18next';
 import { FC, useCallback } from 'react';
 import { useSelector } from 'react-redux';
+import { useSearchParams } from 'react-router-dom';
 import {
   DynamicModuleLoader,
   ReducersList,
@@ -23,10 +20,10 @@ import {
 import { fetchArticlesNextPage } from '../../model/services/fetchArticlesNextPage/fetchArticlesNextPage';
 import { initArticles } from '../../model/services/initArticles/initArticles';
 import {
-  articlesPageActions,
   articlesPageReducer,
   getArticles,
 } from '../../model/slices/articlePageSlice';
+import ArticlesPageFilters from '../ArticlesPageFilters/ArticlesPageFilters';
 import styles from './ArticlesPage.module.scss';
 
 interface ArticlesPageProps {
@@ -44,20 +41,15 @@ const ArticlesPage: FC<ArticlesPageProps> = (props) => {
   const articlesIsLoading = useSelector(getArticlesIsLoading);
   const articlesError = useSelector(getArticlesError);
   const articlesView = useSelector(getArticlesView);
-
-  const handleChangeView = useCallback(
-    (view: ArticleView) => {
-      dispatch(articlesPageActions.setView(view));
-    },
-    [dispatch]
-  );
+  const [searchParams] = useSearchParams();
+  console.log(searchParams);
 
   const handleNextPart = useCallback(() => {
     dispatch(fetchArticlesNextPage());
   }, [dispatch]);
 
   useInitialEffect(() => {
-    dispatch(initArticles());
+    dispatch(initArticles(searchParams));
   });
 
   if (articlesError) {
@@ -79,11 +71,9 @@ const ArticlesPage: FC<ArticlesPageProps> = (props) => {
         onScrollEnd={handleNextPart}
         className={getClassNames(styles.articlesPage, {}, [className])}
       >
-        <ArticleViewSelector
-          view={articlesView}
-          onViewClick={handleChangeView}
-        />
+        <ArticlesPageFilters />
         <ArticleList
+          className={styles.list}
           isLoading={articlesIsLoading}
           view={articlesView}
           articles={articles}

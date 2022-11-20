@@ -70,9 +70,8 @@
 }
 
 .GRID {
-  max-width: 270px;
+  width: 270px;
   transition: 0.2s;
-  margin: 0 30px 30px 0;
 
   .date {
     position: absolute;
@@ -117,7 +116,7 @@
     text-overflow: ellipsis;
   }
 
-  .viewWrapper {
+  .viewsWrapper {
     display: flex;
   }
 

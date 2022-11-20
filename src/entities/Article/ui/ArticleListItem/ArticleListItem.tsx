@@ -97,7 +97,7 @@ const ArticleListItem = memo((props: ArticleListItemProps) => {
         </div>
         <div className={styles.infoWrapper}>
           {types}
-          <div className={styles.viewWrapper}>{views}</div>
+          {views}
         </div>
         <Text text={article.title} className={styles.title} />
       </Card>

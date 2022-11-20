@@ -68,7 +68,7 @@
       "title": "Javascript news",
       "type": ["IT"],
       "userId": "1",
-      "views": 1022
+      "views": 2314
     },
     {
       "blocks": [
@@ -95,7 +95,7 @@
       "title": "Python news",
       "type": ["IT"],
       "userId": "1",
-      "views": 1022
+      "views": 343
     },
     {
       "blocks": [
@@ -165,7 +165,7 @@
       "title": "Typescript news",
       "type": ["IT"],
       "userId": "1",
-      "views": 1022
+      "views": 45656
     },
     {
       "blocks": [
@@ -185,14 +185,14 @@
           "type": "CODE"
         }
       ],
-      "createdAt": "26.02.2022",
+      "createdAt": "26.02.2019",
       "id": "4",
-      "img": "https://www.tutorialbar.com/wp-content/uploads/3145740_fdaa-2048x1152.jpeg",
+      "img": "https://static.tildacdn.com/tild3231-3035-4863-b161-396462666132/1_.png",
       "subtitle": "Что нового в Python за 2022 год?",
-      "title": "Python news",
+      "title": "C# news",
       "type": ["IT"],
       "userId": "1",
-      "views": 1022
+      "views": 111
     },
     {
       "blocks": [
@@ -255,14 +255,14 @@
           "type": "TEXT"
         }
       ],
-      "createdAt": "26.02.2022",
+      "createdAt": "12.02.2020",
       "id": "5",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/800px-Typescript_logo_2020.svg.png",
+      "img": "https://i.pinimg.com/originals/bc/3f/04/bc3f04efca03c6b2661c9e9500b9a549.png",
       "subtitle": "Что нового в Typescript за 2022 год?",
-      "title": "Typescript news",
+      "title": "Ruby news",
       "type": ["IT"],
       "userId": "1",
-      "views": 1022
+      "views": 45454
     },
     {
       "blocks": [
@@ -282,14 +282,14 @@
           "type": "CODE"
         }
       ],
-      "createdAt": "26.02.2022",
+      "createdAt": "26.12.2021",
       "id": "6",
-      "img": "https://www.tutorialbar.com/wp-content/uploads/3145740_fdaa-2048x1152.jpeg",
+      "img": "https://cdn.worldvectorlogo.com/logos/java.svg",
       "subtitle": "Что нового в Python за 2022 год?",
-      "title": "Python news",
+      "title": "Java news",
       "type": ["IT"],
       "userId": "1",
-      "views": 1022
+      "views": 1011122
     },
     {
       "blocks": [
@@ -352,14 +352,14 @@
           "type": "TEXT"
         }
       ],
-      "createdAt": "26.02.2022",
+      "createdAt": "29.09.2020",
       "id": "7",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/800px-Typescript_logo_2020.svg.png",
+      "img": "https://myeditor.ru/wp-content/uploads/5/a/c/5aca578c5257de7968382788ac9b7b3a.png",
       "subtitle": "Что нового в Typescript за 2022 год?",
-      "title": "Typescript news",
+      "title": "Go news",
       "type": ["IT"],
       "userId": "1",
-      "views": 1022
+      "views": 199
     },
     {
       "blocks": [
@@ -379,14 +379,14 @@
           "type": "CODE"
         }
       ],
-      "createdAt": "26.02.2022",
+      "createdAt": "16.01.2019",
       "id": "8",
-      "img": "https://www.tutorialbar.com/wp-content/uploads/3145740_fdaa-2048x1152.jpeg",
+      "img": "https://fb.ru/misc/i/gallery/101519/2842647.jpg",
       "subtitle": "Что нового в Python за 2022 год?",
       "title": "Python news",
       "type": ["IT"],
       "userId": "1",
-      "views": 1022
+      "views": 200
     },
     {
       "blocks": [
@@ -476,14 +476,14 @@
           "type": "CODE"
         }
       ],
-      "createdAt": "26.02.2022",
+      "createdAt": "12.12.2022",
       "id": "10",
       "img": "https://www.tutorialbar.com/wp-content/uploads/3145740_fdaa-2048x1152.jpeg",
       "subtitle": "Что нового в Python за 2022 год?",
       "title": "Python news",
       "type": ["IT"],
       "userId": "1",
-      "views": 1022
+      "views": 33
     },
     {
       "blocks": [
@@ -546,14 +546,14 @@
           "type": "TEXT"
         }
       ],
-      "createdAt": "26.02.2022",
+      "createdAt": "09.05.2010",
       "id": "11",
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/800px-Typescript_logo_2020.svg.png",
       "subtitle": "Что нового в Typescript за 2022 год?",
       "title": "Typescript news",
       "type": ["IT"],
       "userId": "1",
-      "views": 1022
+      "views": 566
     },
     {
       "blocks": [
@@ -573,14 +573,14 @@
           "type": "CODE"
         }
       ],
-      "createdAt": "26.02.2022",
+      "createdAt": "11.11.2022",
       "id": "12",
       "img": "https://www.tutorialbar.com/wp-content/uploads/3145740_fdaa-2048x1152.jpeg",
       "subtitle": "Что нового в Python за 2022 год?",
       "title": "Python news",
       "type": ["IT"],
       "userId": "1",
-      "views": 1022
+      "views": 999
     },
     {
       "blocks": [
@@ -643,14 +643,14 @@
           "type": "TEXT"
         }
       ],
-      "createdAt": "26.02.2022",
+      "createdAt": "12.09.2012",
       "id": "13",
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/800px-Typescript_logo_2020.svg.png",
       "subtitle": "Что нового в Typescript за 2022 год?",
       "title": "Typescript news",
       "type": ["IT"],
       "userId": "1",
-      "views": 1022
+      "views": 444
     },
     {
       "blocks": [
@@ -670,14 +670,14 @@
           "type": "CODE"
         }
       ],
-      "createdAt": "26.02.2022",
+      "createdAt": "21.08.2013",
       "id": "14",
       "img": "https://www.tutorialbar.com/wp-content/uploads/3145740_fdaa-2048x1152.jpeg",
       "subtitle": "Что нового в Python за 2022 год?",
       "title": "Python news",
       "type": ["IT"],
       "userId": "1",
-      "views": 1022
+      "views": 454
     },
     {
       "blocks": [

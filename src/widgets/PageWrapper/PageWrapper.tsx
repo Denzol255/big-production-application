@@ -53,7 +53,9 @@ export const PageWrapper: FC<PageWrapperProps> = (props) => {
       className={getClassNames(styles.pageWrapper, {}, [className])}
     >
       {children}
-      <div className={styles.loadTrigger} ref={targetRef} />
+      {onScrollEnd ? (
+        <div className={styles.loadTrigger} ref={targetRef} />
+      ) : null}
     </section>
   );
 };

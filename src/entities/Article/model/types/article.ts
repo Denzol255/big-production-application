@@ -13,6 +13,12 @@ export interface ArticleBlockBase {
   paragraphs: string[];
 }
 
+export enum ArticlesSortField {
+  VIEWS = 'views',
+  TITLE = 'title',
+  CREATED = 'createdAt',
+}
+
 export enum ArticleBlockType {
   TEXT = 'TEXT',
   CODE = 'CODE',

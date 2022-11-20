@@ -14,7 +14,7 @@ interface CurrencySelectProps {
 export const CurrencySelect: FC<CurrencySelectProps> = memo((props) => {
   const { t } = useTranslation();
   const { value, onChange, readonly, className } = props;
-  const currencyOptions = useMemo<SelectOption[]>(() => {
+  const currencyOptions = useMemo<SelectOption<Currency>[]>(() => {
     return [
       { value: Currency.RUB, text: '₽(RUB)' },
       { value: Currency.EUR, text: '€(EUR)' },

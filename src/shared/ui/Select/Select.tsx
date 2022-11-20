@@ -1,22 +1,22 @@
-import { ChangeEvent, FC, memo, useMemo } from 'react';
+import { ChangeEvent, useMemo } from 'react';
 import { getClassNames } from 'shared/lib/getClassNames/getClassNames';
 import styles from './Select.module.scss';
 
-export interface SelectOption {
-  value: string;
+export interface SelectOption<T extends string> {
+  value: T;
   text: string;
 }
 
-interface SelectProps {
+interface SelectProps<T extends string> {
   className?: string;
-  options: SelectOption[];
+  options: SelectOption<T>[];
   label?: string;
-  value?: string;
-  onChange?: (value: string) => void;
+  value?: T;
+  onChange?: (value: T) => void;
   readonly?: boolean;
 }
 
-export const Select: FC<SelectProps> = memo((props) => {
+export const Select = <T extends string>(props: SelectProps<T>) => {
   const { className, options, label, value, onChange, readonly } = props;
 
   const optionsList = useMemo(() => {
@@ -28,7 +28,7 @@ export const Select: FC<SelectProps> = memo((props) => {
   }, [options]);
 
   const onChangeHandler = (e: ChangeEvent<HTMLSelectElement>) => {
-    onChange?.(e.target.value);
+    onChange?.(e.target.value as T);
   };
 
   return (
@@ -52,4 +52,4 @@ export const Select: FC<SelectProps> = memo((props) => {
       </select>
     </div>
   );
-});
+};

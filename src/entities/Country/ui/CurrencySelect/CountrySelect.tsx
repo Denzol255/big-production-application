@@ -14,7 +14,7 @@ interface CountrySelectProps {
 export const CountrySelect: FC<CountrySelectProps> = memo((props) => {
   const { t } = useTranslation();
   const { value, onChange, readonly, className } = props;
-  const countryOptions = useMemo<SelectOption[]>(() => {
+  const countryOptions = useMemo<SelectOption<Country>[]>(() => {
     return [
       { value: Country.RUSSIA, text: t(Country.RUSSIA) },
       { value: Country.ARMENIA, text: t(Country.ARMENIA) },

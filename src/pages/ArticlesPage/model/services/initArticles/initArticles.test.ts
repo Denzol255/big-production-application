@@ -7,6 +7,7 @@ jest.mock('../fetchArticlesList/fetchArticlesList');
 jest.mock('../../slices/articlePageSlice');
 
 describe('initArticles.test test', () => {
+  const params = new URLSearchParams();
   test('inited', async () => {
     const newTestAsyncThunk = new TestAsyncThunk(initArticles, {
       articlesPage: {
@@ -19,7 +20,7 @@ describe('initArticles.test test', () => {
         _inited: true,
       },
     });
-    await newTestAsyncThunk.callThunk();
+    await newTestAsyncThunk.callThunk(params);
     expect(articlesPageActions.initState).not.toHaveBeenCalled();
     expect(fetchArticlesList).not.toHaveBeenCalled();
   });
@@ -36,7 +37,7 @@ describe('initArticles.test test', () => {
         _inited: false,
       },
     });
-    await newTestAsyncThunk.callThunk();
+    await newTestAsyncThunk.callThunk(params);
     expect(articlesPageActions.initState).toHaveBeenCalled();
     expect(fetchArticlesList).toHaveBeenCalled();
   });
