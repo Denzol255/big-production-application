@@ -578,7 +578,7 @@
       "img": "https://www.tutorialbar.com/wp-content/uploads/3145740_fdaa-2048x1152.jpeg",
       "subtitle": "Что нового в Python за 2022 год?",
       "title": "Python news",
-      "type": ["IT"],
+      "type": ["MEDICINE"],
       "userId": "1",
       "views": 999
     },
@@ -772,7 +772,7 @@
       "img": "https://www.tutorialbar.com/wp-content/uploads/3145740_fdaa-2048x1152.jpeg",
       "subtitle": "Что нового в Python за 2022 год?",
       "title": "Python news",
-      "type": ["IT"],
+      "type": ["ECONOMIC"],
       "userId": "1",
       "views": 1022
     },
@@ -842,7 +842,7 @@
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/800px-Typescript_logo_2020.svg.png",
       "subtitle": "Что нового в Typescript за 2022 год?",
       "title": "Typescript news",
-      "type": ["IT"],
+      "type": ["ECONOMIC"],
       "userId": "1",
       "views": 1022
     },
@@ -869,7 +869,7 @@
       "img": "https://www.tutorialbar.com/wp-content/uploads/3145740_fdaa-2048x1152.jpeg",
       "subtitle": "Что нового в Python за 2022 год?",
       "title": "Python news",
-      "type": ["IT"],
+      "type": ["SCIENCE"],
       "userId": "1",
       "views": 1022
     },
@@ -939,7 +939,7 @@
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/800px-Typescript_logo_2020.svg.png",
       "subtitle": "Что нового в Typescript за 2022 год?",
       "title": "Typescript news",
-      "type": ["IT"],
+      "type": ["MEDICINE"],
       "userId": "1",
       "views": 1022
     }

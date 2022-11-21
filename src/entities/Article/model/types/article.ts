@@ -1,10 +1,11 @@
 import { User } from 'entities/User';
 
 export enum ArticleType {
+  ALL = 'ALL',
   IT = 'IT',
   MEDICINE = 'MEDICINE',
   ECONOMIC = 'ECONOMIC',
-  SCIENCE = 'MEDICINE',
+  SCIENCE = 'SCIENCE',
 }
 
 export interface ArticleBlockBase {

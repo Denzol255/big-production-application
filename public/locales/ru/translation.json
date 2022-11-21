@@ -1,6 +1,7 @@
 {
   "About": "О сайте",
   "Age": "Возраст",
+  "All": "Все",
   "An error occurred while loading the article": "Произошла ошибка при загрузке статьи",
   "An error occurred while loading the profile": "Произошла ошибка при загрузке профиля",
   "Armenia": "Армения",
@@ -20,6 +21,7 @@
   "Creation date": "Дата создания",
   "Data not specified": "Не указаны данные",
   "Descending": "Убыванию",
+  "Economic": "Экономика",
   "Edit": "Редактировать",
   "Enter": "Введите",
   "Error while getting data from server": "Ошибка при получении данных с сервера",
@@ -28,10 +30,12 @@
   "Field": "поле",
   "First and last name are required": "Имя и фамилия обязательны",
   "Go to home page": "Вернутся на главную",
+  "IT": "Айти",
   "Incorrect age": "Некорректный возраст",
   "Incorrect username or password": "Неверно указан логин или пароль",
   "Login": "Логин",
   "Main": "Главная",
+  "Medicine": "Медицина",
   "My App": "Мое приложение",
   "No comments": "Комментарии отсутствуют",
   "Not Found": "Страница не найдена",
@@ -44,6 +48,7 @@
   "Reload page": "Перезагрузить страницу",
   "Russia": "Россия",
   "Save": "Сохранить",
+  "Science": "Наука",
   "Search value": "Поисковой запрос",
   "Send": "Отправить",
   "Sign in": "Войти",
@@ -67,5 +72,6 @@
   "Your username": "Ваш никнейм",
   "_LanguageShort_": "RU",
   "_Language_": "Русский",
-  "code": "код"
+  "code": "код",
+  "Not found any articles": "Статьи не были найдены"
 }

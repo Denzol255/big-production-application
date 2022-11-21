@@ -1,5 +1,7 @@
 import { memo } from 'react';
+import { useTranslation } from 'react-i18next';
 import { getClassNames } from 'shared/lib/getClassNames/getClassNames';
+import { Text, TextSize } from 'shared/ui/Text/Text';
 import { Article, ArticleView } from '../../model/types/article';
 import ArticleListItem from '../ArticleListItem/ArticleListItem';
 import ArticleListItemSceleton from '../ArticleListItem/ArticleListItemSceleton';
@@ -23,6 +25,15 @@ export const ArticleList = memo((props: ArticleListProps) => {
   const renderArticle = (article: Article) => {
     return <ArticleListItem view={view} article={article} key={article.id} />;
   };
+  const { t } = useTranslation();
+
+  if (!isLoading && !articles.length) {
+    return (
+      <div className={getClassNames(styles.articlesPage, {}, [className])}>
+        <Text size={TextSize.LARGE} title={t('Not found any articles')} />
+      </div>
+    );
+  }
 
   return (
     <div

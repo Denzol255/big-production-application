@@ -1,6 +1,6 @@
 import { ArticleList } from 'entities/Article';
-import { t } from 'i18next';
 import { FC, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { useSearchParams } from 'react-router-dom';
 import {
@@ -42,10 +42,12 @@ const ArticlesPage: FC<ArticlesPageProps> = (props) => {
   const articlesError = useSelector(getArticlesError);
   const articlesView = useSelector(getArticlesView);
   const [searchParams] = useSearchParams();
-  console.log(searchParams);
+  const { t } = useTranslation();
 
   const handleNextPart = useCallback(() => {
-    dispatch(fetchArticlesNextPage());
+    if (__PROJECT__ !== 'storybook') {
+      dispatch(fetchArticlesNextPage());
+    }
   }, [dispatch]);
 
   useInitialEffect(() => {

@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from 'app/providers/StoreProvider';
 import { AxiosError } from 'axios';
-import { Article } from 'entities/Article';
+import { Article, ArticleType } from 'entities/Article';
 import { addQueryParams } from 'shared/lib/url/addQueryParams/addQueryParams';
 import {
   getArticlesLimit,
@@ -9,6 +9,7 @@ import {
   getArticlesPage,
   getArticlesSearch,
   getArticlesSortField,
+  getArticlesType,
 } from '../../selectors/articlesPage';
 
 interface FetchArticlesListProps {
@@ -26,12 +27,14 @@ export const fetchArticlesList = createAsyncThunk<
   const articlesSearchValue = getArticlesSearch(getState());
   const articlesSortField = getArticlesSortField(getState());
   const articlesPage = getArticlesPage(getState());
+  const articlesType = getArticlesType(getState());
 
   try {
     addQueryParams({
       articlesSortField,
       articlesSortOrder,
       articlesSearchValue,
+      articlesType,
     });
     const response = await extra.api.get<Article[]>('/articles', {
       params: {
@@ -41,6 +44,7 @@ export const fetchArticlesList = createAsyncThunk<
         q: articlesSearchValue,
         _sort: articlesSortField,
         _order: articlesSortOrder,
+        type: articlesType === ArticleType.ALL ? undefined : articlesType,
       },
     });
 
