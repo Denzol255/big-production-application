@@ -48,7 +48,14 @@ module.exports = {
       'warn',
       {
         markupOnly: true,
-        ignoreAttribute: ['data-testid', 'to', 'fill', 'inputName', 'name'],
+        ignoreAttribute: [
+          'data-testid',
+          'to',
+          'fill',
+          'inputName',
+          'name',
+          'target',
+        ],
       },
     ],
     '@typescript-eslint/ban-ts-comment': OFF,

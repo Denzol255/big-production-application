@@ -1,10 +1,11 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import { memo, useCallback } from 'react';
+import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import EyeIcon from 'shared/assets/icons/eyeIcon.svg';
 import { RoutePath } from 'shared/config/routerConfig/RouteConfig';
 import { getClassNames } from 'shared/lib/getClassNames/getClassNames';
+import { AppLink } from 'shared/ui/AppLink/AppLink';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Button } from 'shared/ui/Button/Button';
 import { Card } from 'shared/ui/Card/Card';
@@ -23,10 +24,11 @@ interface ArticleListItemProps {
   className?: string;
   article: Article;
   view: ArticleView;
+  target?: HTMLAttributeAnchorTarget;
 }
 
 const ArticleListItem = memo((props: ArticleListItemProps) => {
-  const { className, view, article } = props;
+  const { className, view, article, target } = props;
   const { t } = useTranslation();
 
   const views = (
@@ -38,9 +40,6 @@ const ArticleListItem = memo((props: ArticleListItemProps) => {
 
   const types = <Text className={styles.types} text={article.type.join(',')} />;
   const navigate = useNavigate();
-  const handleOpenArticle = useCallback(() => {
-    navigate(RoutePath.articles_details + article.id);
-  }, [article.id, navigate]);
 
   if (view === ArticleView.LIST) {
     const textBlock = article.blocks.find(
@@ -53,7 +52,7 @@ const ArticleListItem = memo((props: ArticleListItemProps) => {
           styles[view],
         ])}
       >
-        <Card className={styles.listCard} onClick={handleOpenArticle}>
+        <Card className={styles.listCard}>
           <div className={styles.articleTop}>
             <div className={styles.imageUsernameBlock}>
               <Avatar
@@ -75,7 +74,9 @@ const ArticleListItem = memo((props: ArticleListItemProps) => {
             />
           )}
           <div className={styles.footer}>
-            <Button onClick={handleOpenArticle}>{t('Read more')}...</Button>
+            <AppLink to={RoutePath.articles_details + article.id}>
+              <Button>{t('Read more')}...</Button>
+            </AppLink>
             {views}
           </div>
         </Card>
@@ -84,13 +85,15 @@ const ArticleListItem = memo((props: ArticleListItemProps) => {
   }
 
   return (
-    <div
+    <AppLink
+      target={target}
+      to={RoutePath.articles_details + article.id}
       className={getClassNames(styles.articleListItem, {}, [
         className,
         styles[view],
       ])}
     >
-      <Card className={styles.gridCard} onClick={handleOpenArticle}>
+      <Card className={styles.gridCard}>
         <div className={styles.imageWrapper}>
           <img src={article.img} className={styles.img} alt={article.title} />
           <Text text={article.createdAt} className={styles.date} />
@@ -101,7 +104,7 @@ const ArticleListItem = memo((props: ArticleListItemProps) => {
         </div>
         <Text text={article.title} className={styles.title} />
       </Card>
-    </div>
+    </AppLink>
   );
 });
 

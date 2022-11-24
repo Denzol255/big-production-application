@@ -4,3 +4,10 @@
 .articleCommentListTitle {
   margin: 20px 0;
 }
+
+.recommendations {
+  flex-wrap: nowrap !important;
+  overflow-y: hidden;
+  overflow-x: auto;
+  padding: 0 10px;
+}

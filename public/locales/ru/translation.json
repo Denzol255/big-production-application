@@ -44,7 +44,7 @@
   "Password": "Пароль",
   "Picture": "Изображение",
   "Profile": "Профиль",
-  "Read more": "Читать далее...",
+  "Read more": "Читать далее",
   "Reload page": "Перезагрузить страницу",
   "Russia": "Россия",
   "Save": "Сохранить",
@@ -73,5 +73,6 @@
   "_LanguageShort_": "RU",
   "_Language_": "Русский",
   "code": "код",
-  "Not found any articles": "Статьи не были найдены"
+  "Not found any articles": "Статьи не были найдены",
+  "Recommendations": "Рекомендации"
 }
