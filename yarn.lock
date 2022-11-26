@@ -4166,9 +4166,9 @@
     "uri-js" "^4.2.2"
 
 "ajv@^8.8.0", "ajv@^8.8.2":
-  "integrity" "sha512-bzqAEZOjkrUMl2afH8dknrq5KEk2SrwdBROR+vH1EKVQTqaUbJVPdc/gEdggTMM0Se+s+Ja4ju4TlNcStKl2Hw=="
-  "resolved" "https://registry.npmjs.org/ajv/-/ajv-8.10.0.tgz"
-  "version" "8.10.0"
+  "integrity" "sha512-E4bfmKAhGiSTvMfL1Myyycaub+cUEU2/IvpylXkUu7CHBkBj1f/ikdzbD7YQ6FKUbixDxeYvB/xY4fvyroDlQg=="
+  "resolved" "https://registry.npmjs.org/ajv/-/ajv-8.11.2.tgz"
+  "version" "8.11.2"
   dependencies:
     "fast-deep-equal" "^3.1.1"
     "json-schema-traverse" "^1.0.0"
@@ -5849,6 +5849,18 @@
   "version" "3.3.1"
   dependencies:
     "toggle-selection" "^1.0.6"
+
+"copy-webpack-plugin@^11.0.0":
+  "integrity" "sha512-fX2MWpamkW0hZxMEg0+mYnA40LTosOSa5TqZ9GYIBzyJa9C3QUaMPSE2xAi/buNr8u89SfD9wHSQVBzrRa/SOQ=="
+  "resolved" "https://registry.npmjs.org/copy-webpack-plugin/-/copy-webpack-plugin-11.0.0.tgz"
+  "version" "11.0.0"
+  dependencies:
+    "fast-glob" "^3.2.11"
+    "glob-parent" "^6.0.1"
+    "globby" "^13.1.1"
+    "normalize-path" "^3.0.0"
+    "schema-utils" "^4.0.0"
+    "serialize-javascript" "^6.0.0"
 
 "core-js-compat@^3.20.2", "core-js-compat@^3.21.0", "core-js-compat@^3.8.1":
   "integrity" "sha512-gbgX5AUvMb8gwxC7FLVWYT7Kkgu/y7+h/h1X43yJkNqhlK2fuYyQimqvKGNZFAY6CKii/GFKJ2cp/1/42TN36g=="
@@ -8006,6 +8018,17 @@
     "ignore" "^5.2.0"
     "merge2" "^1.4.1"
     "slash" "^3.0.0"
+
+"globby@^13.1.1":
+  "integrity" "sha512-LKSDZXToac40u8Q1PQtZihbNdTYSNMuWe+K5l+oa6KgDzSvVrHXlJy40hUP522RjAIoNLJYBJi7ow+rbFpIhHQ=="
+  "resolved" "https://registry.npmjs.org/globby/-/globby-13.1.2.tgz"
+  "version" "13.1.2"
+  dependencies:
+    "dir-glob" "^3.0.1"
+    "fast-glob" "^3.2.11"
+    "ignore" "^5.2.0"
+    "merge2" "^1.4.1"
+    "slash" "^4.0.0"
 
 "globby@^9.2.0":
   "integrity" "sha512-ollPHROa5mcxDEkwg6bPt3QbEf4pDQSNtd6JPL1YvOvAo/7/0VAm9TccUeoTmarjPw4pfUthSCqcyfNB1I3ZSg=="
@@ -13530,6 +13553,11 @@
   "integrity" "sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q=="
   "resolved" "https://registry.npmjs.org/slash/-/slash-3.0.0.tgz"
   "version" "3.0.0"
+
+"slash@^4.0.0":
+  "integrity" "sha512-3dOsAHXXUkQTpOYcoAxLIorMTp4gIQr5IW3iVb7A7lFIp0VHhnynm9izx6TssdrIcVIESAlVjtnO2K8bg+Coew=="
+  "resolved" "https://registry.npmjs.org/slash/-/slash-4.0.0.tgz"
+  "version" "4.0.0"
 
 "slice-ansi@^3.0.0":
   "integrity" "sha512-pSyv7bSTC7ig9Dcgbw9AuRNUb5k5V6oDudjZoMBSr13qpLBG7tB+zgCkARjq7xIUgdz5P1Qe8u+rSGdouOOIyQ=="

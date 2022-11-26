@@ -9,14 +9,6 @@ const router = jsonServer.router(path.resolve(__dirname, 'db.json'));
 server.use(jsonServer.defaults({}));
 server.use(jsonServer.bodyParser);
 
-// Fake delay
-server.use(async (req, res, next) => {
-  await new Promise((res) => {
-    setTimeout(res, 800);
-  });
-  next();
-});
-
 // Endpoint for login
 server.post('/login', (req, res) => {
   try {
