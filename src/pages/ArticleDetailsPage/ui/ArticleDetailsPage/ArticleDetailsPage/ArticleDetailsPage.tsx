@@ -4,8 +4,7 @@ import { AddCommentForm } from 'features/addCommentForm';
 import { FC, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { useNavigate, useParams } from 'react-router-dom';
-import { RoutePath } from 'shared/config/routerConfig/RouteConfig';
+import { useParams } from 'react-router-dom';
 import {
   DynamicModuleLoader,
   ReducersList,
@@ -13,23 +12,23 @@ import {
 import { getClassNames } from 'shared/lib/getClassNames/getClassNames';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { Text, TextSize } from 'shared/ui/Text/Text';
 import { PageWrapper } from 'widgets/PageWrapper/PageWrapper';
 import {
   getArticleCommentsError,
   getArticleCommentsIsLoading,
-} from '../../model/selectors/comments';
+} from '../../../model/selectors/comments';
 import {
   getArticleRecommendationsError,
   getArticleRecommendationsIsLoading,
-} from '../../model/selectors/recommendations';
-import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
-import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
-import { fetchArticleRecommendations } from '../../model/services/fetchRecommendations/fetchRecommendations';
-import { articleDetailsPageReducer } from '../../model/slices';
-import { getArticleComments } from '../../model/slices/articleDetailsCommentsSlice';
-import { getArticleRecommendations } from '../../model/slices/articleDetailsPageRecommendationsSlice';
+} from '../../../model/selectors/recommendations';
+import { addCommentForArticle } from '../../../model/services/addCommentForArticle/addCommentForArticle';
+import { fetchCommentsByArticleId } from '../../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
+import { fetchArticleRecommendations } from '../../../model/services/fetchRecommendations/fetchRecommendations';
+import { articleDetailsPageReducer } from '../../../model/slices';
+import { getArticleComments } from '../../../model/slices/articleDetailsCommentsSlice';
+import { getArticleRecommendations } from '../../../model/slices/articleDetailsPageRecommendationsSlice';
+import ArticleDetailsPageHeader from '../../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import styles from './ArticleDetailsPage.module.scss';
 
 interface ArticleDetailsPageProps {
@@ -53,7 +52,6 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
   const recommendationsError = useSelector(getArticleRecommendationsError);
   const recommendations = useSelector(getArticleRecommendations.selectAll);
   const dispatch = useAppDispatch();
-  const navigate = useNavigate();
 
   const handleSendComment = useCallback(
     (value: string) => {
@@ -61,10 +59,6 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
     },
     [dispatch]
   );
-
-  const handleBackToList = useCallback(() => {
-    navigate(RoutePath.articles);
-  }, [navigate]);
 
   useInitialEffect(() => {
     dispatch(fetchCommentsByArticleId(id));
@@ -88,9 +82,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
       <PageWrapper
         className={getClassNames(styles.articleDetailsPage, {}, [className])}
       >
-        <Button theme={ButtonTheme.OUTLINE} onClick={handleBackToList}>
-          {t('Back to list')}
-        </Button>
+        <ArticleDetailsPageHeader />
         <ArticleDetails id={id} />
         <Text
           size={TextSize.LARGE}

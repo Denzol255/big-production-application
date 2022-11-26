@@ -5,8 +5,10 @@ import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import Logo from 'shared/assets/icons/logo.svg';
+import { RoutePath } from 'shared/config/routerConfig/RouteConfig';
 import { USER_LOCAL_STORAGE_KEY } from 'shared/constants/localstorage';
 import { getClassNames } from 'shared/lib/getClassNames/getClassNames';
+import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import styles from './Navbar.module.scss';
 
@@ -42,7 +44,18 @@ export const Navbar = memo(({ className }: NavbarProps) => {
           <Logo fill='#FAA508' className={styles.navbarLogoImage} />
           <span className={styles.navbarLogoText}>{t('My App')}</span>
         </div>
-        <Button theme={ButtonTheme.CLEAR_INVERTED} onClick={handleLogOut}>
+        <AppLink
+          className={styles.navbarCreateArticle}
+          theme={AppLinkTheme.PRIMARY_INVERTED}
+          to={RoutePath.article_create}
+        >
+          {t('Create Article')}
+        </AppLink>
+        <Button
+          className={styles.navbarSignOut}
+          theme={ButtonTheme.CLEAR_INVERTED}
+          onClick={handleLogOut}
+        >
           {t('Sign out')}
         </Button>
       </header>
