@@ -23,9 +23,11 @@ body {
   width: 12px; /* ширина scrollbar */
   height: 12px;
 }
+
 *::-webkit-scrollbar-track {
   background: var(--primary-color); /* цвет дорожки */
 }
+
 *::-webkit-scrollbar-thumb {
   background-color: var(--bg-color); /* цвет плашки */
   border-radius: 20px; /* закругления плашки */

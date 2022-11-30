@@ -1,7 +1,7 @@
 import { FC, ReactNode, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { getClassNames } from 'shared/lib/getClassNames/getClassNames';
-import { Card, CardTheme } from 'shared/ui/Card/Card';
+import { Card, CardTheme } from '../Card/Card';
 import styles from './Tabs.module.scss';
 
 export interface TabItem {

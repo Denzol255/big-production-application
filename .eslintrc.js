@@ -22,7 +22,13 @@ module.exports = {
     sourceType: 'module',
     project: ['./tsconfig.json'],
   },
-  plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks'],
+  plugins: [
+    'react',
+    '@typescript-eslint',
+    'i18next',
+    'react-hooks',
+    'denzol-plugin',
+  ],
   ignorePatterns: ['*.stories.tsx'],
   rules: {
     'comma-dangle': OFF,
@@ -55,6 +61,10 @@ module.exports = {
           'inputName',
           'name',
           'target',
+          'direction',
+          'justify',
+          'align',
+          'gap',
         ],
       },
     ],
@@ -67,6 +77,7 @@ module.exports = {
     'react/prop-types': OFF,
     'jsx-a11y/no-autofocus': OFF,
     'no-undef': OFF,
+    'denzol-plugin/path-checker': ERROR,
   },
   globals: {
     __IS_DEV__: true,

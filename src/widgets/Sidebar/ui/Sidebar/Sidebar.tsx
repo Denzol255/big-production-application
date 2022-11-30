@@ -1,8 +1,8 @@
 import { FC, memo, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
-
 import { getClassNames } from 'shared/lib/getClassNames/getClassNames';
 import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button/Button';
+import { VStack } from 'shared/ui/Stack';
 import { LanguageSwitcher } from 'widgets/LanguageSwitcher';
 import { ToggleTheme } from 'widgets/ToggleTheme';
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
@@ -36,7 +36,7 @@ export const Sidebar: FC<SidebarProps> = memo((props) => {
         [className]
       )}
     >
-      <div className={styles.sidebarItems}>{itemsList}</div>
+      <VStack className={styles.sidebarItems}>{itemsList}</VStack>
       <Button
         className={styles.sidebarToggleBtn}
         theme={ButtonTheme.BACKGROUND}

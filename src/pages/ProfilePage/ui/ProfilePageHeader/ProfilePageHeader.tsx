@@ -9,8 +9,8 @@ import { useSelector } from 'react-redux';
 import { getClassNames } from 'shared/lib/getClassNames/getClassNames';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
+import { HStack } from 'shared/ui/Stack';
 import { Text } from 'shared/ui/Text/Text';
-import styles from './ProfilePageHeader.module.scss';
 
 interface ProfilePageHeaderProps {
   className?: string;
@@ -36,42 +36,32 @@ export const ProfilePageHeader: FC<ProfilePageHeaderProps> = (props) => {
   }, [dispatch]);
 
   return (
-    <div className={getClassNames(styles.profileHeader, {}, [className])}>
-      <div className={styles.profileHeader}>
-        <Text title={t('Profile')} />
-        <div className={styles.profileHeaderButtons}>
-          {canEdit && (
-            <div className={styles.btnsWrapper}>
-              {readonly ? (
-                <Button
-                  theme={ButtonTheme.PRIMARY}
-                  className={styles.profileHeaderButtonOnEdit}
-                  onClick={onEdit}
-                >
-                  {t('Edit')}
+    <HStack
+      maxWidth
+      justify='between'
+      className={getClassNames('', {}, [className])}
+    >
+      <Text title={t('Profile')} />
+      <>
+        {canEdit && (
+          <HStack>
+            {readonly ? (
+              <Button theme={ButtonTheme.PRIMARY} onClick={onEdit}>
+                {t('Edit')}
+              </Button>
+            ) : (
+              <>
+                <Button theme={ButtonTheme.PRIMARY} onClick={onSave}>
+                  {t('Save')}
                 </Button>
-              ) : (
-                <>
-                  <Button
-                    theme={ButtonTheme.PRIMARY}
-                    onClick={onSave}
-                    className={styles.profileHeaderButtonSave}
-                  >
-                    {t('Save')}
-                  </Button>
-                  <Button
-                    theme={ButtonTheme.DANGER}
-                    onClick={onCancelEdit}
-                    className={styles.profileHeaderButtonCancel}
-                  >
-                    {t('Cancel')}
-                  </Button>
-                </>
-              )}
-            </div>
-          )}
-        </div>
-      </div>
-    </div>
+                <Button theme={ButtonTheme.DANGER} onClick={onCancelEdit}>
+                  {t('Cancel')}
+                </Button>
+              </>
+            )}
+          </HStack>
+        )}
+      </>
+    </HStack>
   );
 };

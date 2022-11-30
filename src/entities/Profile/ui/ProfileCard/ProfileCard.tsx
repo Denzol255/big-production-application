@@ -6,6 +6,7 @@ import { getClassNames } from 'shared/lib/getClassNames/getClassNames';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Input, InputTheme } from 'shared/ui/Input/Input';
 import { Loader } from 'shared/ui/Loader/Loader';
+import { VStack } from 'shared/ui/Stack';
 import { Text, TextAlign, TextTheme } from 'shared/ui/Text/Text';
 import { Profile } from '../../model/types/profile';
 import styles from './ProfileCard.module.scss';
@@ -81,7 +82,7 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
 
   return (
     <div className={getClassNames(styles.profileCard, mods, [className])}>
-      <div className={styles.profileData}>
+      <VStack gap='16' align='start'>
         <Avatar size={150} src={formData?.avatar} alt={t('Avatar')} />
         <Input
           theme={InputTheme.INVERTED_LABEL}
@@ -149,7 +150,7 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
           onChange={handleCountry}
           readonly={readonly}
         />
-      </div>
+      </VStack>
     </div>
   );
 };

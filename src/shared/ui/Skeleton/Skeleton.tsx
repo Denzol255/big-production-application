@@ -1,4 +1,4 @@
-import { CSSProperties, FC } from 'react';
+import { CSSProperties, FC, memo } from 'react';
 import { getClassNames } from 'shared/lib/getClassNames/getClassNames';
 import styles from './Skeleton.module.scss';
 interface SkeletonProps {
@@ -8,7 +8,7 @@ interface SkeletonProps {
   border?: string;
 }
 
-export const Skeleton: FC<SkeletonProps> = (props) => {
+export const Skeleton: FC<SkeletonProps> = memo((props) => {
   const { className, width, height, border } = props;
 
   const styleInline: CSSProperties = {
@@ -23,4 +23,4 @@ export const Skeleton: FC<SkeletonProps> = (props) => {
       className={getClassNames(styles.skeleton, {}, [className])}
     ></div>
   );
-};
+});

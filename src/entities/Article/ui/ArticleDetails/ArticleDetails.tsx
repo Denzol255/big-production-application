@@ -1,8 +1,3 @@
-import { fetchArticleByID } from 'entities/Article/model/services/fetchArticleByID/fetchArticleByID';
-import {
-  ArticleBlock,
-  ArticleBlockType,
-} from 'entities/Article/model/types/article';
 import { FC, memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
@@ -24,8 +19,10 @@ import {
   getArticleDetailsError,
   getArticleDetailsIsLoading,
 } from '../../model/selectors/articleDetails';
+import { fetchArticleByID } from '../../model/services/fetchArticleByID/fetchArticleByID';
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
-import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
+import { ArticleBlock, ArticleBlockType } from '../../model/types/article';
+import { ArticleCodeBlockComponent } from '../../ui/ArticleCodeBlockComponent/ArticleCodeBlockComponent';
 import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleCodeImageComponent';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import styles from './ArticleDetails.module.scss';

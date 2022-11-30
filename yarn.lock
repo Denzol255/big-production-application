@@ -6958,6 +6958,13 @@
     "debug" "^3.2.7"
     "find-up" "^2.1.0"
 
+"eslint-plugin-denzol-plugin@^0.0.4":
+  "integrity" "sha512-zFk0JsKivr/nZd0tHB9JpzBZsxGhvzBnV3/8qRdDUwBYFM4XYJIbCDLCZrxdB/GrrUZxLoVQFvZnsJdQhA30Fg=="
+  "resolved" "https://registry.npmjs.org/eslint-plugin-denzol-plugin/-/eslint-plugin-denzol-plugin-0.0.4.tgz"
+  "version" "0.0.4"
+  dependencies:
+    "requireindex" "^1.2.0"
+
 "eslint-plugin-i18next@^5.1.2":
   "integrity" "sha512-YuJWaio8BE7eoWE2V3UnddwJhf3XNQ2tb7XAKZhbkeA+BWzm33ujOv6Ezm98Wjc8VCyT9NJvDyvs5/a9AG4QpQ=="
   "resolved" "https://registry.npmjs.org/eslint-plugin-i18next/-/eslint-plugin-i18next-5.1.2.tgz"
@@ -7076,7 +7083,7 @@
   "resolved" "https://registry.npmjs.org/eslint-visitor-keys/-/eslint-visitor-keys-3.3.0.tgz"
   "version" "3.3.0"
 
-"eslint@*", "eslint@^2 || ^3 || ^4 || ^5 || ^6 || ^7.2.0 || ^8", "eslint@^3 || ^4 || ^5 || ^6 || ^7 || ^8", "eslint@^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0", "eslint@^6.0.0 || ^7.0.0 || ^8.0.0", "eslint@^7.32.0 || ^8.2.0", "eslint@^8.10.0", "eslint@>= 6", "eslint@>=5", "eslint@>=6":
+"eslint@*", "eslint@^2 || ^3 || ^4 || ^5 || ^6 || ^7.2.0 || ^8", "eslint@^3 || ^4 || ^5 || ^6 || ^7 || ^8", "eslint@^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0", "eslint@^6.0.0 || ^7.0.0 || ^8.0.0", "eslint@^7.32.0 || ^8.2.0", "eslint@^8.10.0", "eslint@>= 6", "eslint@>=5", "eslint@>=6", "eslint@>=7":
   "integrity" "sha512-tcI1D9lfVec+R4LE1mNDnzoJ/f71Kl/9Cv4nG47jOueCMBrCCKYXr4AUVS7go6mWYGFD4+EoN6+eXSrEbRzXVw=="
   "resolved" "https://registry.npmjs.org/eslint/-/eslint-8.10.0.tgz"
   "version" "8.10.0"
@@ -12965,6 +12972,11 @@
   "integrity" "sha1-5UBLgVV+91225JxacgBIk/4D4WI="
   "resolved" "https://registry.npmjs.org/requireindex/-/requireindex-1.1.0.tgz"
   "version" "1.1.0"
+
+"requireindex@^1.2.0":
+  "integrity" "sha512-L9jEkOi3ASd9PYit2cwRfyppc9NoABujTP8/5gFcbERmo5jUoAKovIC3fsF17pkTnGsrByysqX+Kxd2OTNI1ww=="
+  "resolved" "https://registry.npmjs.org/requireindex/-/requireindex-1.2.0.tgz"
+  "version" "1.2.0"
 
 "requires-port@^1.0.0":
   "integrity" "sha1-kl0mAdOaxIXgkc8NpcbmlNw9yv8="

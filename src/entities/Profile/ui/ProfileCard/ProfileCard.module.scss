@@ -5,25 +5,10 @@
   min-width: 430px;
 }
 
-.profileHeader {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
-}
-
-.profileData {
-  display: flex;
-  flex-direction: column;
-}
-
 .profileInput {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-
-  &:not(:last-child) {
-    margin-bottom: 10px;
-  }
 }
 
 .loading {

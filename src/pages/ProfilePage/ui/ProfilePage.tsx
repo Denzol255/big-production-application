@@ -25,6 +25,7 @@ import {
 import { getClassNames } from 'shared/lib/getClassNames/getClassNames';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { VStack } from 'shared/ui/Stack';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { PageWrapper } from 'widgets/PageWrapper/PageWrapper';
 import styles from './ProfilePage.module.scss';
@@ -143,31 +144,33 @@ const ProfilePage = memo((props: ProfilePageProps) => {
       <PageWrapper
         className={getClassNames(styles.profilePage, {}, [className])}
       >
-        <ProfilePageHeader canEdit={canEdit} />
-        {validateErrors?.length &&
-          validateErrors.map((error) => {
-            return (
-              <Text
-                theme={TextTheme.ERROR}
-                text={validatesErrorTranslate[error]}
-                key={error}
-              />
-            );
-          })}
-        <ProfileCard
-          formData={formData}
-          error={error}
-          isLoading={isLoading}
-          handleFirstname={handleFirstname}
-          handleLastname={handleLastname}
-          handleCity={handleCity}
-          handleAge={handleAge}
-          handleUsername={handleUsername}
-          handleAvatar={handleAvatar}
-          handleCurrency={handleCurrency}
-          handleCountry={handleCountry}
-          readonly={readonly}
-        />
+        <VStack align='start' gap='32'>
+          <ProfilePageHeader canEdit={canEdit} />
+          {validateErrors?.length &&
+            validateErrors.map((error) => {
+              return (
+                <Text
+                  theme={TextTheme.ERROR}
+                  text={validatesErrorTranslate[error]}
+                  key={error}
+                />
+              );
+            })}
+          <ProfileCard
+            formData={formData}
+            error={error}
+            isLoading={isLoading}
+            handleFirstname={handleFirstname}
+            handleLastname={handleLastname}
+            handleCity={handleCity}
+            handleAge={handleAge}
+            handleUsername={handleUsername}
+            handleAvatar={handleAvatar}
+            handleCurrency={handleCurrency}
+            handleCountry={handleCountry}
+            readonly={readonly}
+          />
+        </VStack>
       </PageWrapper>
     </DynamicModuleLoader>
   );
