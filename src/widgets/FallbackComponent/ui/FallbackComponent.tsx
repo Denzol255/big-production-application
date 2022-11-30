@@ -23,7 +23,7 @@ export const FallbackComponent: FC<FallbackComponentProps> = memo((props) => {
   };
 
   return (
-    <div className={getClassNames('', {}, [className])}>
+    <div className={getClassNames('fallBackCompoenent', {}, [className])}>
       <h1>500</h1>
       <h2>
         {t('Unexpected Error')} <b>:(</b>

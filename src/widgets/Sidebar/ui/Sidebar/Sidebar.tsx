@@ -28,7 +28,7 @@ export const Sidebar: FC<SidebarProps> = memo((props) => {
   );
 
   return (
-    <menu
+    <section
       data-testid='sidebar'
       className={getClassNames(
         styles.sidebar,
@@ -36,7 +36,9 @@ export const Sidebar: FC<SidebarProps> = memo((props) => {
         [className]
       )}
     >
-      <VStack className={styles.sidebarItems}>{itemsList}</VStack>
+      <VStack role='navigation' className={styles.sidebarItems}>
+        {itemsList}
+      </VStack>
       <Button
         className={styles.sidebarToggleBtn}
         theme={ButtonTheme.BACKGROUND}
@@ -51,6 +53,6 @@ export const Sidebar: FC<SidebarProps> = memo((props) => {
         <ToggleTheme />
         <LanguageSwitcher className={styles.langSwitcher} short={collapsed} />
       </div>
-    </menu>
+    </section>
   );
 });

@@ -47,7 +47,7 @@ export const PageWrapper: FC<PageWrapperProps> = (props) => {
   }, 500);
 
   return (
-    <section
+    <main
       ref={wrapperRef}
       onScroll={handleScroll}
       className={getClassNames(styles.pageWrapper, {}, [className])}
@@ -56,6 +56,6 @@ export const PageWrapper: FC<PageWrapperProps> = (props) => {
       {onScrollEnd ? (
         <div className={styles.loadTrigger} ref={targetRef} />
       ) : null}
-    </section>
+    </main>
   );
 };

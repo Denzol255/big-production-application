@@ -1,5 +1,6 @@
 /* eslint-disable */
 import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import { Text } from 'shared/ui/Text/Text';
 import { PageWrapper } from './PageWrapper';
 
@@ -24,3 +25,4 @@ Primary.args = {
     </div>
   ),
 };
+Primary.decorators = [StoreDecorator({})];

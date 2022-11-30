@@ -38,6 +38,17 @@ export const Text: FC<TextProps> = memo((props) => {
     align = TextAlign.LEFT,
     size = TextSize.MEDIUM,
   } = props;
+
+  type HeaderType = 'h1' | 'h2' | 'h3';
+
+  const mapSizeToHeaderType: Record<TextSize, HeaderType> = {
+    [TextSize.SMALL]: 'h3',
+    [TextSize.MEDIUM]: 'h2',
+    [TextSize.LARGE]: 'h1',
+  };
+
+  const HeaderTag = mapSizeToHeaderType[size];
+
   return (
     <div
       className={getClassNames(
@@ -46,7 +57,7 @@ export const Text: FC<TextProps> = memo((props) => {
         [className, styles[size]]
       )}
     >
-      {title && <p className={styles.textTitle}>{title}</p>}
+      {title && <HeaderTag className={styles.textTitle}>{title}</HeaderTag>}
       {text && <p className={styles.textDescription}>{text}</p>}
     </div>
   );
