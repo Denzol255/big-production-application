@@ -1,0 +1,56 @@
+.listBox {
+  position: relative;
+}
+
+.listBoxBtn {
+  border: none;
+  border-radius: 5px;
+}
+
+.options {
+  position: absolute;
+  left: -45%;
+  z-index: 10000;
+  background-color: var(--listbox-bg);
+  border-radius: 8px;
+  box-shadow: 4px 4px 8px var(--listbox-bg);
+  padding: 5px;
+
+  &.bottom {
+    top: calc(100% + 10px);
+  }
+
+  &.top {
+    bottom: calc(100% + 10px);
+  }
+}
+
+.optionItem {
+  padding: 5px 10px;
+}
+
+.checkedIcon {
+  width: 20px;
+  height: 20px;
+  fill: var(--primary-color);
+  margin-right: 8px;
+}
+
+.liItem {
+  display: flex;
+  align-items: center;
+  transition: 0.2s;
+
+  &.active {
+    background-color: var(--primary-button-bg-color);
+  }
+}
+
+.disabled {
+  background-color: rgb(138 134 134);
+  opacity: 0.7;
+}
+
+.labelReadonly {
+  color: var(--secondary-color);
+}

@@ -3,5 +3,5 @@ export const enum Currency {
   USD = 'USD',
   EUR = 'EUR',
   // sweden krona
-  SEK = 'SEK ',
+  SEK = 'SEK',
 }

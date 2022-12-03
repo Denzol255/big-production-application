@@ -2,6 +2,8 @@
   "extends": ["stylelint-config-standard-scss"],
   "rules": {
     "block-no-empty": null,
+    "color-function-notation": ["modern", "legacy"],
+    "declaration-colon-newline-after": null,
     "keyframes-name-pattern": null,
     "no-duplicate-selectors": null,
     "no-empty-source": null,
@@ -11,7 +13,6 @@
       {
         "avoidEscape": false
       }
-    ],
-    "declaration-colon-newline-after": null
+    ]
   }
 }

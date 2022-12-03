@@ -1,7 +1,7 @@
 import { FC, memo, useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { getClassNames } from 'shared/lib/getClassNames/getClassNames';
-import { Select, SelectOption } from 'shared/ui/Select/Select';
+import { ListBox, ListBoxItem } from 'shared/ui/ListBox/ListBox';
 import { Country } from '../../model/types/country';
 
 interface CountrySelectProps {
@@ -14,12 +14,12 @@ interface CountrySelectProps {
 export const CountrySelect: FC<CountrySelectProps> = memo((props) => {
   const { t } = useTranslation();
   const { value, onChange, readonly, className } = props;
-  const countryOptions = useMemo<SelectOption<Country>[]>(() => {
+  const countryOptions = useMemo<ListBoxItem<Country>[]>(() => {
     return [
-      { value: Country.RUSSIA, text: t(Country.RUSSIA) },
-      { value: Country.ARMENIA, text: t(Country.ARMENIA) },
-      { value: Country.UZBEKISTAN, text: t(Country.UZBEKISTAN) },
-      { value: Country.SWEDEN, text: t(Country.SWEDEN) },
+      { value: Country.RUSSIA, content: t(Country.RUSSIA) },
+      { value: Country.ARMENIA, content: t(Country.ARMENIA) },
+      { value: Country.UZBEKISTAN, content: t(Country.UZBEKISTAN) },
+      { value: Country.SWEDEN, content: t(Country.SWEDEN) },
     ];
   }, [t]);
 
@@ -31,10 +31,10 @@ export const CountrySelect: FC<CountrySelectProps> = memo((props) => {
   );
 
   return (
-    <Select
+    <ListBox
       value={value}
       label={t('Choose country')}
-      options={countryOptions}
+      items={countryOptions}
       onChange={onChangeHandler}
       readonly={readonly}
       className={getClassNames('', {}, [className])}

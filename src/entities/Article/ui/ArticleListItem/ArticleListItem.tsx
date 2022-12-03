@@ -1,7 +1,6 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useNavigate } from 'react-router-dom';
 import EyeIcon from 'shared/assets/icons/eyeIcon.svg';
 import { RoutePath } from 'shared/config/routerConfig/RouteConfig';
 import { getClassNames } from 'shared/lib/getClassNames/getClassNames';
@@ -39,7 +38,6 @@ const ArticleListItem = memo((props: ArticleListItemProps) => {
   );
 
   const types = <Text className={styles.types} text={article.type.join(',')} />;
-  const navigate = useNavigate();
 
   if (view === ArticleView.LIST) {
     const textBlock = article.blocks.find(
