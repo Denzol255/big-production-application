@@ -5,7 +5,7 @@
   width: 100%;
   height: var(--navbar-height);
   background-color: var(--inverted-bg-color);
-  padding: 0 20px;
+  padding: 0 40px;
 }
 
 .navbarLogoContainer {
@@ -28,6 +28,6 @@
   margin-left: auto;
 }
 
-.navbarSignOut {
+.navbarDropdown {
   margin-left: 40px;
 }

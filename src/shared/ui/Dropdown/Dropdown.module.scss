@@ -1,0 +1,74 @@
+.dropdown {
+  position: relative;
+}
+
+.trigger {
+  background: none;
+  border: none;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.menuItems {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--dropdown-bg);
+  position: absolute;
+  z-index: 1000;
+  border-radius: 8px;
+  border: 1px solid var(--primary-button-bg-color);
+
+  &.bottom {
+    top: calc(100% + 5px);
+    left: -25%;
+  }
+
+  &.top {
+    bottom: calc(100% + 5px);
+    left: -25%;
+  }
+
+  &.bottomRight {
+    top: calc(100% + 5px);
+    left: 45%;
+  }
+
+  &.topRight {
+    bottom: calc(100% + 5px);
+    left: 45%;
+  }
+
+  &.bottomLeft {
+    top: calc(100% + 5px);
+    left: -100%;
+  }
+
+  &.topLeft {
+    bottom: calc(100% + 5px);
+    left: -90%;
+  }
+}
+
+.item {
+  padding: 10px 25px;
+  width: 100%;
+  border: none;
+  outline: none;
+  color: var(--primary-color);
+  cursor: pointer;
+  margin: 10px 0 0;
+
+  &.disabled {
+    cursor: not-allowed;
+  }
+
+  &:last-child {
+    margin: 10px 0;
+  }
+}
+
+.active {
+  opacity: 0.7;
+}

@@ -9,7 +9,9 @@ import { RoutePath } from 'shared/config/routerConfig/RouteConfig';
 import { USER_LOCAL_STORAGE_KEY } from 'shared/constants/localstorage';
 import { getClassNames } from 'shared/lib/getClassNames/getClassNames';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
+import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
+import { Dropdown } from 'shared/ui/Dropdown/Dropdown';
 import styles from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -51,13 +53,21 @@ export const Navbar = memo(({ className }: NavbarProps) => {
         >
           {t('Create Article')}
         </AppLink>
-        <Button
-          className={styles.navbarSignOut}
-          theme={ButtonTheme.CLEAR_INVERTED}
-          onClick={handleLogOut}
-        >
-          {t('Sign out')}
-        </Button>
+        <Dropdown
+          className={styles.navbarDropdown}
+          trigger={<Avatar size={45} src={authData.avatar} />}
+          optionsDirection='bottomLeft'
+          items={[
+            {
+              content: t('Profile'),
+              href: RoutePath.profile + authData.id,
+            },
+            {
+              content: t('Sign out'),
+              onClick: handleLogOut,
+            },
+          ]}
+        />
       </header>
     );
   }
