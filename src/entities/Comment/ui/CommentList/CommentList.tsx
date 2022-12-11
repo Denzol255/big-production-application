@@ -38,7 +38,7 @@ export const CommentList: FC<CommentListProps> = memo((props) => {
           <CommentCard
             isLoading={isLoading}
             comment={comment}
-            key={comment.toString()}
+            key={comment.id}
           />
         ))
       ) : (

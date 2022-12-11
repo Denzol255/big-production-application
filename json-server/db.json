@@ -988,6 +988,18 @@
       "id": "1",
       "text": "some comment",
       "userId": "1"
+    },
+    {
+      "articleId": "11",
+      "userId": "1",
+      "text": "2323123",
+      "id": "bBts0tp"
+    },
+    {
+      "articleId": "11",
+      "userId": "1",
+      "text": "3333",
+      "id": "c0fxOlk"
     }
   ],
   "posts": [

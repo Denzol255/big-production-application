@@ -18,10 +18,12 @@
   "Choose currency": "Välj valuta",
   "Comment text": "Kommentar text",
   "Comments": "Kommentarer",
+  "Create Article": "Skapa en artikel",
   "Creation date": "Skapandedatum",
   "Data not specified": "Data ej specificerade",
   "Descending": "Fallande",
   "Economic": "Ekonomisk",
+  "Edit": "Redigera",
   "Enter": "Ange",
   "Error while getting data from server": "Fel när data hämtades från servern",
   "Error while loading artiles list": "Fel vid laddning av artikellistan",
@@ -44,7 +46,9 @@
   "Password": "Lösenord",
   "Picture": "Bild",
   "Profile": "Profil",
+  "Profile is not found": "Profilen hittades inte",
   "Read more": "Läs mer",
+  "Recommendations": "Rekommendation",
   "Reload page": "Ladda om sidan",
   "Russia": "Ryssland",
   "Save": "Spara",
@@ -72,8 +76,5 @@
   "Your username": "Ditt användarnamn",
   "_LanguageShort_": "SV",
   "_Language_": "Svenska",
-  "code": "koda",
-  "Recommendations": "Rekommendation",
-  "Edit": "Redigera",
-  "Create Article": "Skapa en artikel"
+  "code": "koda"
 }
