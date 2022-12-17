@@ -58,7 +58,7 @@ export const ArticleRecommendationsList = memo(
         <ArticleList
           target='_blank'
           view={ArticleView.GRID}
-          articles={recommendationsArticles}
+          articles={recommendationsArticles || []}
         />
       </VStack>
     );

@@ -85,6 +85,7 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
       <VStack gap='16' align='start'>
         <Avatar size={150} src={formData?.avatar} alt={t('Avatar')} />
         <Input
+          data-testid='ProfileCard.Firstname'
           theme={InputTheme.INVERTED_LABEL}
           inputName={t('Firstname')}
           className={styles.profileInput}
@@ -94,6 +95,7 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
           readonly={readonly}
         />
         <Input
+          data-testid='ProfileCard.Lastname'
           theme={InputTheme.INVERTED_LABEL}
           inputName={t('Lastname')}
           className={styles.profileInput}

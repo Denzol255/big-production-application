@@ -50,15 +50,27 @@ export const EditableProfileHeader: FC<EditableProfileHeaderProps> = (
         {canEdit && (
           <HStack>
             {readonly ? (
-              <Button theme={ButtonTheme.PRIMARY} onClick={onEdit}>
+              <Button
+                data-testid='EditableProfileHeader.EditButton'
+                theme={ButtonTheme.PRIMARY}
+                onClick={onEdit}
+              >
                 {t('Edit')}
               </Button>
             ) : (
               <>
-                <Button theme={ButtonTheme.PRIMARY} onClick={onSave}>
+                <Button
+                  data-testid='EditableProfileHeader.SaveButton'
+                  theme={ButtonTheme.PRIMARY}
+                  onClick={onSave}
+                >
                   {t('Save')}
                 </Button>
-                <Button theme={ButtonTheme.DANGER} onClick={onCancelEdit}>
+                <Button
+                  data-testid='EditableProfileHeader.CancelButton'
+                  theme={ButtonTheme.DANGER}
+                  onClick={onCancelEdit}
+                >
                   {t('Cancel')}
                 </Button>
               </>
