@@ -1,4 +1,4 @@
-import { memo, Suspense, useCallback } from 'react';
+import { Suspense, memo, useCallback } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import {
   AppRoutesProps,
@@ -17,7 +17,11 @@ export const AppRouter = memo(() => {
         key={route.path}
         path={route.path}
         element={
-          route.authOnly ? <RequireAuth>{element}</RequireAuth> : element
+          route.authOnly ? (
+            <RequireAuth roles={route.roles}>{element}</RequireAuth>
+          ) : (
+            element
+          )
         }
       />
     );

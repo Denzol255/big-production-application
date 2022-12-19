@@ -111,9 +111,9 @@ Loading.decorators = [
   }),
 ];
 
-export const Error = Template.bind({});
-Error.args = {};
-Error.decorators = [
+export const WithError = Template.bind({});
+WithError.args = {};
+WithError.decorators = [
   StoreDecorator({
     articleDetails: {
       error: '123',

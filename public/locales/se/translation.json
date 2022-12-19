@@ -76,5 +76,8 @@
   "Your username": "Ditt användarnamn",
   "_LanguageShort_": "SV",
   "_Language_": "Svenska",
-  "code": "koda"
+  "code": "koda",
+  "Admin panel": "Admin panel",
+  "You are not allowed to access this page": "Du får inte komma åt den här sidan",
+  "Back to main page": "Tillbaka till startsidan"
 }

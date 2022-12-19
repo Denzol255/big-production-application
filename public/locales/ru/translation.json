@@ -76,5 +76,8 @@
   "Not found any articles": "Статьи не были найдены",
   "Recommendations": "Рекомендации",
   "Create Article": "Создать статью",
-  "Profile is not found": "Страница профиля не найдена"
+  "Profile is not found": "Страница профиля не найдена",
+  "Admin panel": "Панель админа",
+  "You are not allowed to access this page": "Вам запрещен доступ к этой странице",
+  "Back to main page": "Вернуться на главную"
 }
