@@ -1,13 +1,13 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, {
-  FC,
   MutableRefObject,
+  ReactNode,
   useCallback,
   useEffect,
   useRef,
   useState,
 } from 'react';
-import { getClassNames, Mods } from 'shared/lib/getClassNames/getClassNames';
+import { Mods, getClassNames } from 'shared/lib/getClassNames/getClassNames';
 import { Portal } from '../Portal/Portal';
 import styles from './Modal.module.scss';
 
@@ -16,11 +16,12 @@ interface ModalProps {
   isOpen?: boolean;
   onClose?: () => void;
   lazy?: boolean;
+  children: ReactNode;
 }
 
 const ANIMATION_DELAY = 300;
 
-export const Modal: FC<ModalProps> = (props) => {
+export const Modal = (props: ModalProps) => {
   const { children, className, isOpen, onClose, lazy } = props;
   // const [isOpening, setIsOpening] = useState<boolean>(false);
   const [isClosing, setIsClosing] = useState<boolean>(false);

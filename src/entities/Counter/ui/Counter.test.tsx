@@ -25,6 +25,6 @@ describe('Counter', () => {
     const toggleBtn = screen.getByTestId('counter-decrement');
     expect(screen.getByTestId('counter')).toBeInTheDocument();
     userEvent.click(toggleBtn);
-    expect(screen.getByTestId('counter-value')).toHaveTextContent('-1');
+    expect(screen.getByTestId('counter-value')).toHaveTextContent('0');
   });
 });

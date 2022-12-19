@@ -1,7 +1,6 @@
 import { ArticleDetails } from 'entities/Article';
 import { ArticleRecommendationsList } from 'features/articleRecommendationsList';
 import { FC } from 'react';
-import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
 import {
   DynamicModuleLoader,
@@ -26,7 +25,6 @@ const reducers: ReducersList = {
 };
 
 const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
-  const { t } = useTranslation();
   const { className } = props;
   const { id } = useParams<{ id: string }>();
   const dispatch = useAppDispatch();
@@ -34,16 +32,6 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
   useInitialEffect(() => {
     dispatch(fetchCommentsByArticleId(id));
   });
-
-  if (!id) {
-    return (
-      <PageWrapper
-        className={getClassNames(styles.articleDetailsPage, {}, [className])}
-      >
-        {t('Article is not found')}
-      </PageWrapper>
-    );
-  }
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>

@@ -66,7 +66,9 @@
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "subtitle": "Что нового в JS за 2022 год?",
       "title": "Javascript news",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "userId": "1",
       "views": 2314
     },
@@ -93,7 +95,9 @@
       "img": "https://www.tutorialbar.com/wp-content/uploads/3145740_fdaa-2048x1152.jpeg",
       "subtitle": "Что нового в Python за 2022 год?",
       "title": "Python news",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "userId": "1",
       "views": 343
     },
@@ -163,7 +167,9 @@
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/800px-Typescript_logo_2020.svg.png",
       "subtitle": "Что нового в Typescript за 2022 год?",
       "title": "Typescript news",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "userId": "1",
       "views": 45656
     },
@@ -190,7 +196,9 @@
       "img": "https://static.tildacdn.com/tild3231-3035-4863-b161-396462666132/1_.png",
       "subtitle": "Что нового в Python за 2022 год?",
       "title": "C# news",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "userId": "1",
       "views": 111
     },
@@ -260,7 +268,9 @@
       "img": "https://i.pinimg.com/originals/bc/3f/04/bc3f04efca03c6b2661c9e9500b9a549.png",
       "subtitle": "Что нового в Typescript за 2022 год?",
       "title": "Ruby news",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "userId": "1",
       "views": 45454
     },
@@ -287,7 +297,9 @@
       "img": "https://cdn.worldvectorlogo.com/logos/java.svg",
       "subtitle": "Что нового в Python за 2022 год?",
       "title": "Java news",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "userId": "1",
       "views": 1011122
     },
@@ -357,7 +369,9 @@
       "img": "https://myeditor.ru/wp-content/uploads/5/a/c/5aca578c5257de7968382788ac9b7b3a.png",
       "subtitle": "Что нового в Typescript за 2022 год?",
       "title": "Go news",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "userId": "1",
       "views": 199
     },
@@ -384,7 +398,9 @@
       "img": "https://fb.ru/misc/i/gallery/101519/2842647.jpg",
       "subtitle": "Что нового в Python за 2022 год?",
       "title": "Python news",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "userId": "1",
       "views": 200
     },
@@ -454,7 +470,9 @@
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/800px-Typescript_logo_2020.svg.png",
       "subtitle": "Что нового в Typescript за 2022 год?",
       "title": "Typescript news",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "userId": "1",
       "views": 1022
     },
@@ -481,7 +499,9 @@
       "img": "https://www.tutorialbar.com/wp-content/uploads/3145740_fdaa-2048x1152.jpeg",
       "subtitle": "Что нового в Python за 2022 год?",
       "title": "Python news",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "userId": "1",
       "views": 33
     },
@@ -551,7 +571,9 @@
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/800px-Typescript_logo_2020.svg.png",
       "subtitle": "Что нового в Typescript за 2022 год?",
       "title": "Typescript news",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "userId": "1",
       "views": 566
     },
@@ -578,7 +600,9 @@
       "img": "https://www.tutorialbar.com/wp-content/uploads/3145740_fdaa-2048x1152.jpeg",
       "subtitle": "Что нового в Python за 2022 год?",
       "title": "Python news",
-      "type": ["MEDICINE"],
+      "type": [
+        "MEDICINE"
+      ],
       "userId": "1",
       "views": 999
     },
@@ -648,7 +672,9 @@
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/800px-Typescript_logo_2020.svg.png",
       "subtitle": "Что нового в Typescript за 2022 год?",
       "title": "Typescript news",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "userId": "1",
       "views": 444
     },
@@ -675,7 +701,9 @@
       "img": "https://www.tutorialbar.com/wp-content/uploads/3145740_fdaa-2048x1152.jpeg",
       "subtitle": "Что нового в Python за 2022 год?",
       "title": "Python news",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "userId": "1",
       "views": 454
     },
@@ -745,7 +773,9 @@
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/800px-Typescript_logo_2020.svg.png",
       "subtitle": "Что нового в Typescript за 2022 год?",
       "title": "Typescript news",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "userId": "1",
       "views": 1022
     },
@@ -772,7 +802,9 @@
       "img": "https://www.tutorialbar.com/wp-content/uploads/3145740_fdaa-2048x1152.jpeg",
       "subtitle": "Что нового в Python за 2022 год?",
       "title": "Python news",
-      "type": ["ECONOMIC"],
+      "type": [
+        "ECONOMIC"
+      ],
       "userId": "1",
       "views": 1022
     },
@@ -842,7 +874,9 @@
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/800px-Typescript_logo_2020.svg.png",
       "subtitle": "Что нового в Typescript за 2022 год?",
       "title": "Typescript news",
-      "type": ["ECONOMIC"],
+      "type": [
+        "ECONOMIC"
+      ],
       "userId": "1",
       "views": 1022
     },
@@ -869,7 +903,9 @@
       "img": "https://www.tutorialbar.com/wp-content/uploads/3145740_fdaa-2048x1152.jpeg",
       "subtitle": "Что нового в Python за 2022 год?",
       "title": "Python news",
-      "type": ["SCIENCE"],
+      "type": [
+        "SCIENCE"
+      ],
       "userId": "1",
       "views": 1022
     },
@@ -939,7 +975,9 @@
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/800px-Typescript_logo_2020.svg.png",
       "subtitle": "Что нового в Typescript за 2022 год?",
       "title": "Typescript news",
-      "type": ["MEDICINE"],
+      "type": [
+        "MEDICINE"
+      ],
       "userId": "1",
       "views": 1022
     }
@@ -962,6 +1000,24 @@
       "id": "c0fxOlk",
       "text": "3333",
       "userId": "1"
+    },
+    {
+      "articleId": "3",
+      "userId": "1",
+      "text": "123",
+      "id": "NEJgpU4"
+    },
+    {
+      "articleId": "3",
+      "userId": "1",
+      "text": "22223",
+      "id": "3QXE1N6"
+    },
+    {
+      "articleId": "3",
+      "userId": "1",
+      "text": "4444",
+      "id": "rysXHl8"
     }
   ],
   "posts": [
@@ -1015,21 +1071,27 @@
       "avatar": "https://img.freepik.com/premium-photo/emoji-with-medical-mask-sunglass-royal-crown-3d_286925-127.jpg?w=826",
       "id": "1",
       "password": "123",
-      "roles": ["ADMIN"],
+      "roles": [
+        "ADMIN"
+      ],
       "username": "admin"
     },
     {
       "avatar": "https://ru-static.z-dn.net/files/ddd/02bd3a23f077cda4cc1843b6467a4db1.jpg",
       "id": "2",
       "password": "1234",
-      "roles": ["USER"],
+      "roles": [
+        "USER"
+      ],
       "username": "user"
     },
     {
       "avatar": "https://img.freepik.com/premium-photo/emoji-with-medical-mask-sunglass-royal-crown-3d_286925-127.jpg?w=826",
       "id": "2",
       "password": "1234",
-      "roles": ["MANAGER"],
+      "roles": [
+        "MANAGER"
+      ],
       "username": "manager"
     }
   ]
