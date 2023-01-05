@@ -33,6 +33,10 @@ const BuildPlugins = ({
     new CopyPlugin({
       patterns: [{ from: paths.locales, to: paths.buildLocales }],
     }),
+    // new CircularDependencyPlugin({
+    //   exclude: /node_modules/,
+    //   failOnError: false,
+    // }),
   ];
 
   if (isDev) {
