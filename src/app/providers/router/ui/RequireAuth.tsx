@@ -1,5 +1,5 @@
 import { getUserAuthData, getUserRoles } from 'entities/User';
-import { UserRole } from 'entities/User/model/types/userSchema';
+import { UserRole } from 'entities/User/model/const/userConst';
 import { useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import { Navigate, useLocation } from 'react-router-dom';

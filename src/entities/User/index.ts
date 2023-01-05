@@ -6,4 +6,4 @@ export {
   getUserRoles,
 } from './model/selectors/rolesSelector';
 export { userActions, userReducer } from './model/slice/UserSlice';
-export { User, UserSchema } from './model/types/userSchema';
+export type { User, UserSchema } from './model/types/userSchema';

@@ -3,7 +3,7 @@ import { FC, ReactNode } from 'react';
 import { Provider } from 'react-redux';
 import { NavigateOptions, To } from 'react-router-dom';
 import { StateSchema } from '../config/StateSchema';
-import { createReduxStore } from '../config/store';
+import { createReduxStore } from '../config/utils';
 
 interface StoreProviderProps {
   children?: ReactNode;

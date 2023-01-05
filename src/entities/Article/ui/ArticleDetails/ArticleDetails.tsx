@@ -14,6 +14,7 @@ import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Icon } from 'shared/ui/Icon/Icon';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
 import { Text, TextAlign, TextSize, TextTheme } from 'shared/ui/Text/Text';
+import { ArticleBlockType } from '../../model/const/articleConst';
 import {
   getArticleDetailsData,
   getArticleDetailsError,
@@ -21,7 +22,7 @@ import {
 } from '../../model/selectors/articleDetails';
 import { fetchArticleByID } from '../../model/services/fetchArticleByID/fetchArticleByID';
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
-import { ArticleBlock, ArticleBlockType } from '../../model/types/article';
+import { ArticleBlock } from '../../model/types/article';
 import { ArticleCodeBlockComponent } from '../../ui/ArticleCodeBlockComponent/ArticleCodeBlockComponent';
 import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleCodeImageComponent';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
