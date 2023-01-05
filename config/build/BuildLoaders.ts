@@ -17,16 +17,12 @@ const BuildLoaders = (options: BuildOptions): webpack.RuleSetRule[] => {
     test: /\.svg$/,
     use: ['@svgr/webpack'],
   };
-  const babelLoader = buildBabelLoader();
+  const codebabelLoader = buildBabelLoader({ isTsx: false });
+  const tsxCodebabelLoader = buildBabelLoader({ isTsx: true });
 
-  const typescriptRules = {
-    test: /\.tsx?$/,
-    use: 'ts-loader',
-    exclude: /node_modules/,
-  };
   const scssRules = buildCssLoader(isDev);
 
-  return [fileRules, svgRules, babelLoader, typescriptRules, scssRules];
+  return [fileRules, svgRules, codebabelLoader, tsxCodebabelLoader, scssRules];
 };
 
 export default BuildLoaders;
