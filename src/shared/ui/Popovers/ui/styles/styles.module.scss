@@ -1,0 +1,46 @@
+.popup {
+  position: relative;
+}
+
+.bottom {
+  top: calc(100% + 5px);
+  left: -25%;
+}
+
+.top {
+  bottom: calc(100% + 5px);
+  left: -25%;
+}
+
+.bottomRight {
+  top: calc(100% + 5px);
+  left: 45%;
+}
+
+.topRight {
+  bottom: calc(100% + 5px);
+  left: 45%;
+}
+
+.bottomLeft {
+  top: calc(100% + 5px);
+  left: -100%;
+}
+
+.topLeft {
+  bottom: calc(100% + 5px);
+  left: -90%;
+}
+
+.active {
+  background-color: var(--primary-button-bg-color);
+}
+
+.trigger {
+  background: none;
+  border: none;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}

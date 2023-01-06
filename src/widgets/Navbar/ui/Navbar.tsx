@@ -10,13 +10,16 @@ import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import Logo from 'shared/assets/icons/logo.svg';
+import NotificationIcon from 'shared/assets/icons/notificationIcon.svg';
 import { RoutePath } from 'shared/config/routerConfig/RouteConfig';
 import { USER_LOCAL_STORAGE_KEY } from 'shared/constants/localstorage';
 import { getClassNames } from 'shared/lib/getClassNames/getClassNames';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
-import { Dropdown } from 'shared/ui/Dropdown/Dropdown';
+import { Icon } from 'shared/ui/Icon/Icon';
+import { Dropdown, Popover } from 'shared/ui/Popovers';
+import { HStack } from 'shared/ui/Stack';
 import styles from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -54,36 +57,51 @@ export const Navbar = memo(({ className }: NavbarProps) => {
           <Logo fill='#FAA508' className={styles.navbarLogoImage} />
           <span className={styles.navbarLogoText}>{t('My App')}</span>
         </div>
-        <AppLink
-          className={styles.navbarCreateArticle}
-          theme={AppLinkTheme.PRIMARY_INVERTED}
-          to={RoutePath.article_create}
-        >
-          {t('Create Article')}
-        </AppLink>
-        <Dropdown
-          className={styles.navbarDropdown}
-          trigger={<Avatar size={45} src={authData.avatar} />}
-          optionsDirection='bottomLeft'
-          items={[
-            ...(isAdminPanelAvailable
-              ? [
-                  {
-                    content: t('Admin panel'),
-                    href: RoutePath.admin,
-                  },
-                ]
-              : []),
-            {
-              content: t('Profile'),
-              href: RoutePath.profile + authData.id,
-            },
-            {
-              content: t('Sign out'),
-              onClick: handleLogOut,
-            },
-          ]}
-        />
+
+        <HStack className={styles.navbarButtons}>
+          <AppLink
+            theme={AppLinkTheme.PRIMARY_INVERTED}
+            to={RoutePath.article_create}
+          >
+            {t('Create Article')}
+          </AppLink>
+
+          <Popover
+            trigger={
+              <Button
+                className={styles.navbarNotificationButton}
+                theme={ButtonTheme.CLEAR}
+              >
+                <Icon Svg={NotificationIcon} inverted />
+              </Button>
+            }
+          >
+            12312
+          </Popover>
+          <Dropdown
+            className={styles.navbarAvatarDropdown}
+            trigger={<Avatar size={45} src={authData.avatar} />}
+            optionsDirection='bottomLeft'
+            items={[
+              ...(isAdminPanelAvailable
+                ? [
+                    {
+                      content: t('Admin panel'),
+                      href: RoutePath.admin,
+                    },
+                  ]
+                : []),
+              {
+                content: t('Profile'),
+                href: RoutePath.profile + authData.id,
+              },
+              {
+                content: t('Sign out'),
+                onClick: handleLogOut,
+              },
+            ]}
+          />
+        </HStack>
       </header>
     );
   }

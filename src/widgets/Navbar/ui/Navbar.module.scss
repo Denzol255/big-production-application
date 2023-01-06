@@ -24,10 +24,15 @@
   width: 50px;
 }
 
-.navbarCreateArticle {
+.navbarButtons {
   margin-left: auto;
 }
 
-.navbarDropdown {
-  margin-left: 40px;
+.navbarAvatarDropdown,
+.navbarNotificationButton {
+  margin-left: 20px;
+}
+
+.navbarNotificationButton {
+  height: 20px;
 }

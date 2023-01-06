@@ -1,7 +1,9 @@
 import { Menu } from '@headlessui/react';
 import { Fragment, ReactNode } from 'react';
 import { getClassNames } from 'shared/lib/getClassNames/getClassNames';
-import { AppLink } from '../AppLink/AppLink';
+import { AppLink } from '../../../AppLink/AppLink';
+import { DropDownOptionsDirectionsType } from '../styles/const';
+import unionStyles from '../styles/styles.module.scss';
 import styles from './Dropdown.module.scss';
 
 export interface DropDownItem {
@@ -11,30 +13,25 @@ export interface DropDownItem {
   href?: string;
 }
 
-type DropDownDirectionsType =
-  | 'top'
-  | 'bottom'
-  | 'bottomLeft'
-  | 'bottomRight'
-  | 'topLeft'
-  | 'topRight';
-
 interface DropDownProps {
   className?: string;
   items: DropDownItem[];
   trigger: ReactNode;
-  optionsDirection?: DropDownDirectionsType;
+  optionsDirection?: DropDownOptionsDirectionsType;
 }
 
 export function Dropdown(props: DropDownProps) {
   const { trigger, items, className, optionsDirection = 'bottom' } = props;
 
   return (
-    <Menu as='div' className={getClassNames(styles.dropdown, {}, [className])}>
-      <Menu.Button className={styles.trigger}>{trigger}</Menu.Button>
+    <Menu
+      as='div'
+      className={getClassNames(unionStyles.popup, {}, [className])}
+    >
+      <Menu.Button className={unionStyles.trigger}>{trigger}</Menu.Button>
       <Menu.Items
         className={getClassNames(styles.menuItems, {}, [
-          styles[optionsDirection],
+          unionStyles[optionsDirection],
         ])}
       >
         {items.map((item, index) => {
@@ -46,7 +43,7 @@ export function Dropdown(props: DropDownProps) {
               className={getClassNames(
                 styles.item,
                 {
-                  [styles.active]: active,
+                  [unionStyles.active]: active,
                   [styles.disabled]: item.disabled,
                 },
                 []

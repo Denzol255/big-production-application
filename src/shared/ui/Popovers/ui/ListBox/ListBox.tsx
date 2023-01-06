@@ -2,9 +2,11 @@ import { Listbox as HListBox } from '@headlessui/react';
 import { ReactNode } from 'react';
 import CheckedListBoxIcon from 'shared/assets/icons/checkedListBoxIcon.svg';
 import { getClassNames } from 'shared/lib/getClassNames/getClassNames';
-import { Button } from '../Button/Button';
-import { Icon } from '../Icon/Icon';
-import { HStack } from '../Stack';
+import { Button } from '../../../Button/Button';
+import { Icon } from '../../../Icon/Icon';
+import { HStack } from '../../../Stack';
+import { DropDownOptionsDirectionsType } from '../styles/const';
+import unionStyles from '../styles/styles.module.scss';
 import styles from './ListBox.module.scss';
 
 export interface ListBoxItem<T extends string> {
@@ -12,10 +14,6 @@ export interface ListBoxItem<T extends string> {
   content: ReactNode;
   disabled?: boolean;
 }
-
-type OptionsDirectionType = 'top' | 'bottom';
-
-// const directions: Record<> =
 
 interface ListBoxProps<T extends string> {
   items?: ListBoxItem<T>[];
@@ -25,7 +23,7 @@ interface ListBoxProps<T extends string> {
   defaultValue?: string;
   label?: string;
   readonly?: boolean;
-  optionsDirection?: OptionsDirectionType;
+  optionsDirection?: DropDownOptionsDirectionsType;
 }
 
 export function ListBox<T extends string>(props: ListBoxProps<T>) {
@@ -55,17 +53,17 @@ export function ListBox<T extends string>(props: ListBoxProps<T>) {
       )}
       <HListBox
         as='div'
-        className={getClassNames(styles.listBox, {}, [className])}
+        className={getClassNames(unionStyles.popup, {}, [className])}
         value={value}
         onChange={onChange}
         disabled={readonly}
       >
-        <HListBox.Button disabled={readonly} className={styles.listBoxBtn}>
+        <HListBox.Button disabled={readonly} className={unionStyles.trigger}>
           <Button disabled={readonly}>{value ?? defaultValue}</Button>
         </HListBox.Button>
         <HListBox.Options
           className={getClassNames(styles.options, {}, [
-            styles[optionsDirection],
+            unionStyles[optionsDirection],
           ])}
         >
           {items?.map((item) => (
@@ -80,7 +78,7 @@ export function ListBox<T extends string>(props: ListBoxProps<T>) {
                   className={getClassNames(
                     styles.liItem,
                     {
-                      [styles.active]: active,
+                      [unionStyles.active]: active,
                       [styles.disabled]: item.disabled,
                     },
                     []

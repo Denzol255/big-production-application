@@ -1,0 +1,9 @@
+.panel {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--dropdown-bg);
+  position: absolute;
+  z-index: 1000;
+  border-radius: 8px;
+  overflow: hidden;
+}
