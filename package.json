@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack serve --env port=9000",
+    "start": "webpack serve --env port=8080",
     "start:dev": "concurrently \"npm start\" \"npm run start:dev:server\" ",
     "start:dev:server": "node ./json-server/index.js",
     "build:prod": "webpack --env mode=production apiUrl=https://production-project-server-rust.vercel.app/",
@@ -26,7 +26,8 @@
     "build-storybook": "build-storybook -c ./config/storybook",
     "component": "generate-react component",
     "prepare": "husky install",
-    "generate:slice": "node ./scripts/createSlice/index.js"
+    "generate:slice": "node ./scripts/createSlice/index.js",
+    "pretty": "prettier --write \"./**/*.{js,jsx,ts,tsx,json}\""
   },
   "keywords": [],
   "author": "",

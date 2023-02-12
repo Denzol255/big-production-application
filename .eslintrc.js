@@ -62,6 +62,7 @@ module.exports = {
           'inputName',
           'name',
           'target',
+          'border',
           'direction',
           'justify',
           'align',

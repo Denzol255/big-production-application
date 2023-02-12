@@ -4,6 +4,10 @@
   background-color: var(--dropdown-bg);
   position: absolute;
   z-index: 1000;
-  border-radius: 8px;
   overflow: hidden;
+  min-width: 250px;
+  padding: 20px 0;
+  min-height: 150px;
+  max-height: 250px;
+  overflow-y: auto;
 }

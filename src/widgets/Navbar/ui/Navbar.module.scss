@@ -36,3 +36,15 @@
 .navbarNotificationButton {
   height: 20px;
 }
+
+.navbarNotificationList {
+  min-height: 150px;
+  max-height: 300px;
+  width: 350px;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+.navbarCreateArticle {
+  margin-right: 20px;
+}
