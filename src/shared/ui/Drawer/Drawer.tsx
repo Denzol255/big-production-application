@@ -1,13 +1,6 @@
-import {
-  memo,
-  MutableRefObject,
-  ReactNode,
-  useCallback,
-  useEffect,
-  useRef,
-  useState,
-} from 'react';
+import { memo, ReactNode } from 'react';
 import { getClassNames } from 'shared/lib/getClassNames/getClassNames';
+import { useModal } from 'shared/lib/hooks/useModal/useModal';
 import Overlay from '../Overlay/Overlay';
 import { Portal } from '../Portal/Portal';
 import styles from './Drawer.module.scss';
@@ -25,9 +18,12 @@ const ANIMATION_DELAY_HIDE = 200;
 
 const Drawer = memo((props: DrawerProps) => {
   const { className, isOpen, onClose, content, lazy } = props;
-  const [isClosing, setIsClosing] = useState<boolean>(false);
-  const [isMounted, setIsMounted] = useState<boolean>(false);
-  const [showContent, setShowContent] = useState<boolean>(false);
+  const { isClosing, showContent, isMounted, close } = useModal({
+    animationDelayHide: ANIMATION_DELAY_HIDE,
+    animationDelayShow: ANIMATION_DELAY_SHOW,
+    isOpen,
+    onClose,
+  });
   const drawerMods = {
     [styles.opened]: isOpen,
   };
@@ -36,32 +32,6 @@ const Drawer = memo((props: DrawerProps) => {
     [styles.contentClosing]: isClosing,
   };
 
-  const timerRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;
-
-  const handleOnClose = useCallback(() => {
-    if (onClose) {
-      setIsClosing(true);
-      timerRef.current = setTimeout(() => {
-        onClose();
-        setIsClosing(false);
-      }, ANIMATION_DELAY_HIDE);
-    }
-  }, [onClose]);
-
-  useEffect(() => {
-    if (isOpen) {
-      setIsMounted(true);
-      timerRef.current = setTimeout(() => {
-        setShowContent(true);
-      }, ANIMATION_DELAY_SHOW);
-    }
-    return () => {
-      setShowContent(false);
-      setIsMounted(false);
-      clearTimeout(timerRef.current);
-    };
-  }, [isOpen]);
-
   if (lazy && !isMounted) {
     return null;
   }
@@ -69,7 +39,7 @@ const Drawer = memo((props: DrawerProps) => {
   return (
     <Portal>
       <div className={getClassNames(styles.drawer, drawerMods, [className])}>
-        <Overlay onClose={handleOnClose} />
+        <Overlay onClose={close} />
         <div className={getClassNames(styles.contentWrapper, contentMods, [])}>
           {content}
         </div>

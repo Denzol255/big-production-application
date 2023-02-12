@@ -56,8 +56,6 @@ export const Navbar = memo(({ className }: NavbarProps) => {
     );
   }
 
-  console.log(window.matchMedia('(pointer:coarse)'));
-
   return (
     <header className={getClassNames(styles.navbar, {}, [className])}>
       <div className={styles.navbarLogoContainer}>
