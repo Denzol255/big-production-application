@@ -74,6 +74,7 @@ module.exports = {
     ],
     '@typescript-eslint/ban-ts-comment': OFF,
     'jsx-a11y/click-events-have-key-events': WARN,
+    'jsx-a11y/no-static-element-interactions': WARN,
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'error',
     'no-param-reassing': OFF,

@@ -56,6 +56,8 @@ export const Navbar = memo(({ className }: NavbarProps) => {
     );
   }
 
+  console.log(window.matchMedia('(pointer:coarse)'));
+
   return (
     <header className={getClassNames(styles.navbar, {}, [className])}>
       <div className={styles.navbarLogoContainer}>
@@ -65,7 +67,6 @@ export const Navbar = memo(({ className }: NavbarProps) => {
       <Button theme={ButtonTheme.CLEAR_INVERTED} onClick={handleShowModal}>
         {t('Sign in')}
       </Button>
-
       {isAuthModal && (
         <LoginModal isOpen={isAuthModal} onClose={handleCloseModal} />
       )}

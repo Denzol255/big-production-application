@@ -6,7 +6,7 @@
 .options {
   position: absolute;
   left: -45%;
-  z-index: 10000;
+  z-index: var(--popup-z-index);
   background-color: var(--listbox-bg);
   border-radius: 8px;
   box-shadow: 4px 4px 8px var(--listbox-bg);

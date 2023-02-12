@@ -3,7 +3,7 @@
   flex-direction: column;
   background-color: var(--dropdown-bg);
   position: absolute;
-  z-index: 1000;
+  z-index: var(--popup-z-index);
   overflow: hidden;
   min-width: 250px;
   padding: 20px 0;

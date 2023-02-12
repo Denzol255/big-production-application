@@ -36,5 +36,7 @@
   --secondary-red-color: rgb(238 68 68);
 
   // Z-index
+  --modal-init-z-index: -1;
   --modal-z-index: 10;
+  --popup-z-index: 5;
 }

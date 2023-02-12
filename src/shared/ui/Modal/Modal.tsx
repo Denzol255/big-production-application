@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import React, {
+import {
   MutableRefObject,
   ReactNode,
   useCallback,
@@ -7,7 +7,8 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import { Mods, getClassNames } from 'shared/lib/getClassNames/getClassNames';
+import { getClassNames, Mods } from 'shared/lib/getClassNames/getClassNames';
+import Overlay from '../Overlay/Overlay';
 import { Portal } from '../Portal/Portal';
 import styles from './Modal.module.scss';
 
@@ -19,7 +20,8 @@ interface ModalProps {
   children: ReactNode;
 }
 
-const ANIMATION_DELAY = 300;
+const ANIMATION_DELAY_SHOW = 0;
+const ANIMATION_DELAY_HIDE = 300;
 
 export const Modal = (props: ModalProps) => {
   const { children, className, isOpen, onClose, lazy } = props;
@@ -27,18 +29,14 @@ export const Modal = (props: ModalProps) => {
   const [isClosing, setIsClosing] = useState<boolean>(false);
   const [isMounted, setIsMounted] = useState<boolean>(false);
   const timerRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;
-
-  const handleContentClick = (e: React.MouseEvent) => {
-    e.stopPropagation();
-  };
-
+  const [showContent, setShowContent] = useState<boolean>(false);
   const handleOnClose = useCallback(() => {
     if (onClose) {
       setIsClosing(true);
       timerRef.current = setTimeout(() => {
         onClose();
         setIsClosing(false);
-      }, ANIMATION_DELAY);
+      }, ANIMATION_DELAY_HIDE);
     }
   }, [onClose]);
 
@@ -51,18 +49,21 @@ export const Modal = (props: ModalProps) => {
     [handleOnClose]
   );
 
-  const mods: Mods = {
+  const modalMods: Mods = {
     [styles.opened]: isOpen,
     [styles.isClosing]: isClosing,
-    // [styles.isOpening]: isOpening,
   };
+
+  const contentMods: Mods = {
+    [styles.contentOpen]: showContent,
+  };
+
   useEffect(() => {
     if (isOpen) {
       setIsMounted(true);
-      // setIsOpening(true);
-      // timerRef.current = setTimeout(() => {
-      //   setIsOpening(false);
-      // }, ANIMATION_DELAY);
+      timerRef.current = setTimeout(() => {
+        setShowContent(true);
+      }, ANIMATION_DELAY_SHOW);
     }
   }, [isOpen]);
 
@@ -82,21 +83,12 @@ export const Modal = (props: ModalProps) => {
 
   return (
     <Portal>
-      <div className={getClassNames(styles.modal, mods, [className])}>
+      <div className={getClassNames(styles.modal, modalMods, [className])}>
+        <Overlay onClose={handleOnClose} />
         <div
-          className={styles.overlay}
-          onClick={handleOnClose}
-          role='button'
-          tabIndex={0}
+          className={getClassNames(styles.content, contentMods, [className])}
         >
-          <div
-            className={styles.content}
-            onClick={handleContentClick}
-            role='button'
-            tabIndex={-1}
-          >
-            {children}
-          </div>
+          {children}
         </div>
       </div>
     </Portal>
